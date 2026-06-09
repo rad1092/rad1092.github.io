@@ -4,7 +4,9 @@ permalink: /en/
 ---
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Nanum+Myeongjo:wght@700;800&display=swap">
 
 <style>
 /* ===== Reset Cayman chrome — full-bleed canvas ===== */
@@ -14,15 +16,16 @@ permalink: /en/
 .page-footer, footer.site-footer { display: none !important; }
 
 :root {
-  --bg: #0e0e10;
-  --bg-soft: #161618;
-  --card: #fff;
-  --line: #26262a;
-  --text: #ededef;
-  --muted: #9a9aa2;
-  --accent: #d8ff3e;
-  --accent-ink: #0e0e10;
-  --serif: "Space Grotesk", "Pretendard", sans-serif;
+  --bg: #ffffff;
+  --bg-soft: #f5f6f8;
+  --card: #ffffff;
+  --line: #e7e7ec;
+  --text: #18181b;
+  --muted: #6c6c76;
+  --accent: #2f56e6;        /* cobalt blue */
+  --accent-ink: #ffffff;
+  --serif: "Space Grotesk", "Pretendard", sans-serif;   /* labels / code / mono */
+  --display: "Fraunces", "Nanum Myeongjo", "Pretendard", serif;  /* editorial headings */
 }
 
 body { background: var(--bg); }
@@ -35,7 +38,7 @@ body { background: var(--bg); }
 
 .rail { position: sticky; top: 0; align-self: flex-start; height: 100vh; flex: 0 0 256px;
   padding: 54px 30px 40px 44px; display: flex; flex-direction: column; }
-.rail-name { font-family: var(--serif); font-size: 1.7rem; font-weight: 700; letter-spacing: -.02em; line-height: 1.15; }
+.rail-name { font-family: var(--display); font-size: 1.8rem; font-weight: 600; letter-spacing: -.01em; line-height: 1.15; }
 .rail-name small { display: block; font-size: .82rem; font-weight: 500; color: var(--muted); margin-top: 4px; letter-spacing: 0; }
 .rail-role { color: var(--muted); font-size: .9rem; margin-top: 14px; max-width: 200px; }
 
@@ -58,11 +61,14 @@ body { background: var(--bg); }
 @keyframes fade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 
 .kicker { font-family: var(--serif); font-size: .78rem; color: var(--accent); letter-spacing: .14em; text-transform: uppercase; margin: 0 0 14px; }
-.view-title { font-family: var(--serif); font-size: 2.5rem; font-weight: 700; letter-spacing: -.02em; line-height: 1.1; margin: 0 0 26px; }
+.view-title { font-family: var(--display); font-size: 2.6rem; font-weight: 600; letter-spacing: -.01em; line-height: 1.12; margin: 0 0 26px; }
 .lead { color: var(--muted); font-size: 1.06rem; max-width: 70ch; }
 .lead .hl { color: var(--text); }
 
-.about-head { font-family: var(--serif); font-size: 3rem; font-weight: 700; letter-spacing: -.025em; line-height: 1.16; max-width: 20ch; margin: 0 0 28px; }
+.about-hero { display: flex; gap: 52px; align-items: center; flex-wrap: wrap-reverse; }
+.about-text { flex: 1; min-width: 300px; }
+.about-photo { flex: 0 0 auto; width: 230px; height: 230px; border-radius: 50%; object-fit: cover; border: 1px solid var(--line); box-shadow: 0 18px 50px rgba(24,24,27,.14); }
+.about-head { font-family: var(--display); font-size: 2.9rem; font-weight: 600; letter-spacing: -.015em; line-height: 1.18; max-width: 20ch; margin: 0 0 28px; }
 .about-head .hl { color: var(--accent); }
 .chips { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 26px; }
 .chip { border: 1px solid var(--line); color: var(--text); padding: 7px 14px; border-radius: 999px; font-size: .84rem; }
@@ -79,7 +85,7 @@ body { background: var(--bg); }
 .tl-item:last-child { padding-bottom: 0; }
 .tl-item::before { content: ""; position: absolute; left: -28px; top: 6px; width: 11px; height: 11px; border-radius: 50%; background: var(--bg); border: 2px solid var(--accent); }
 .tl-when { font-family: var(--serif); font-size: .8rem; color: var(--accent); letter-spacing: .04em; }
-.tl-role { font-size: 1.18rem; font-weight: 700; margin: 4px 0 2px; letter-spacing: -.01em; }
+.tl-role { font-family: var(--display); font-size: 1.3rem; font-weight: 600; margin: 5px 0 3px; letter-spacing: -.01em; }
 .tl-role .org { color: var(--muted); font-weight: 400; font-size: .92rem; }
 .tl-desc { color: var(--muted); margin: 6px 0 0; }
 .tl-detail { margin: 14px 0 0; padding-left: 20px; color: var(--muted); }
@@ -110,7 +116,7 @@ body { background: var(--bg); }
 .gallery { display: grid; gap: 14px; }
 .gallery.cols-2 { grid-template-columns: repeat(2, 1fr); }
 .gallery.one { max-width: 760px; }
-.gallery figure { margin: 0; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: #000; }
+.gallery figure { margin: 0; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: var(--bg-soft); }
 .gallery img { width: 100%; display: block; }
 .gallery figcaption { font-size: .8rem; color: var(--muted); padding: 9px 12px; border-top: 1px solid var(--line); }
 
@@ -145,7 +151,7 @@ body { background: var(--bg); }
 @media (max-width: 900px) {
   .app { flex-direction: column; max-width: none; }
   .rail { position: sticky; top: 0; z-index: 10; height: auto; width: 100%; flex-basis: auto;
-    background: rgba(14,14,16,.9); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line);
+    background: rgba(255,255,255,.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line);
     padding: 14px 20px; flex-direction: row; align-items: center; gap: 16px; }
   .rail-name { font-size: 1.05rem; }
   .rail-name small, .rail-role { display: none; }
@@ -154,6 +160,8 @@ body { background: var(--bg); }
   .rail-link .bar { display: none; }
   .rail-foot { margin: 0; }
   .view { padding: 30px 22px 80px; }
+  .about-hero { gap: 24px; }
+  .about-photo { width: 130px; height: 130px; }
   .about-head { font-size: 2rem; }
   .view-title { font-size: 1.9rem; }
   .gallery.cols-2 { grid-template-columns: 1fr; }
@@ -191,12 +199,17 @@ body { background: var(--bg); }
     <!-- ---------- ABOUT ---------- -->
     <section class="view-panel active" id="about">
       <p class="kicker">01 — About</p>
-      <h1 class="about-head">After years in field sales and delivery, I build software that helps people take their <span class="hl">next step</span>.</h1>
-      <p class="lead">
-        I started from small learning repositories and grew step by step toward real, usable tools.
-        Guided by the idea of <span class="hl">"going beyond delivering information to driving action,"</span>
-        I focus on software — disaster evacuation guidance, API tooling, dependency-risk checks — that helps users act.
-      </p>
+      <div class="about-hero">
+        <div class="about-text">
+          <h1 class="about-head">After years in field sales and delivery, I build software that helps people take their <span class="hl">next step</span>.</h1>
+          <p class="lead">
+            I started from small learning repositories and grew step by step toward real, usable tools.
+            Guided by the idea of <span class="hl">"going beyond delivering information to driving action,"</span>
+            I focus on software — disaster evacuation guidance, API tooling, dependency-risk checks — that helps users act.
+          </p>
+        </div>
+        <img class="about-photo" src="/profile.png" alt="HongDae Kim">
+      </div>
       <div class="chips">
         <span class="chip"><b>Python</b> · Streamlit · Pandas · Folium</span>
         <span class="chip"><b>Rust</b> · egui/eframe</span>
