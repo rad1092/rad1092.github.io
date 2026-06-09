@@ -33,8 +33,14 @@ body { background: var(--bg); }
 .pf a:hover { color: var(--accent); }
 .pf .mono { font-family: "Space Grotesk", ui-monospace, monospace; }
 
+/* subtle background grid (fills empty space without clutter) */
+.pf::before { content: ""; position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background-image: linear-gradient(to right, rgba(24,24,40,.028) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(24,24,40,.028) 1px, transparent 1px);
+  background-size: 78px 78px; }
+
 /* ===== App shell: editorial left rail + wide content ===== */
-.app { display: flex; align-items: flex-start; max-width: 1360px; margin: 0 auto; }
+.app { display: flex; align-items: flex-start; max-width: 1360px; margin: 0 auto; position: relative; z-index: 1; }
 
 .rail { position: sticky; top: 0; align-self: flex-start; height: 100vh; flex: 0 0 264px;
   padding: 56px 30px 40px 46px; display: flex; flex-direction: column; }
@@ -131,19 +137,27 @@ body { background: var(--bg); }
 .gallery img { width: 100%; display: block; }
 .gallery figcaption { font-size: .8rem; color: var(--muted); padding: 9px 12px; border-top: 1px solid var(--line); }
 
-.tabs { display: flex; gap: 6px; border-bottom: 1px solid var(--line); flex-wrap: wrap; margin-top: 6px; max-width: 820px; }
-.tab-btn { background: none; border: none; color: var(--muted); padding: 11px 20px; cursor: pointer; font-size: .95rem; border-bottom: 2px solid transparent; font-family: inherit; }
-.tab-btn:hover { color: var(--text); }
-.tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
-.tab-panel { display: none; padding: 22px 2px 4px; animation: fade .25s ease; max-width: 820px; }
-.tab-panel.active { display: block; }
-.tab-panel ul { margin: 0; padding-left: 20px; }
-.tab-panel li { margin-bottom: 11px; }
-.tab-panel li b { color: var(--text); }
+/* metric / quick-fact cards */
+.metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(132px, 1fr)); gap: 12px; margin: 6px 0 36px; max-width: 720px; }
+.metric { border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; background: var(--card); }
+.metric b { display: block; font-family: var(--display); font-size: 2rem; font-weight: 600; color: var(--accent); letter-spacing: -.02em; line-height: 1; }
+.metric span { display: block; margin-top: 9px; font-size: .82rem; color: var(--muted); line-height: 1.4; }
+
+/* case-study narrative (replaces STAR tabs) */
+.case { max-width: 820px; }
+.case-block { padding: 30px 0; border-top: 1px solid var(--line); }
+.case-block.flush { border-top: none; padding: 0 0 30px; }
+.case-h { font-family: var(--serif); font-size: .76rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin: 0 0 16px; }
+.case-h .sub { color: var(--text); }
+.case-block p { margin: 0; font-size: 1.04rem; color: var(--muted); }
+.case-block p b { color: var(--text); }
+.case-block ul { margin: 0; padding-left: 20px; }
+.case-block li { margin-bottom: 12px; color: var(--muted); }
+.case-block li b { color: var(--text); }
 
 /* other projects */
 .archive { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; max-width: 920px; }
-.arch-card { border: 1px solid var(--line); border-radius: 14px; padding: 24px; transition: transform .2s, border-color .2s, background .2s; }
+.arch-card { border: 1px solid var(--line); border-radius: 14px; padding: 24px; background: var(--card); transition: transform .2s, border-color .2s, background .2s; }
 .arch-card:hover { transform: translateY(-5px); border-color: var(--accent); background: var(--bg-soft); }
 .arch-card .top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
 .arch-card .folder { font-size: 1.5rem; }
@@ -287,8 +301,12 @@ body { background: var(--bg); }
       <div class="stack"><span>Python</span><span>Streamlit</span><span>Pandas</span><span>Folium</span><span>OSRM</span><span>Selenium</span><span>SQLite</span><span>pytest</span></div>
 
       <p class="summary">재난문자는 <b>"무슨 일이 일어났는지"</b>만 알려줍니다. "지금 어디로, 어떻게 대피해야 하는지"까지 안내하는 대시보드를 만들었습니다.</p>
-      <p class="context">정적 공공데이터, 실시간 재난문자, 사용자 위치, 외부 경로 API를 <b>함께 쓰는 서비스</b>라, 단순 화면 시각화보다 <b>데이터가 끊기지 않게 불러오고·추천하고·길을 찾아주는 구조</b>가 핵심이었습니다. 저는 4인 팀에서 <b>백엔드와 전체 아키텍처</b>를 맡아 데이터 로딩·대피소 추천·실시간 재난문자 처리·경로 안내·테스트를 설계하고 구현했습니다.</p>
-      <div class="ai-note"><span class="badge">AI</span><span>처음 다뤄 보는 기술 스택이 많았는데, <b>AI 도구를 적극 활용해 단기간에 구현 역량을 끌어올렸습니다.</b> 새로운 도구를 실전에서 빠르게 익히고, AI를 개발 파트너로 부리는 실용적인 방식을 체득한 프로젝트입니다.</span></div>
+
+      <div class="metrics">
+        <div class="metric"><b>4인</b><span>팀 · 백엔드/아키텍처 담당</span></div>
+        <div class="metric"><b>4</b><span>멀티페이지 구성</span></div>
+        <div class="metric"><b>5</b><span>지원 권역 (대구·울산·부산·경북·경남)</span></div>
+      </div>
 
       <div class="media">
         <div class="gallery cols-2">
@@ -299,41 +317,39 @@ body { background: var(--bg); }
         </div>
       </div>
 
-      <div class="tabs" role="tablist">
-        <button class="tab-btn active" data-target="p1-s">상황</button>
-        <button class="tab-btn" data-target="p1-t">역할</button>
-        <button class="tab-btn" data-target="p1-a">행동</button>
-        <button class="tab-btn" data-target="p1-r">결과</button>
-      </div>
-      <div class="tab-panel active" id="p1-s">
-        <ul>
-          <li>재난 발생 시 영남권(대구·울산·부산·경북·경남) 주민이 <b>대피소를 찾고 이동 경로를 확인할 통합 서비스가 없었습니다.</b></li>
-          <li>특보 데이터와 대피소 정보가 흩어져 있어, 위기 상황에서 사용자가 <b>빠르게 판단하기 어려운</b> 환경이었습니다.</li>
-          <li>여러 데이터 출처와 실행 환경이 섞여, <b>안정적인 데이터 로딩·추천·경로 처리 구조</b>가 무엇보다 중요했습니다.</li>
-        </ul>
-      </div>
-      <div class="tab-panel" id="p1-t">
-        <ul>
-          <li>4인 팀에서 <b>전체 대시보드 아키텍처 설계</b>를 담당.</li>
-          <li>데이터 경로 관리, CSV 검증·정규화, 실시간 재난문자 처리, <b>대피소 추천 로직</b>, OSRM 경로 조회와 <b>장애 대응(fallback)</b> 구조를 설계·구현.</li>
-          <li>지도 시각화와 테스트 구성 등 <b>핵심 기능 구현을 주도</b>.</li>
-        </ul>
-      </div>
-      <div class="tab-panel" id="p1-a">
-        <ul>
-          <li><b>안 끊기는 데이터 로딩:</b> 환경변수 → Streamlit secrets → 저장소 기본 경로를 순서대로 탐색하는 로딩 계층을 만들고, 한글 CSV 인코딩과 필수 컬럼 검증을 처리.</li>
-          <li><b>대피소 추천 엔진:</b> 재난 유형별 전용 대피소 우선 추천 → 지역 단위 fallback → 하버사인(Haversine) 거리 계산 → 수용 인원 기반 정렬을 결합.</li>
-          <li><b>실시간 + 모의 데이터:</b> Selenium 크롤러로 재난문자를 모아 앱 내부 표준 형식으로 변환하고, 크롤링이 어려운 상황을 대비해 <b>모의 재난문자 생성기</b>도 구현.</li>
-          <li><b>경로 안내:</b> OSRM 도보 경로를 사용하되, API 실패 시 <b>직선거리 기반 대체 경로</b>를 자동으로 표시.</li>
-          <li><b>구조 &amp; 검증:</b> Streamlit 멀티페이지(Home·시뮬레이션·실시간 안내·분석)를 일관되게 구성하고, Folium 지도로 위치·대피소·경로를 한 화면에 표시. <code class="mono">pytest</code>로 경로 계산·세션 상태·페이지 import를 검증.</li>
-        </ul>
-      </div>
-      <div class="tab-panel" id="p1-r">
-        <ul>
-          <li>사용자는 <b>재난 유형과 현재 위치에 맞는 대피소를 추천</b>받고, 외부 API나 실시간 수집이 실패해도 <b>대체 경로·모의 데이터로 서비스 흐름이 끊기지 않게</b> 되었습니다.</li>
-          <li>단순 Streamlit 시각화가 아니라 <b>데이터 처리 · 추천 · 실시간 수집 · 장애 대응</b>을 포함한 재난 안내 구조로 확장.</li>
-          <li>Folium·OSRM·Streamlit을 실제로 연동한 <b>작동하는 대시보드</b>를 완성 — 처음 다루는 기술을 빠르게 익혀 실전에 적용했습니다.</li>
-        </ul>
+      <div class="ai-note"><span class="badge">AI</span><span>처음 다뤄 보는 기술 스택이 많았는데, <b>AI 도구를 적극 활용해 단기간에 구현 역량을 끌어올렸습니다.</b> 새로운 도구를 실전에서 빠르게 익히고, AI를 개발 파트너로 부리는 실용적인 방식을 체득한 프로젝트입니다.</span></div>
+
+      <div class="case">
+        <div class="case-block flush">
+          <h3 class="case-h">문제</h3>
+          <p>재난문자는 발생 사실만 알릴 뿐, 특보 데이터와 대피소 정보가 흩어져 있어 위기 상황에서 <b>빠른 판단이 어려웠습니다.</b> 정적 공공데이터·실시간 재난문자·사용자 위치·외부 경로 API를 함께 쓰는 서비스라, 단순 화면 시각화보다 <b>데이터가 끊기지 않게 불러오고·추천하고·길을 찾아주는 구조</b>가 핵심이었습니다.</p>
+        </div>
+        <div class="case-block">
+          <h3 class="case-h">내 역할 — <span class="sub">4인 팀 · 백엔드 / 아키텍처</span></h3>
+          <ul>
+            <li>전체 대시보드 <b>아키텍처 설계</b>를 담당.</li>
+            <li>데이터 경로 관리, CSV 검증·정규화, 실시간 재난문자 처리, <b>대피소 추천 로직</b>, OSRM 경로 조회와 <b>장애 대응(fallback)</b> 구조를 설계·구현.</li>
+            <li>지도 시각화와 테스트 구성 등 <b>핵심 기능 구현을 주도</b>.</li>
+          </ul>
+        </div>
+        <div class="case-block">
+          <h3 class="case-h">한 일</h3>
+          <ul>
+            <li><b>안 끊기는 데이터 로딩:</b> 환경변수 → Streamlit secrets → 저장소 기본 경로를 순서대로 탐색하는 로딩 계층을 만들고, 한글 CSV 인코딩과 필수 컬럼 검증을 처리.</li>
+            <li><b>대피소 추천 엔진:</b> 재난 유형별 전용 대피소 우선 추천 → 지역 단위 fallback → 하버사인(Haversine) 거리 계산 → 수용 인원 기반 정렬을 결합.</li>
+            <li><b>실시간 + 모의 데이터:</b> Selenium 크롤러로 재난문자를 모아 앱 내부 표준 형식으로 변환하고, 크롤링이 어려운 상황을 대비해 <b>모의 재난문자 생성기</b>도 구현.</li>
+            <li><b>경로 안내:</b> OSRM 도보 경로를 사용하되, API 실패 시 <b>직선거리 기반 대체 경로</b>를 자동으로 표시.</li>
+            <li><b>구조 &amp; 검증:</b> Streamlit 멀티페이지(Home·시뮬레이션·실시간 안내·분석)를 일관되게 구성하고, Folium 지도로 위치·대피소·경로를 한 화면에 표시. <code class="mono">pytest</code>로 경로 계산·세션 상태·페이지 import를 검증.</li>
+          </ul>
+        </div>
+        <div class="case-block">
+          <h3 class="case-h">결과</h3>
+          <ul>
+            <li>사용자는 <b>재난 유형과 현재 위치에 맞는 대피소를 추천</b>받고, 외부 API나 실시간 수집이 실패해도 <b>대체 경로·모의 데이터로 서비스 흐름이 끊기지 않게</b> 되었습니다.</li>
+            <li>단순 Streamlit 시각화가 아니라 <b>데이터 처리 · 추천 · 실시간 수집 · 장애 대응</b>을 포함한 재난 안내 구조로 확장.</li>
+            <li>Folium·OSRM·Streamlit을 실제로 연동한 <b>작동하는 대시보드</b>를 완성 — 처음 다루는 기술을 빠르게 익혀 실전에 적용했습니다.</li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -353,8 +369,12 @@ body { background: var(--bg); }
       <div class="stack"><span>Rust 2024</span><span>egui / eframe</span><span>firstcall-cli</span><span>GitHub Actions</span></div>
 
       <p class="summary">여러 곳에서 만든 <b>API 호출을 내 컴퓨터 안에서 검증</b>하고, 안전한 형태로 정리해 재사용하게 해주는 도구입니다.</p>
-      <p class="context">프로그램이 외부 서비스를 부르는 'API 요청'은 주소·인증키·형식이 제각각이라 매번 맞추기 번거롭고, 잘못하면 <b>비밀번호 같은 민감 정보가 새어 나갈</b> 위험도 있습니다. FirstCall은 이런 요청을 한 번 제대로 <b>검증해 '레시피'처럼 저장</b>해 두고, 민감 정보를 지운 채로 다시 쓸 수 있게 합니다. 특히 요즘 늘어나는 <b>AI 에이전트가 API를 안전하게 사용</b>하도록 "검증된 것만, 비밀정보는 빼고" 넘겨주는 것이 목표입니다.</p>
-      <div class="ai-note"><span class="badge">AI</span><span>Rust 코어 설계와 여러 입력 형식 처리·테스트·문서 작성 과정에서 <b>Claude를 페어 프로그래밍 파트너</b>로 활용했습니다. 무엇을 만들지와 지켜야 할 규칙은 제가 정하고, 반복 구현과 예외 상황 점검 속도를 AI로 끌어올렸습니다.</span></div>
+
+      <div class="metrics">
+        <div class="metric"><b>8</b><span>지원 입력 형식 (curl·OpenAPI·Postman 등)</span></div>
+        <div class="metric"><b>2</b><span>사용 방식 — 데스크톱 GUI · CLI</span></div>
+        <div class="metric"><b>3</b><span>OS 릴리스 (윈도우·맥·리눅스)</span></div>
+      </div>
 
       <div class="media">
         <div class="gallery cols-2">
@@ -363,40 +383,38 @@ body { background: var(--bg); }
         </div>
       </div>
 
-      <div class="tabs" role="tablist">
-        <button class="tab-btn active" data-target="p2-s">상황</button>
-        <button class="tab-btn" data-target="p2-t">과제</button>
-        <button class="tab-btn" data-target="p2-a">행동</button>
-        <button class="tab-btn" data-target="p2-r">결과</button>
-      </div>
-      <div class="tab-panel active" id="p2-s">
-        <ul>
-          <li>API 요청을 <b>재사용 가능한 형태로 안전하게 모아둘</b> 마땅한 도구가 없었습니다.</li>
-          <li>특히 AI 에이전트나 자동화 도구에 API를 넘길 때 <b>인증키가 그대로 노출</b>되거나 <b>검증 안 된 요청</b>이 섞이는 위험이 컸습니다.</li>
-          <li>요청을 외부 클라우드에 올리지 않고 <b>내 컴퓨터 안에서만 처리</b>하고 싶은 보안 요구도 있었습니다.</li>
-        </ul>
-      </div>
-      <div class="tab-panel" id="p2-t">
-        <ul>
-          <li>curl·OpenAPI·Postman 등 <b>형식이 다른 요청들을 한 흐름으로 받아</b> 로컬에서 검증.</li>
-          <li>검증에 성공한 요청만 <b>재사용 가능한 '레시피'로 저장</b>하고, 민감 정보는 지운 패키지로 내보내기.</li>
-          <li>사람이 쓰는 <b>화면(GUI)</b>과 자동화가 쓰는 <b>명령어(CLI)</b>를 모두 제공.</li>
-        </ul>
-      </div>
-      <div class="tab-panel" id="p2-a">
-        <ul>
-          <li>Rust로 핵심 로직을 만들고 그 위에 <b>두 가지 사용 방식</b>을 올렸습니다 — 클릭으로 쓰는 <b>데스크톱 화면</b>과, 자동화용 <b>명령어 도구(firstcall-cli)</b>.</li>
-          <li>"가져오기 → 검증 → 레시피로 저장 → 민감정보 제거 후 내보내기 → 다시 검증"으로 이어지는 <b>안전 흐름</b>을 구조로 못박았습니다.</li>
-          <li>가져온 요청 안의 <b>스크립트·설정 파일은 절대 실행하지 않도록</b> 처리해, 악성 코드가 끼어들 여지를 차단(공급망 보안).</li>
-          <li>민감 정보는 환경변수로만 다루고, 자동 테스트·보안 점검을 GitHub Actions로 <b>릴리스 때마다 검증</b>.</li>
-        </ul>
-      </div>
-      <div class="tab-panel" id="p2-r">
-        <ul>
-          <li>화면과 명령어 도구를 모두 담은 <b>v0.1.0 정식 배포본</b>을 윈도우·맥·리눅스용으로 출시.</li>
-          <li>명령어 도구가 결과를 <b>기계가 읽기 좋은 형식(JSON)</b>으로도 내보내, 자동화·AI 파이프라인에 바로 연결 가능.</li>
-          <li>"검증된, 민감정보 없는 요청만 밖으로 나간다"는 원칙을 <b>도구가 스스로 강제</b>하도록 설계.</li>
-        </ul>
+      <div class="ai-note"><span class="badge">AI</span><span>Rust 코어 설계와 여러 입력 형식 처리·테스트·문서 작성 과정에서 <b>Claude를 페어 프로그래밍 파트너</b>로 활용했습니다. 무엇을 만들지와 지켜야 할 규칙은 제가 정하고, 반복 구현과 예외 상황 점검 속도를 AI로 끌어올렸습니다.</span></div>
+
+      <div class="case">
+        <div class="case-block flush">
+          <h3 class="case-h">문제</h3>
+          <p>API 요청은 주소·인증키·형식이 제각각이라 <b>재사용 가능한 형태로 안전하게 모아둘</b> 도구가 마땅치 않았습니다. 특히 AI 에이전트·자동화에 API를 넘길 때 <b>인증키가 그대로 노출</b>되거나 <b>검증 안 된 요청</b>이 섞일 위험이 컸고, 요청을 외부 클라우드에 올리지 않고 <b>내 컴퓨터 안에서만 처리</b>하고 싶은 보안 요구도 있었습니다.</p>
+        </div>
+        <div class="case-block">
+          <h3 class="case-h">내 역할 — <span class="sub">개인 프로젝트 · 설계부터 배포까지</span></h3>
+          <ul>
+            <li>curl·OpenAPI·Postman 등 <b>형식이 다른 요청을 한 흐름으로 받아</b> 로컬에서 검증하는 구조를 설계.</li>
+            <li>검증에 성공한 것만 <b>'레시피'로 저장</b>하고 민감 정보를 지운 패키지로 내보내는 흐름을 정의.</li>
+            <li>사람용 <b>화면(GUI)</b>과 자동화용 <b>명령어(CLI)</b>를 하나의 코어 위에 모두 제공.</li>
+          </ul>
+        </div>
+        <div class="case-block">
+          <h3 class="case-h">한 일</h3>
+          <ul>
+            <li>Rust로 핵심 로직을 만들고 그 위에 <b>두 가지 사용 방식</b>을 올렸습니다 — 클릭으로 쓰는 <b>데스크톱 화면</b>과 자동화용 <b>명령어 도구(firstcall-cli)</b>.</li>
+            <li>"가져오기 → 검증 → 레시피로 저장 → 민감정보 제거 후 내보내기 → 다시 검증"으로 이어지는 <b>안전 흐름</b>을 구조로 못박았습니다.</li>
+            <li>가져온 요청 안의 <b>스크립트·설정 파일은 절대 실행하지 않도록</b> 처리해 악성 코드가 끼어들 여지를 차단(공급망 보안).</li>
+            <li>민감 정보는 환경변수로만 다루고, 자동 테스트·보안 점검을 GitHub Actions로 <b>릴리스 때마다 검증</b>.</li>
+          </ul>
+        </div>
+        <div class="case-block">
+          <h3 class="case-h">결과</h3>
+          <ul>
+            <li>화면과 명령어 도구를 모두 담은 <b>v0.1.0 정식 배포본</b>을 윈도우·맥·리눅스용으로 출시.</li>
+            <li>명령어 도구가 결과를 <b>기계가 읽기 좋은 형식(JSON)</b>으로도 내보내 자동화·AI 파이프라인에 바로 연결 가능.</li>
+            <li>"검증된, 민감정보 없는 요청만 밖으로 나간다"는 원칙을 <b>도구가 스스로 강제</b>하도록 설계.</li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -413,8 +431,12 @@ body { background: var(--bg); }
       <div class="stack"><span>Go</span><span>GitHub CLI Extension</span><span>Dependency Review API</span><span>GitHub Actions</span></div>
 
       <p class="summary">코드 변경(PR)에 새로 들어온 <b>외부 라이브러리가 보안상 위험하지 않은지</b>, 리뷰어가 명령어 한 번으로 확인하게 해주는 도구입니다.</p>
-      <p class="context">요즘 소프트웨어는 직접 만들지 않고 <b>외부 라이브러리(의존성)를 수십~수백 개씩 가져다 씁니다.</b> 그중 하나에 보안 취약점이 있으면 전체가 위험해지죠. 이 도구는 PR에 새로 추가된 라이브러리를 자동으로 점검해 <b>위험 정보를 PR 댓글로 정리</b>해 줍니다. 별도 서버나 데이터베이스 없이, <b>필요할 때만 명령어 하나로 실행</b>되는 가벼운 방식이라 작은 팀도 부담 없이 쓸 수 있습니다.</p>
-      <div class="ai-note"><span class="badge">AI</span><span>npm·pip·Go 등 <b>도구마다 다른 라이브러리 기록 방식</b>을 정리하고 예외 상황을 점검할 때 AI를 활용해, 빠르게 테스트 케이스를 갖췄습니다. "어디까지 지원하고 무엇은 지원하지 않을지" 범위는 제가 직접 정했습니다.</span></div>
+
+      <div class="metrics">
+        <div class="metric"><b>11</b><span>점검 가능한 생태계 (npm·pip·Go·Maven 등)</span></div>
+        <div class="metric"><b>1</b><span>설치 = 명령어 한 줄</span></div>
+        <div class="metric"><b>0</b><span>서버 · DB · 상시 인프라</span></div>
+      </div>
 
       <div class="media">
         <div class="gallery one">
@@ -422,39 +444,38 @@ body { background: var(--bg); }
         </div>
       </div>
 
-      <div class="tabs" role="tablist">
-        <button class="tab-btn active" data-target="p3-s">상황</button>
-        <button class="tab-btn" data-target="p3-t">과제</button>
-        <button class="tab-btn" data-target="p3-a">행동</button>
-        <button class="tab-btn" data-target="p3-r">결과</button>
-      </div>
-      <div class="tab-panel active" id="p3-s">
-        <ul>
-          <li>PR에 새로 추가되는 외부 라이브러리의 보안 위험을, 리뷰어가 <b>코드 검토 중에 빠르게 파악</b>하기 어려웠습니다.</li>
-          <li>그렇다고 상시 켜두는 <b>서버·데이터베이스 같은 무거운 시스템</b>을 두는 건 작은 팀엔 부담이었습니다.</li>
-        </ul>
-      </div>
-      <div class="tab-panel" id="p3-t">
-        <ul>
-          <li>설치·운영 부담 없이, <b>리뷰어가 필요할 때만 실행</b>하는 가벼운 도구.</li>
-          <li>이미 쓰고 있는 GitHub 로그인을 그대로 활용해 <b>바로 실행</b>되게 하기.</li>
-          <li>CI(자동 검사)를 실패시키지 않고, <b>리뷰어의 판단을 돕는</b> 형태로 결과 제공.</li>
-        </ul>
-      </div>
-      <div class="tab-panel" id="p3-a">
-        <ul>
-          <li>서버 대신 <b>GitHub CLI 확장(작은 실행 파일 하나)</b>으로 만들어, 설치 한 줄로 끝나게 했습니다.</li>
-          <li>먼저 <b>GitHub 공식 보안 데이터를 사용</b>하고, 그게 불가능할 때만 프로젝트 파일을 직접 읽어 점검하는 <b>대체 방식</b>으로 전환.</li>
-          <li>점검 대상(npm·pip·Go 등)과 <b>지원 범위를 명확히 한정</b>해, 과한 분석으로 잘못된 결과를 내지 않도록 문서로 명시.</li>
-          <li>결과는 <b>PR 댓글로 깔끔하게 정리</b>(중복 없이 갱신)하고, 자동 테스트로 안정성을 검증.</li>
-        </ul>
-      </div>
-      <div class="tab-panel" id="p3-r">
-        <ul>
-          <li><code class="mono">gh extension install rad1092/gh-dep-risk</code> <b>한 줄로 설치·사용</b> 가능.</li>
-          <li>npm·pip·Go·Maven 등 <b>11개 생태계</b>의 라이브러리 위험을 확인.</li>
-          <li>CI를 멈추지 않고, <b>리뷰 흐름 안에서 보안을 점검</b>하는 가벼운 방식을 만들었습니다.</li>
-        </ul>
+      <div class="ai-note"><span class="badge">AI</span><span>npm·pip·Go 등 <b>도구마다 다른 라이브러리 기록 방식</b>을 정리하고 예외 상황을 점검할 때 AI를 활용해, 빠르게 테스트 케이스를 갖췄습니다. "어디까지 지원하고 무엇은 지원하지 않을지" 범위는 제가 직접 정했습니다.</span></div>
+
+      <div class="case">
+        <div class="case-block flush">
+          <h3 class="case-h">문제</h3>
+          <p>요즘 소프트웨어는 <b>외부 라이브러리를 수십~수백 개씩</b> 가져다 쓰고, 그중 하나에 취약점이 있으면 전체가 위험해집니다. 리뷰어가 PR에 새로 추가된 라이브러리의 위험을 <b>코드 검토 중에 빠르게 파악</b>하긴 어려웠고, 그렇다고 상시 켜두는 <b>서버·DB 같은 무거운 시스템</b>은 작은 팀엔 부담이었습니다.</p>
+        </div>
+        <div class="case-block">
+          <h3 class="case-h">내 역할 — <span class="sub">개인 프로젝트 · 설계부터 배포까지</span></h3>
+          <ul>
+            <li>설치·운영 부담 없이 <b>리뷰어가 필요할 때만 실행</b>하는 가벼운 도구로 방향을 잡음.</li>
+            <li>이미 쓰는 GitHub 로그인을 그대로 활용해 <b>바로 실행</b>되게 설계.</li>
+            <li>CI를 실패시키지 않고 <b>리뷰어의 판단을 돕는</b> 형태로 결과를 전달하도록 결정.</li>
+          </ul>
+        </div>
+        <div class="case-block">
+          <h3 class="case-h">한 일</h3>
+          <ul>
+            <li>서버 대신 <b>GitHub CLI 확장(작은 실행 파일 하나)</b>으로 만들어 설치 한 줄로 끝나게 했습니다.</li>
+            <li>먼저 <b>GitHub 공식 보안 데이터를 사용</b>하고, 불가능할 때만 프로젝트 파일을 직접 읽는 <b>대체 방식</b>으로 전환.</li>
+            <li>점검 대상(npm·pip·Go 등)과 <b>지원 범위를 명확히 한정</b>해 과한 분석으로 잘못된 결과를 내지 않도록 문서로 명시.</li>
+            <li>결과는 <b>PR 댓글로 깔끔하게 정리</b>(중복 없이 갱신)하고 자동 테스트로 안정성을 검증.</li>
+          </ul>
+        </div>
+        <div class="case-block">
+          <h3 class="case-h">결과</h3>
+          <ul>
+            <li><code class="mono">gh extension install rad1092/gh-dep-risk</code> <b>한 줄로 설치·사용</b> 가능.</li>
+            <li>npm·pip·Go·Maven 등 <b>11개 생태계</b>의 라이브러리 위험을 확인.</li>
+            <li>CI를 멈추지 않고 <b>리뷰 흐름 안에서 보안을 점검</b>하는 가벼운 방식을 만들었습니다.</li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -516,18 +537,5 @@ body { background: var(--bg); }
   }
   window.addEventListener('hashchange', showView);
   showView();
-
-  document.querySelectorAll('.tabs').forEach(function (tabs) {
-    tabs.addEventListener('click', function (e) {
-      var btn = e.target.closest('.tab-btn');
-      if (!btn) return;
-      var scope = tabs.closest('.view-panel');
-      scope.querySelectorAll('.tab-btn').forEach(function (b) { b.classList.remove('active'); });
-      scope.querySelectorAll('.tab-panel').forEach(function (p) { p.classList.remove('active'); });
-      btn.classList.add('active');
-      var t = scope.querySelector('#' + btn.dataset.target);
-      if (t) t.classList.add('active');
-    });
-  });
 })();
 </script>

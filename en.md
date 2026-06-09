@@ -34,7 +34,12 @@ body { background: var(--bg); }
 .pf a:hover { color: var(--accent); }
 .pf .mono { font-family: "Space Grotesk", ui-monospace, monospace; }
 
-.app { display: flex; align-items: flex-start; max-width: 1360px; margin: 0 auto; }
+.pf::before { content: ""; position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background-image: linear-gradient(to right, rgba(24,24,40,.028) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(24,24,40,.028) 1px, transparent 1px);
+  background-size: 78px 78px; }
+
+.app { display: flex; align-items: flex-start; max-width: 1360px; margin: 0 auto; position: relative; z-index: 1; }
 
 .rail { position: sticky; top: 0; align-self: flex-start; height: 100vh; flex: 0 0 264px;
   padding: 56px 30px 40px 46px; display: flex; flex-direction: column; }
@@ -127,18 +132,26 @@ body { background: var(--bg); }
 .gallery img { width: 100%; display: block; }
 .gallery figcaption { font-size: .8rem; color: var(--muted); padding: 9px 12px; border-top: 1px solid var(--line); }
 
-.tabs { display: flex; gap: 6px; border-bottom: 1px solid var(--line); flex-wrap: wrap; margin-top: 6px; max-width: 820px; }
-.tab-btn { background: none; border: none; color: var(--muted); padding: 11px 20px; cursor: pointer; font-size: .95rem; border-bottom: 2px solid transparent; font-family: inherit; }
-.tab-btn:hover { color: var(--text); }
-.tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
-.tab-panel { display: none; padding: 22px 2px 4px; animation: fade .25s ease; max-width: 820px; }
-.tab-panel.active { display: block; }
-.tab-panel ul { margin: 0; padding-left: 20px; }
-.tab-panel li { margin-bottom: 11px; }
-.tab-panel li b { color: var(--text); }
+/* metric / quick-fact cards */
+.metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(132px, 1fr)); gap: 12px; margin: 6px 0 36px; max-width: 720px; }
+.metric { border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; background: var(--card); }
+.metric b { display: block; font-family: var(--display); font-size: 2rem; font-weight: 600; color: var(--accent); letter-spacing: -.02em; line-height: 1; }
+.metric span { display: block; margin-top: 9px; font-size: .82rem; color: var(--muted); line-height: 1.4; }
+
+/* case-study narrative (replaces STAR tabs) */
+.case { max-width: 820px; }
+.case-block { padding: 30px 0; border-top: 1px solid var(--line); }
+.case-block.flush { border-top: none; padding: 0 0 30px; }
+.case-h { font-family: var(--serif); font-size: .76rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin: 0 0 16px; }
+.case-h .sub { color: var(--text); }
+.case-block p { margin: 0; font-size: 1.04rem; color: var(--muted); }
+.case-block p b { color: var(--text); }
+.case-block ul { margin: 0; padding-left: 20px; }
+.case-block li { margin-bottom: 12px; color: var(--muted); }
+.case-block li b { color: var(--text); }
 
 .archive { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; max-width: 920px; }
-.arch-card { border: 1px solid var(--line); border-radius: 14px; padding: 24px; transition: transform .2s, border-color .2s, background .2s; }
+.arch-card { border: 1px solid var(--line); border-radius: 14px; padding: 24px; background: var(--card); transition: transform .2s, border-color .2s, background .2s; }
 .arch-card:hover { transform: translateY(-5px); border-color: var(--accent); background: var(--bg-soft); }
 .arch-card .top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
 .arch-card .folder { font-size: 1.5rem; }
@@ -281,8 +294,12 @@ body { background: var(--bg); }
       <div class="stack"><span>Python</span><span>Streamlit</span><span>Pandas</span><span>Folium</span><span>OSRM</span><span>Selenium</span><span>SQLite</span><span>pytest</span></div>
 
       <p class="summary">A disaster alert tells you <b>"that"</b> something happened. I built a dashboard that answers "where and how do I evacuate <b>right now</b>."</p>
-      <p class="context">Because the service combines <b>static public data, real-time disaster alerts, user location and an external routing API</b>, the real challenge wasn't visualization but a <b>structure that loads data reliably, recommends shelters, and finds routes without breaking</b>. On a 4-person team I owned the <b>backend and overall architecture</b> — data loading, shelter recommendation, real-time alert handling, route guidance and testing.</p>
-      <div class="ai-note"><span class="badge">AI</span><span>Much of the stack was new to me, so I <b>leaned on AI tools to ramp up implementation quickly.</b> This is where I built the practical muscle of learning a new tool on the job and driving it with AI as a partner.</span></div>
+
+      <div class="metrics">
+        <div class="metric"><b>4-person</b><span>team · backend / architecture lead</span></div>
+        <div class="metric"><b>4</b><span>multi-page app</span></div>
+        <div class="metric"><b>5</b><span>regions supported (Yeongnam)</span></div>
+      </div>
 
       <div class="media">
         <div class="gallery cols-2">
@@ -293,41 +310,39 @@ body { background: var(--bg); }
         </div>
       </div>
 
-      <div class="tabs" role="tablist">
-        <button class="tab-btn active" data-target="p1-s">Situation</button>
-        <button class="tab-btn" data-target="p1-t">My role</button>
-        <button class="tab-btn" data-target="p1-a">Action</button>
-        <button class="tab-btn" data-target="p1-r">Result</button>
-      </div>
-      <div class="tab-panel active" id="p1-s">
-        <ul>
-          <li>There was <b>no unified service</b> for Yeongnam-region residents (Daegu·Ulsan·Busan·Gyeongbuk·Gyeongnam) to find shelters and routes during a disaster.</li>
-          <li>Alert data and shelter info were scattered, making it <b>hard to decide quickly</b> in a crisis.</li>
-          <li>With multiple data sources and runtime environments mixed in, a <b>reliable loading / recommendation / routing structure</b> mattered most.</li>
-        </ul>
-      </div>
-      <div class="tab-panel" id="p1-t">
-        <ul>
-          <li>Owned the <b>overall dashboard architecture</b> on a 4-person team.</li>
-          <li>Designed and built data-path management, CSV validation/normalization, real-time alert handling, the <b>shelter recommendation logic</b>, and OSRM routing with <b>failure fallback</b>.</li>
-          <li>Led core feature work including <b>map visualization and the test setup</b>.</li>
-        </ul>
-      </div>
-      <div class="tab-panel" id="p1-a">
-        <ul>
-          <li><b>Resilient data loading:</b> a layer searching environment variables → Streamlit secrets → repo default paths in order, handling Korean CSV encoding and required-column validation.</li>
-          <li><b>Recommendation engine:</b> disaster-type-specific shelter priority → region-level fallback → Haversine distance → capacity-based sorting.</li>
-          <li><b>Real-time + mock data:</b> a Selenium crawler collects alerts and converts them to the app's standard schema; a <b>mock-alert generator</b> covers cases where crawling isn't possible.</li>
-          <li><b>Route guidance:</b> OSRM walking routes, with an automatic <b>straight-line fallback</b> when the API fails.</li>
-          <li><b>Structure &amp; testing:</b> a consistent Streamlit multi-page app (Home·Simulation·Real-time·Analysis) with a Folium map showing location, shelters and route together; <code class="mono">pytest</code> validates routing, session state and page imports.</li>
-        </ul>
-      </div>
-      <div class="tab-panel" id="p1-r">
-        <ul>
-          <li>Users get <b>shelter recommendations matched to disaster type and location</b>, and the flow <b>keeps working via fallback routes and mock data</b> even when the external API or live crawling fails.</li>
-          <li>It grew from a simple Streamlit visualization into a structure covering <b>data processing · recommendation · real-time collection · failure handling</b>.</li>
-          <li>A <b>working dashboard</b> with Folium·OSRM·Streamlit actually wired together — new tools learned fast and applied in practice.</li>
-        </ul>
+      <div class="ai-note"><span class="badge">AI</span><span>Much of the stack was new to me, so I <b>leaned on AI tools to ramp up implementation quickly.</b> This is where I built the practical muscle of learning a new tool on the job and driving it with AI as a partner.</span></div>
+
+      <div class="case">
+        <div class="case-block flush">
+          <h3 class="case-h">The problem</h3>
+          <p>A disaster alert only says something happened; shelter and alert data were scattered, making it <b>hard to decide quickly</b> in a crisis. Because the service combines static public data, real-time alerts, user location and an external routing API, the real challenge wasn't visualization but a <b>structure that loads data reliably, recommends shelters, and finds routes without breaking</b>.</p>
+        </div>
+        <div class="case-block">
+          <h3 class="case-h">My role — <span class="sub">4-person team · backend / architecture</span></h3>
+          <ul>
+            <li>Owned the <b>overall dashboard architecture</b>.</li>
+            <li>Designed and built data-path management, CSV validation/normalization, real-time alert handling, the <b>shelter recommendation logic</b>, and OSRM routing with <b>failure fallback</b>.</li>
+            <li>Led core feature work including <b>map visualization and the test setup</b>.</li>
+          </ul>
+        </div>
+        <div class="case-block">
+          <h3 class="case-h">What I did</h3>
+          <ul>
+            <li><b>Resilient data loading:</b> a layer searching environment variables → Streamlit secrets → repo default paths in order, handling Korean CSV encoding and required-column validation.</li>
+            <li><b>Recommendation engine:</b> disaster-type-specific shelter priority → region-level fallback → Haversine distance → capacity-based sorting.</li>
+            <li><b>Real-time + mock data:</b> a Selenium crawler collects alerts and converts them to the app's standard schema; a <b>mock-alert generator</b> covers cases where crawling isn't possible.</li>
+            <li><b>Route guidance:</b> OSRM walking routes, with an automatic <b>straight-line fallback</b> when the API fails.</li>
+            <li><b>Structure &amp; testing:</b> a consistent Streamlit multi-page app (Home·Simulation·Real-time·Analysis) with a Folium map showing location, shelters and route together; <code class="mono">pytest</code> validates routing, session state and page imports.</li>
+          </ul>
+        </div>
+        <div class="case-block">
+          <h3 class="case-h">Result</h3>
+          <ul>
+            <li>Users get <b>shelter recommendations matched to disaster type and location</b>, and the flow <b>keeps working via fallback routes and mock data</b> even when the external API or live crawling fails.</li>
+            <li>It grew from a simple Streamlit visualization into a structure covering <b>data processing · recommendation · real-time collection · failure handling</b>.</li>
+            <li>A <b>working dashboard</b> with Folium·OSRM·Streamlit actually wired together — new tools learned fast and applied in practice.</li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -347,8 +362,12 @@ body { background: var(--bg); }
       <div class="stack"><span>Rust 2024</span><span>egui / eframe</span><span>firstcall-cli</span><span>GitHub Actions</span></div>
 
       <p class="summary">A tool that lets you <b>verify API calls on your own machine</b> and keep them in a safe, reusable form.</p>
-      <p class="context">When a program calls an external service (an "API"), the address, auth key and format differ every time — and a mistake can <b>leak sensitive info like passwords</b>. FirstCall verifies a request once, saves it like a <b>"recipe,"</b> and lets you reuse it with the secrets stripped out. The goal is to hand <b>AI agents</b> only what's <b>verified, with secrets removed</b>, so they can use APIs safely.</p>
-      <div class="ai-note"><span class="badge">AI</span><span>I used <b>Claude as a pair-programming partner</b> for the Rust core, handling many input formats, tests and docs. I decided <em>what</em> to build and which rules to hold; AI sped up the repetitive implementation and edge-case checking.</span></div>
+
+      <div class="metrics">
+        <div class="metric"><b>8</b><span>input formats (curl·OpenAPI·Postman…)</span></div>
+        <div class="metric"><b>2</b><span>surfaces — desktop GUI · CLI</span></div>
+        <div class="metric"><b>3</b><span>OS releases (Windows·macOS·Linux)</span></div>
+      </div>
 
       <div class="media">
         <div class="gallery cols-2">
@@ -357,40 +376,38 @@ body { background: var(--bg); }
         </div>
       </div>
 
-      <div class="tabs" role="tablist">
-        <button class="tab-btn active" data-target="p2-s">Situation</button>
-        <button class="tab-btn" data-target="p2-t">Task</button>
-        <button class="tab-btn" data-target="p2-a">Action</button>
-        <button class="tab-btn" data-target="p2-r">Result</button>
-      </div>
-      <div class="tab-panel active" id="p2-s">
-        <ul>
-          <li>There was no good way to <b>collect API requests in a reusable, safe form</b>.</li>
-          <li>Handing APIs to AI agents or automation risked <b>exposing auth keys</b> or mixing in <b>unverified requests</b>.</li>
-          <li>There was a security need to <b>keep requests on my own machine</b> rather than a cloud.</li>
-        </ul>
-      </div>
-      <div class="tab-panel" id="p2-t">
-        <ul>
-          <li>Accept <b>differently formatted requests</b> (curl·OpenAPI·Postman) into one flow and verify them locally.</li>
-          <li>Save only verified requests as <b>reusable "recipes,"</b> and export them with secrets stripped.</li>
-          <li>Offer both a <b>GUI</b> for people and a <b>CLI</b> for automation.</li>
-        </ul>
-      </div>
-      <div class="tab-panel" id="p2-a">
-        <ul>
-          <li>Built the core in Rust, then two ways to use it — a <b>desktop app</b> you click through, and an automation <b>command-line tool (firstcall-cli)</b>.</li>
-          <li>Locked in a <b>safe flow</b>: import → verify → save as recipe → strip secrets and export → re-verify.</li>
-          <li>Made sure <b>scripts and config files inside imported requests are never executed</b>, blocking malicious code (supply-chain safety).</li>
-          <li>Handled secrets via environment variables only, with automated tests and security checks running <b>on every release</b> via GitHub Actions.</li>
-        </ul>
-      </div>
-      <div class="tab-panel" id="p2-r">
-        <ul>
-          <li>Shipped a <b>v0.1.0 release</b> with both the app and CLI, for Windows, macOS and Linux.</li>
-          <li>The CLI also outputs results in a <b>machine-readable format (JSON)</b>, wiring straight into automation / AI pipelines.</li>
-          <li>The <b>tool itself enforces</b> "only verified, secret-free requests leave the machine."</li>
-        </ul>
+      <div class="ai-note"><span class="badge">AI</span><span>I used <b>Claude as a pair-programming partner</b> for the Rust core, handling many input formats, tests and docs. I decided <em>what</em> to build and which rules to hold; AI sped up the repetitive implementation and edge-case checking.</span></div>
+
+      <div class="case">
+        <div class="case-block flush">
+          <h3 class="case-h">The problem</h3>
+          <p>API requests differ in address, auth key and format every time, so there was no good way to <b>collect them in a reusable, safe form</b>. Handing APIs to AI agents or automation risked <b>exposing auth keys</b> or mixing in <b>unverified requests</b> — and there was a security need to <b>keep requests on my own machine</b> rather than a cloud.</p>
+        </div>
+        <div class="case-block">
+          <h3 class="case-h">My role — <span class="sub">solo project · design to release</span></h3>
+          <ul>
+            <li>Designed a flow to accept <b>differently formatted requests</b> (curl·OpenAPI·Postman) and verify them locally.</li>
+            <li>Defined saving only verified requests as <b>reusable "recipes"</b> and exporting them with secrets stripped.</li>
+            <li>Provided both a <b>GUI</b> for people and a <b>CLI</b> for automation on one shared core.</li>
+          </ul>
+        </div>
+        <div class="case-block">
+          <h3 class="case-h">What I did</h3>
+          <ul>
+            <li>Built the core in Rust, then two ways to use it — a <b>desktop app</b> you click through, and an automation <b>command-line tool (firstcall-cli)</b>.</li>
+            <li>Locked in a <b>safe flow</b>: import → verify → save as recipe → strip secrets and export → re-verify.</li>
+            <li>Made sure <b>scripts and config files inside imported requests are never executed</b>, blocking malicious code (supply-chain safety).</li>
+            <li>Handled secrets via environment variables only, with automated tests and security checks running <b>on every release</b> via GitHub Actions.</li>
+          </ul>
+        </div>
+        <div class="case-block">
+          <h3 class="case-h">Result</h3>
+          <ul>
+            <li>Shipped a <b>v0.1.0 release</b> with both the app and CLI, for Windows, macOS and Linux.</li>
+            <li>The CLI also outputs results in a <b>machine-readable format (JSON)</b>, wiring straight into automation / AI pipelines.</li>
+            <li>The <b>tool itself enforces</b> "only verified, secret-free requests leave the machine."</li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -407,8 +424,12 @@ body { background: var(--bg); }
       <div class="stack"><span>Go</span><span>GitHub CLI Extension</span><span>Dependency Review API</span><span>GitHub Actions</span></div>
 
       <p class="summary">A tool that lets a reviewer check, with one command, whether <b>newly added third-party libraries in a PR are a security risk</b>.</p>
-      <p class="context">Modern software pulls in <b>dozens or hundreds of external libraries (dependencies)</b> instead of writing everything from scratch. If one has a vulnerability, the whole thing is at risk. This tool automatically checks libraries newly added in a PR and <b>summarizes the risk as a PR comment</b>. With no separate server or database — <b>it runs on demand with a single command</b> — even small teams can use it without overhead.</p>
-      <div class="ai-note"><span class="badge">AI</span><span>I used AI to organize the <b>different ways each tool records its libraries</b> (npm·pip·Go…) and to cover edge cases with tests quickly. I personally decided the scope — what to support and what to explicitly leave out.</span></div>
+
+      <div class="metrics">
+        <div class="metric"><b>11</b><span>ecosystems checked (npm·pip·Go·Maven…)</span></div>
+        <div class="metric"><b>1</b><span>install = a single command</span></div>
+        <div class="metric"><b>0</b><span>servers · DB · standing infra</span></div>
+      </div>
 
       <div class="media">
         <div class="gallery one">
@@ -416,39 +437,38 @@ body { background: var(--bg); }
         </div>
       </div>
 
-      <div class="tabs" role="tablist">
-        <button class="tab-btn active" data-target="p3-s">Situation</button>
-        <button class="tab-btn" data-target="p3-t">Task</button>
-        <button class="tab-btn" data-target="p3-a">Action</button>
-        <button class="tab-btn" data-target="p3-r">Result</button>
-      </div>
-      <div class="tab-panel active" id="p3-s">
-        <ul>
-          <li>Reviewers struggled to <b>gauge the risk of newly added libraries during code review</b>.</li>
-          <li>But running an <b>always-on server / database</b> was too heavy for small teams.</li>
-        </ul>
-      </div>
-      <div class="tab-panel" id="p3-t">
-        <ul>
-          <li>A lightweight tool reviewers <b>run only when needed</b>, with no setup or upkeep.</li>
-          <li>Reuse the GitHub login they already have so it <b>runs immediately</b>.</li>
-          <li>Help the reviewer decide <b>without failing CI</b>.</li>
-        </ul>
-      </div>
-      <div class="tab-panel" id="p3-a">
-        <ul>
-          <li>Built it as a <b>GitHub CLI extension (one small binary)</b> — install is a single line.</li>
-          <li>Uses <b>GitHub's official security data first</b>, falling back to reading project files directly only when that's unavailable.</li>
-          <li>Clearly bounded what it checks (npm·pip·Go…) and the <b>support scope</b>, documented so it never over-analyzes into wrong answers.</li>
-          <li>Posts results as a <b>clean PR comment</b> (updated, not duplicated), with automated tests for stability.</li>
-        </ul>
-      </div>
-      <div class="tab-panel" id="p3-r">
-        <ul>
-          <li>Installable in one line: <code class="mono">gh extension install rad1092/gh-dep-risk</code>.</li>
-          <li>Checks library risk across <b>11 ecosystems</b> (npm·pip·Go·Maven and more).</li>
-          <li>A lightweight way to <b>review security inside the code-review flow</b>, without stopping CI.</li>
-        </ul>
+      <div class="ai-note"><span class="badge">AI</span><span>I used AI to organize the <b>different ways each tool records its libraries</b> (npm·pip·Go…) and to cover edge cases with tests quickly. I personally decided the scope — what to support and what to explicitly leave out.</span></div>
+
+      <div class="case">
+        <div class="case-block flush">
+          <h3 class="case-h">The problem</h3>
+          <p>Modern software pulls in <b>dozens or hundreds of external libraries</b>, and if one has a vulnerability the whole thing is at risk. Reviewers struggled to <b>gauge that risk during code review</b>, yet running an <b>always-on server / database</b> was too heavy for small teams.</p>
+        </div>
+        <div class="case-block">
+          <h3 class="case-h">My role — <span class="sub">solo project · design to release</span></h3>
+          <ul>
+            <li>Aimed for a lightweight tool reviewers <b>run only when needed</b>, with no setup or upkeep.</li>
+            <li>Designed it to reuse the GitHub login they already have so it <b>runs immediately</b>.</li>
+            <li>Decided to help the reviewer judge <b>without failing CI</b>.</li>
+          </ul>
+        </div>
+        <div class="case-block">
+          <h3 class="case-h">What I did</h3>
+          <ul>
+            <li>Built it as a <b>GitHub CLI extension (one small binary)</b> — install is a single line.</li>
+            <li>Uses <b>GitHub's official security data first</b>, falling back to reading project files directly only when that's unavailable.</li>
+            <li>Clearly bounded what it checks (npm·pip·Go…) and the <b>support scope</b>, documented so it never over-analyzes into wrong answers.</li>
+            <li>Posts results as a <b>clean PR comment</b> (updated, not duplicated), with automated tests for stability.</li>
+          </ul>
+        </div>
+        <div class="case-block">
+          <h3 class="case-h">Result</h3>
+          <ul>
+            <li>Installable in one line: <code class="mono">gh extension install rad1092/gh-dep-risk</code>.</li>
+            <li>Checks library risk across <b>11 ecosystems</b> (npm·pip·Go·Maven and more).</li>
+            <li>A lightweight way to <b>review security inside the code-review flow</b>, without stopping CI.</li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -510,18 +530,5 @@ body { background: var(--bg); }
   }
   window.addEventListener('hashchange', showView);
   showView();
-
-  document.querySelectorAll('.tabs').forEach(function (tabs) {
-    tabs.addEventListener('click', function (e) {
-      var btn = e.target.closest('.tab-btn');
-      if (!btn) return;
-      var scope = tabs.closest('.view-panel');
-      scope.querySelectorAll('.tab-btn').forEach(function (b) { b.classList.remove('active'); });
-      scope.querySelectorAll('.tab-panel').forEach(function (p) { p.classList.remove('active'); });
-      btn.classList.add('active');
-      var t = scope.querySelector('#' + btn.dataset.target);
-      if (t) t.classList.add('active');
-    });
-  });
 })();
 </script>
