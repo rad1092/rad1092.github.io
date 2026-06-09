@@ -29,14 +29,14 @@ permalink: /en/
 }
 
 body { background: var(--bg); }
-.pf { color: var(--text); font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI", "Apple SD Gothic Neo", sans-serif; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+.pf { color: var(--text); font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI", "Apple SD Gothic Neo", sans-serif; line-height: 1.7; -webkit-font-smoothing: antialiased; word-break: keep-all; overflow-wrap: break-word; }
 .pf a { color: var(--text); text-decoration: none; }
 .pf a:hover { color: var(--accent); }
 .pf .mono { font-family: "Space Grotesk", ui-monospace, monospace; }
 
 .pf::before { content: ""; position: fixed; inset: 0; z-index: 0; pointer-events: none;
-  background-image: linear-gradient(to right, rgba(24,24,40,.028) 1px, transparent 1px),
-                    linear-gradient(to bottom, rgba(24,24,40,.028) 1px, transparent 1px);
+  background-image: linear-gradient(to right, rgba(24,24,40,.031) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(24,24,40,.031) 1px, transparent 1px);
   background-size: 78px 78px; }
 
 .app { display: flex; align-items: flex-start; max-width: 1360px; margin: 0 auto; position: relative; z-index: 1; }
