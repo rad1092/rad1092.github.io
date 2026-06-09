@@ -1,4 +1,6 @@
-
+---
+layout: default
+---
 
 안녕하세요. 김홍대 입니다
 
@@ -11,33 +13,27 @@
 - GitHub Actions, 의존성 보안 점검, API 도구화 같은 개발 생산성 주제도 다뤘습니다.
 - 실험 저장소부터 실제 도구형 프로젝트까지 단계적으로 확장해 왔습니다.
 
-## 저장소 목록
+- 깃허브 저장소 전체 목록: [/repositories/](/repositories/)
 
-아래 목록은 `@rad1092` 공개 저장소를 기준으로 정리했습니다.
+## 주요 프로젝트
 
-| 저장소 | 요약 | 기술 | 링크 |
-|---|---|---|---|
-| job-coach-agent | 취업 코칭 에이전트 프로젝트 | Python | [바로가기](https://github.com/rad1092/job-coach-agent) |
-| smart-mirror-pc123 | PC1/PC2/PC3 통합 스마트미러 저장소 | Python | [바로가기](https://github.com/rad1092/smart-mirror-pc123) |
-| pp_second | 개인 Python 실습/실험 저장소 | Python | [바로가기](https://github.com/rad1092/pp_second) |
-| firstcall-local-api-workbench | 로컬 우선 API 레시피 워크벤치 | Rust | [바로가기](https://github.com/rad1092/firstcall-local-api-workbench) |
-| project_dashboard | 프로젝트 대시보드 구성 | HTML | [바로가기](https://github.com/rad1092/project_dashboard) |
-| smart-mirror-aiot-coaching | 스마트미러 AIoT 코칭 시스템 | Python | [바로가기](https://github.com/rad1092/smart-mirror-aiot-coaching) |
-| streamlit-v2 | Streamlit 기반 앱 실습 | Python | [바로가기](https://github.com/rad1092/streamlit-v2) |
-| dep-risk-live-e2e | 의존성 리스크 e2e 검증(Deprecated) | - | [바로가기](https://github.com/rad1092/dep-risk-live-e2e) |
-| First_one | 초기 Python 학습 저장소 | Python | [바로가기](https://github.com/rad1092/First_one) |
-| first_three | 분석기 설계 실험 저장소 | Python | [바로가기](https://github.com/rad1092/first_three) |
-| gh-dependency-risk | PR 의존성 리스크 검토용 GitHub CLI 확장 | Go | [바로가기](https://github.com/rad1092/gh-dependency-risk) |
-| minipr1_7 | 미니 프로젝트 실습 저장소 | Python | [바로가기](https://github.com/rad1092/minipr1_7) |
-| plotly_class | Plotly 학습/실습 저장소 | - | [바로가기](https://github.com/rad1092/plotly_class) |
-| firstcall-api-lookup-mcp | 읽기 전용 API 조회 MCP 서버 | JavaScript | [바로가기](https://github.com/rad1092/firstcall-api-lookup-mcp) |
-| gh-dep-risk-smoke-matrix | gh-dep-risk 스모크 테스트 매트릭스 | - | [바로가기](https://github.com/rad1092/gh-dep-risk-smoke-matrix) |
-| streamlit-class | Streamlit 수업/실습 저장소 | - | [바로가기](https://github.com/rad1092/streamlit-class) |
-| ascii-diagram-editor | ASCII 다이어그램 편집기 | TypeScript | [바로가기](https://github.com/rad1092/ascii-diagram-editor) |
-| sec-alert-selfhosted | 보안 알림 셀프호스팅 실험 | Python | [바로가기](https://github.com/rad1092/sec-alert-selfhosted) |
-| gh-dep-risk-smoke-comments | gh-dep-risk 코멘트 스모크 테스트 | - | [바로가기](https://github.com/rad1092/gh-dep-risk-smoke-comments) |
-| First_two | 파일 분석 모듈 실험 저장소 | Python | [바로가기](https://github.com/rad1092/First_two) |
-| rad1092.github.io | 개인 포트폴리오 GitHub Pages 저장소 | - | [바로가기](https://github.com/rad1092/rad1092.github.io) |
+### 1. Local-first API 워크벤치 (firstcall-local-api-workbench)
+- **설명**: Rust 2024 기반 로컬 우선 API 레시피 워크벤치입니다. curl, OpenAPI, Postman 컬렉션 등 다양한 요청 소스를 파싱하여 검증하고 재사용 가능한 레시피를 생성합니다.
+- **링크**: [GitHub 저장소 바로가기](https://github.com/rad1092/firstcall-local-api-workbench)
+
+![FirstCall desktop GUI workbench demo](https://raw.githubusercontent.com/rad1092/firstcall-local-api-workbench/main/docs/assets/firstcall-gui-workbench.gif)
+
+### 2. PR 의존성 리스크 검토 확장 (gh-dependency-risk)
+- **설명**: Pull Request에 추가된 의존성 패키지의 보안 취약점을 검토하는 GitHub CLI 확장 프로그램(Go)입니다. GitHub Advisory Database를 조회하여 결과를 코멘트로 남겨줍니다.
+- **링크**: [GitHub 저장소 바로가기](https://github.com/rad1092/gh-dependency-risk)
+
+![gh-dep-risk animated terminal demo](https://raw.githubusercontent.com/rad1092/gh-dependency-risk/main/docs/assets/demo.gif)
+
+### 3. 재난 대피 안내 대시보드 (project_dashboard)
+- **설명**: 영남권 재난 특보와 대피소 데이터를 기반으로 사용자 위치에 맞는 대피소 추천, 경로 안내, 재난 패턴 분석을 제공하는 Streamlit 기반 멀티페이지 대시보드입니다.
+- **링크**: [GitHub 저장소 바로가기](https://github.com/rad1092/project_dashboard)
+
+*(데모 GIF 준비 중)*
 
 ## 연락
 
