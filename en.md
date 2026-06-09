@@ -2,10 +2,9 @@
 permalink: /en/
 ---
 
-# HongDae Kim Portfolio
 
 Hello, I am **HongDae Kim (@rad1092)**.  
-This page is an English overview of my GitHub-based portfolio.
+
 
 - Korean page: [/](/)
 
