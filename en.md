@@ -201,11 +201,11 @@ body { background: var(--bg); }
   <aside class="rail">
     <div>
       <div class="rail-name">HongDae Kim<small>김홍대</small></div>
-      <p class="rail-role">I build software that helps people take their next step.</p>
+      <p class="rail-role">I build software that helps people take their next step</p>
       <nav class="rail-work">
         <div class="grp">Work</div>
         <a class="nav-link work-link" href="#p1"><span class="wno">01 · Python</span><span class="wt">Disaster Dashboard</span></a>
-        <a class="nav-link work-link" href="#p2"><span class="wno">02 · Rust</span><span class="wt">FirstCall · API Workbench</span></a>
+        <a class="nav-link work-link" href="#p2"><span class="wno">02 · Rust</span><span class="wt">FirstCall</span></a>
         <a class="nav-link work-link" href="#p3"><span class="wno">03 · Go</span><span class="wt">gh-dep-risk</span></a>
       </nav>
       <nav class="rail-sub">
@@ -239,11 +239,11 @@ body { background: var(--bg); }
         <img class="about-photo" src="/profile.png" alt="HongDae Kim">
       </div>
       <div class="chips">
-        <span class="chip"><b>Python</b> · Streamlit · Pandas · Folium</span>
-        <span class="chip"><b>Rust</b> · egui/eframe</span>
-        <span class="chip"><b>Go</b> · GitHub CLI</span>
-        <span class="chip"><b>DevOps</b> · GitHub Actions</span>
-        <span class="chip"><b>AI</b> · MCP · agent tooling</span>
+        <span class="chip"><b>Python</b> Streamlit, Pandas, Folium</span>
+        <span class="chip"><b>Rust</b> egui/eframe</span>
+        <span class="chip"><b>Go</b> GitHub CLI</span>
+        <span class="chip"><b>DevOps</b> GitHub Actions</span>
+        <span class="chip"><b>AI</b> MCP, agent tooling</span>
       </div>
       <div class="cta">
         <a class="primary" href="#p1">View Projects →</a>
@@ -257,12 +257,12 @@ body { background: var(--bg); }
       <h2 class="view-title">Experience &amp; Background</h2>
       <div class="timeline">
         <div class="tl-item">
-          <div class="tl-when">2016.07 – 2017.07, 2022.04 – 2025.04 · ~4 years total</div>
-          <div class="tl-role">Sales Management · Materials Delivery <span class="org">— Hyosang Safety Trading</span></div>
+          <div class="tl-when">2016.07 – 2017.07, 2022.04 – 2025.04 — ~4 years total</div>
+          <div class="tl-role">Sales Management, Materials Delivery <span class="org">— Hyosang Safety Trading</span></div>
           <p class="tl-desc">At a company supplying materials and safety equipment to construction sites, I started in materials delivery and grew into sales management over about four years. I handled clients directly, coordinated schedules, inventory and deadlines, and turned on-site needs into process and data.</p>
           <ul class="tl-detail">
-            <li><b>2022.04 – 2025.04</b> · Sales management + materials delivery — client sales management, schedule/inventory/deadline coordination, direct customer handling</li>
-            <li><b>2016.07 – 2017.07</b> · Materials delivery — on-site construction materials delivery</li>
+            <li><b>2022.04 – 2025.04</b> Sales management + materials delivery — client sales management, schedule and inventory coordination, direct customer handling</li>
+            <li><b>2016.07 – 2017.07</b> Materials delivery — on-site construction materials delivery</li>
           </ul>
         </div>
         <div class="tl-item">
@@ -287,16 +287,16 @@ body { background: var(--bg); }
         <div>
           <h2 class="view-title" style="margin-bottom:0;">Real-time Disaster Evacuation Dashboard</h2>
           <code class="repo">rad1092/project_dashboard</code>
-          <div><span class="role-tag">4-person team · Backend / Architecture lead</span></div>
+          <div><span class="role-tag">4-person team — Backend / Architecture lead</span></div>
         </div>
         <div class="proj-links"><a href="https://github.com/rad1092/project_dashboard" target="_blank">GitHub ↗</a></div>
       </div>
       <div class="stack"><span>Python</span><span>Streamlit</span><span>Pandas</span><span>Folium</span><span>OSRM</span><span>Selenium</span><span>SQLite</span><span>pytest</span></div>
 
-      <p class="summary">A disaster alert tells you <b>"that"</b> something happened. I built a dashboard that answers "where and how do I evacuate <b>right now</b>."</p>
+      <p class="summary">A disaster alert tells you <b>"that"</b> something happened — I built a dashboard that answers "where and how do I evacuate <b>right now</b>."</p>
 
       <div class="metrics">
-        <div class="metric"><b>4-person</b><span>team · backend / architecture lead</span></div>
+        <div class="metric"><b>4-person</b><span>team, backend / architecture lead</span></div>
         <div class="metric"><b>4</b><span>multi-page app</span></div>
         <div class="metric"><b>5</b><span>regions supported (Yeongnam)</span></div>
       </div>
@@ -318,29 +318,29 @@ body { background: var(--bg); }
           <p>A disaster alert only says something happened; shelter and alert data were scattered, making it <b>hard to decide quickly</b> in a crisis. Because the service combines static public data, real-time alerts, user location and an external routing API, the real challenge wasn't visualization but a <b>structure that loads data reliably, recommends shelters, and finds routes without breaking</b>.</p>
         </div>
         <div class="case-block">
-          <h3 class="case-h">My role — <span class="sub">4-person team · backend / architecture</span></h3>
+          <h3 class="case-h">My role — <span class="sub">4-person team, backend / architecture</span></h3>
           <ul>
-            <li>Owned the <b>overall dashboard architecture</b>.</li>
-            <li>Designed and built data-path management, CSV validation/normalization, real-time alert handling, the <b>shelter recommendation logic</b>, and OSRM routing with <b>failure fallback</b>.</li>
-            <li>Led core feature work including <b>map visualization and the test setup</b>.</li>
+            <li>Owned the <b>overall dashboard architecture</b></li>
+            <li>Designed and built data-path management, CSV validation and normalization, real-time alert handling, the <b>shelter recommendation logic</b>, and OSRM routing with <b>failure fallback</b></li>
+            <li>Led core feature work including <b>map visualization and the test setup</b></li>
           </ul>
         </div>
         <div class="case-block">
           <h3 class="case-h">What I did</h3>
           <ul>
-            <li><b>Resilient data loading:</b> a layer searching environment variables → Streamlit secrets → repo default paths in order, handling Korean CSV encoding and required-column validation.</li>
-            <li><b>Recommendation engine:</b> disaster-type-specific shelter priority → region-level fallback → Haversine distance → capacity-based sorting.</li>
-            <li><b>Real-time + mock data:</b> a Selenium crawler collects alerts and converts them to the app's standard schema; a <b>mock-alert generator</b> covers cases where crawling isn't possible.</li>
-            <li><b>Route guidance:</b> OSRM walking routes, with an automatic <b>straight-line fallback</b> when the API fails.</li>
-            <li><b>Structure &amp; testing:</b> a consistent Streamlit multi-page app (Home·Simulation·Real-time·Analysis) with a Folium map showing location, shelters and route together; <code class="mono">pytest</code> validates routing, session state and page imports.</li>
+            <li><b>Resilient data loading</b> — a layer searching environment variables → Streamlit secrets → repo default paths in order, handling Korean CSV encoding and required-column validation</li>
+            <li><b>Recommendation engine</b> — disaster-type-specific shelter priority → region-level fallback → Haversine distance → capacity-based sorting</li>
+            <li><b>Real-time and mock data</b> — a Selenium crawler collects alerts and converts them to the app's standard schema; a <b>mock-alert generator</b> covers cases where crawling isn't possible</li>
+            <li><b>Route guidance</b> — OSRM walking routes, with an automatic <b>straight-line fallback</b> when the API fails</li>
+            <li><b>Structure and testing</b> — a consistent Streamlit multi-page app (Home, Simulation, Real-time, Analysis) with a Folium map showing location, shelters and route together; <code class="mono">pytest</code> validates routing, session state and page imports</li>
           </ul>
         </div>
         <div class="case-block">
           <h3 class="case-h">Result</h3>
           <ul>
-            <li>Users get <b>shelter recommendations matched to disaster type and location</b>, and the flow <b>keeps working via fallback routes and mock data</b> even when the external API or live crawling fails.</li>
-            <li>It grew from a simple Streamlit visualization into a structure covering <b>data processing · recommendation · real-time collection · failure handling</b>.</li>
-            <li>A <b>working dashboard</b> with Folium·OSRM·Streamlit actually wired together — new tools learned fast and applied in practice.</li>
+            <li>Users get <b>shelter recommendations matched to disaster type and location</b>, and the flow <b>keeps working via fallback routes and mock data</b> even when the external API or live crawling fails</li>
+            <li>It grew from a simple Streamlit visualization into a structure covering <b>data processing, recommendation, real-time collection and failure handling</b></li>
+            <li>A <b>working dashboard</b> with Folium, OSRM and Streamlit actually wired together — new tools learned fast and applied in practice</li>
           </ul>
         </div>
       </div>
@@ -364,9 +364,9 @@ body { background: var(--bg); }
       <p class="summary">A tool that lets you <b>verify API calls on your own machine</b> and keep them in a safe, reusable form.</p>
 
       <div class="metrics">
-        <div class="metric"><b>8</b><span>input formats (curl·OpenAPI·Postman…)</span></div>
-        <div class="metric"><b>2</b><span>surfaces — desktop GUI · CLI</span></div>
-        <div class="metric"><b>3</b><span>OS releases (Windows·macOS·Linux)</span></div>
+        <div class="metric"><b>8</b><span>input formats (curl, OpenAPI, Postman…)</span></div>
+        <div class="metric"><b>2</b><span>surfaces — desktop GUI, CLI</span></div>
+        <div class="metric"><b>3</b><span>OS releases (Windows, macOS, Linux)</span></div>
       </div>
 
       <div class="media">
@@ -384,28 +384,28 @@ body { background: var(--bg); }
           <p>API requests differ in address, auth key and format every time, so there was no good way to <b>collect them in a reusable, safe form</b>. Handing APIs to AI agents or automation risked <b>exposing auth keys</b> or mixing in <b>unverified requests</b> — and there was a security need to <b>keep requests on my own machine</b> rather than a cloud.</p>
         </div>
         <div class="case-block">
-          <h3 class="case-h">My role — <span class="sub">solo project · design to release</span></h3>
+          <h3 class="case-h">My role — <span class="sub">solo project, design to release</span></h3>
           <ul>
-            <li>Designed a flow to accept <b>differently formatted requests</b> (curl·OpenAPI·Postman) and verify them locally.</li>
-            <li>Defined saving only verified requests as <b>reusable "recipes"</b> and exporting them with secrets stripped.</li>
-            <li>Provided both a <b>GUI</b> for people and a <b>CLI</b> for automation on one shared core.</li>
+            <li>Designed a flow to accept <b>differently formatted requests</b> (curl, OpenAPI, Postman) and verify them locally</li>
+            <li>Defined saving only verified requests as <b>reusable "recipes"</b> and exporting them with secrets stripped</li>
+            <li>Provided both a <b>GUI</b> for people and a <b>CLI</b> for automation on one shared core</li>
           </ul>
         </div>
         <div class="case-block">
           <h3 class="case-h">What I did</h3>
           <ul>
-            <li>Built the core in Rust, then two ways to use it — a <b>desktop app</b> you click through, and an automation <b>command-line tool (firstcall-cli)</b>.</li>
-            <li>Locked in a <b>safe flow</b>: import → verify → save as recipe → strip secrets and export → re-verify.</li>
-            <li>Made sure <b>scripts and config files inside imported requests are never executed</b>, blocking malicious code (supply-chain safety).</li>
-            <li>Handled secrets via environment variables only, with automated tests and security checks running <b>on every release</b> via GitHub Actions.</li>
+            <li>Built the core in Rust, then two ways to use it — a <b>desktop app</b> you click through, and an automation <b>command-line tool (firstcall-cli)</b></li>
+            <li>Locked in a <b>safe flow</b>: import → verify → save as recipe → strip secrets and export → re-verify</li>
+            <li>Made sure <b>scripts and config files inside imported requests are never executed</b>, blocking malicious code (supply-chain safety)</li>
+            <li>Handled secrets via environment variables only, with automated tests and security checks running <b>on every release</b> via GitHub Actions</li>
           </ul>
         </div>
         <div class="case-block">
           <h3 class="case-h">Result</h3>
           <ul>
-            <li>Shipped a <b>v0.1.0 release</b> with both the app and CLI, for Windows, macOS and Linux.</li>
-            <li>The CLI also outputs results in a <b>machine-readable format (JSON)</b>, wiring straight into automation / AI pipelines.</li>
-            <li>The <b>tool itself enforces</b> "only verified, secret-free requests leave the machine."</li>
+            <li>Shipped a <b>v0.1.0 release</b> with both the app and CLI, for Windows, macOS and Linux</li>
+            <li>The CLI also outputs results in a <b>machine-readable format (JSON)</b>, wiring straight into automation / AI pipelines</li>
+            <li>The <b>tool itself enforces</b> "only verified, secret-free requests leave the machine"</li>
           </ul>
         </div>
       </div>
@@ -426,9 +426,9 @@ body { background: var(--bg); }
       <p class="summary">A tool that lets a reviewer check, with one command, whether <b>newly added third-party libraries in a PR are a security risk</b>.</p>
 
       <div class="metrics">
-        <div class="metric"><b>11</b><span>ecosystems checked (npm·pip·Go·Maven…)</span></div>
+        <div class="metric"><b>11</b><span>ecosystems checked (npm, pip, Go, Maven…)</span></div>
         <div class="metric"><b>1</b><span>install = a single command</span></div>
-        <div class="metric"><b>0</b><span>servers · DB · standing infra</span></div>
+        <div class="metric"><b>0</b><span>servers, DB, standing infra</span></div>
       </div>
 
       <div class="media">
@@ -437,7 +437,7 @@ body { background: var(--bg); }
         </div>
       </div>
 
-      <div class="ai-note"><span class="badge">AI</span><span>I used AI to organize the <b>different ways each tool records its libraries</b> (npm·pip·Go…) and to cover edge cases with tests quickly. I personally decided the scope — what to support and what to explicitly leave out.</span></div>
+      <div class="ai-note"><span class="badge">AI</span><span>I used AI to organize the <b>different ways each tool records its libraries</b> (npm, pip, Go…) and to cover edge cases with tests quickly. I personally decided the scope — what to support and what to explicitly leave out.</span></div>
 
       <div class="case">
         <div class="case-block flush">
@@ -445,28 +445,28 @@ body { background: var(--bg); }
           <p>Modern software pulls in <b>dozens or hundreds of external libraries</b>, and if one has a vulnerability the whole thing is at risk. Reviewers struggled to <b>gauge that risk during code review</b>, yet running an <b>always-on server / database</b> was too heavy for small teams.</p>
         </div>
         <div class="case-block">
-          <h3 class="case-h">My role — <span class="sub">solo project · design to release</span></h3>
+          <h3 class="case-h">My role — <span class="sub">solo project, design to release</span></h3>
           <ul>
-            <li>Aimed for a lightweight tool reviewers <b>run only when needed</b>, with no setup or upkeep.</li>
-            <li>Designed it to reuse the GitHub login they already have so it <b>runs immediately</b>.</li>
-            <li>Decided to help the reviewer judge <b>without failing CI</b>.</li>
+            <li>Aimed for a lightweight tool reviewers <b>run only when needed</b>, with no setup or upkeep</li>
+            <li>Designed it to reuse the GitHub login they already have so it <b>runs immediately</b></li>
+            <li>Decided to help the reviewer judge <b>without failing CI</b></li>
           </ul>
         </div>
         <div class="case-block">
           <h3 class="case-h">What I did</h3>
           <ul>
-            <li>Built it as a <b>GitHub CLI extension (one small binary)</b> — install is a single line.</li>
-            <li>Uses <b>GitHub's official security data first</b>, falling back to reading project files directly only when that's unavailable.</li>
-            <li>Clearly bounded what it checks (npm·pip·Go…) and the <b>support scope</b>, documented so it never over-analyzes into wrong answers.</li>
-            <li>Posts results as a <b>clean PR comment</b> (updated, not duplicated), with automated tests for stability.</li>
+            <li>Built it as a <b>GitHub CLI extension (one small binary)</b> — install is a single line</li>
+            <li>Uses <b>GitHub's official security data first</b>, falling back to reading project files directly only when that's unavailable</li>
+            <li>Clearly bounded what it checks (npm, pip, Go…) and the <b>support scope</b>, documented so it never over-analyzes into wrong answers</li>
+            <li>Posts results as a <b>clean PR comment</b> (updated, not duplicated), with automated tests for stability</li>
           </ul>
         </div>
         <div class="case-block">
           <h3 class="case-h">Result</h3>
           <ul>
-            <li>Installable in one line: <code class="mono">gh extension install rad1092/gh-dep-risk</code>.</li>
-            <li>Checks library risk across <b>11 ecosystems</b> (npm·pip·Go·Maven and more).</li>
-            <li>A lightweight way to <b>review security inside the code-review flow</b>, without stopping CI.</li>
+            <li>Installable in one line: <code class="mono">gh extension install rad1092/gh-dep-risk</code></li>
+            <li>Checks library risk across <b>11 ecosystems</b> (npm, pip, Go, Maven and more)</li>
+            <li>A lightweight way to <b>review security inside the code-review flow</b>, without stopping CI</li>
           </ul>
         </div>
       </div>
@@ -480,36 +480,36 @@ body { background: var(--bg); }
         <div class="arch-card">
           <div class="top"><span class="folder">🪞</span><a class="ext" href="https://github.com/rad1092/smart-mirror-pc123" target="_blank">↗</a></div>
           <h4><a href="https://github.com/rad1092/smart-mirror-pc123" target="_blank">Smart Mirror AIoT Workout Coaching</a></h4>
-          <p>An integrated repo wiring a display, a vision gateway and an AI coaching engine — connecting pose analysis, routine generation and real-time coaching.</p>
+          <p>An integrated repo wiring a display, a vision gateway and an AI coaching engine — connecting pose analysis, routine generation and real-time coaching</p>
           <div class="tags"><span>Python</span><span>WebSocket</span><span>SQLite</span><span>AIoT</span></div>
         </div>
         <div class="arch-card">
           <div class="top"><span class="folder">🔌</span><a class="ext" href="https://github.com/rad1092/firstcall-api-lookup-mcp" target="_blank">↗</a></div>
           <h4><a href="https://github.com/rad1092/firstcall-api-lookup-mcp" target="_blank">FirstCall API Lookup MCP</a></h4>
-          <p>A read-only MCP server generated from FirstCall. Exposes a single public-user-lookup tool that an AI agent can use right away.</p>
+          <p>A read-only MCP server generated from FirstCall, exposing a single public-user-lookup tool an AI agent can use right away</p>
           <div class="tags"><span>TypeScript</span><span>MCP</span><span>Node</span></div>
         </div>
         <div class="arch-card">
           <div class="top"><span class="folder">🧭</span><a class="ext" href="https://github.com/rad1092/job-coach-agent" target="_blank">↗</a></div>
           <h4><a href="https://github.com/rad1092/job-coach-agent" target="_blank">Job-Coach Agent</a></h4>
-          <p>Enter a target role and it runs the whole flow — job search, analysis report, cover-letter draft, interview prep, and a roadmap to landing the job.</p>
+          <p>Enter a target role and it runs the whole flow — job search, analysis report, cover-letter draft, interview prep, and a roadmap to landing the job</p>
           <div class="tags"><span>Streamlit</span><span>FastAPI</span><span>SQLite</span></div>
         </div>
         <div class="arch-card">
           <div class="top"><span class="folder">⌨️</span><a class="ext" href="https://github.com/rad1092/ascii-diagram-editor" target="_blank">↗</a></div>
           <h4><a href="https://github.com/rad1092/ascii-diagram-editor" target="_blank">ASCII Diagram Editor</a></h4>
-          <p>A browser-based ASCII diagram editor. Draw on a fixed grid and render the result into real text.</p>
+          <p>A browser-based ASCII diagram editor — draw on a fixed grid and render the result into real text</p>
           <div class="tags"><span>TypeScript</span><span>Vite</span><span>Client-side</span></div>
         </div>
       </div>
-      <p class="lead" style="margin-top:20px;font-size:.92rem;">See everything on the <a href="/repositories-en/" style="color:var(--accent);">repositories page</a>.</p>
+      <p class="lead" style="margin-top:20px;font-size:.92rem;">See everything on the <a href="/repositories-en/" style="color:var(--accent);">repositories page</a></p>
     </section>
 
     <!-- ---------- CONTACT ---------- -->
     <section class="view-panel" id="contact">
       <p class="kicker">Contact</p>
       <h2 class="view-title">Let's work together</h2>
-      <p class="lead">I'm always open to new collaborations and project ideas. Feel free to reach out.</p>
+      <p class="lead">I'm always open to new collaborations and project ideas — feel free to reach out</p>
       <div class="contact-big"><a href="https://github.com/rad1092" target="_blank">GitHub @rad1092 →</a></div>
       <p class="foot">Built with Jekyll · Designed &amp; developed by HongDae Kim — with a little help from AI</p>
     </section>
