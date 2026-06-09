@@ -6,7 +6,7 @@ layout: default
   <img src="/profile.png" alt="Profile Picture" width="150" height="150" style="border-radius: 50%; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
   <div>
     <h1 style="margin: 0; font-size: 2.5em;">김홍대 (HongDae Kim)</h1>
-    <p style="margin: 5px 0; color: #666; font-size: 1.2em;">Software Engineer & Data Enthusiast</p>
+    <p style="margin: 5px 0; color: #666; font-size: 1.2em;"></p>
     <a href="/en/" style="display: inline-block; margin-top: 10px; padding: 5px 10px; background: #eee; border-radius: 4px; text-decoration: none; color: #333;">🌐 English</a>
   </div>
 </div>
@@ -31,8 +31,6 @@ layout: default
 - **핵심 기능**: 로컬 우선(Local-first) 접근 방식을 취하는 API 레시피 워크벤치입니다. curl, OpenAPI, Postman 컬렉션 등 다양한 요청 소스를 파싱하여 검증하고, 이를 재사용 가능한 레시피로 안전하게 관리할 수 있도록 지원합니다.
 - **링크**: [GitHub 저장소 바로가기](https://github.com/rad1092/firstcall-local-api-workbench)
 
-![FirstCall desktop GUI workbench demo](https://raw.githubusercontent.com/rad1092/firstcall-local-api-workbench/main/docs/assets/firstcall-gui-workbench.gif)
-</details>
 
 ### 2. PR 의존성 리스크 검토 확장 (`gh-dependency-risk`)
 <details>
@@ -42,8 +40,7 @@ layout: default
 - **핵심 기능**: Pull Request에 추가된 의존성 패키지의 보안 취약점을 검토하는 GitHub CLI 확장 프로그램입니다. GitHub Advisory Database를 조회하여 결과를 PR 코멘트로 깔끔하게 남겨주어, CI 실패 없이도 리뷰어의 판단을 돕습니다.
 - **링크**: [GitHub 저장소 바로가기](https://github.com/rad1092/gh-dependency-risk)
 
-![gh-dep-risk animated terminal demo](https://raw.githubusercontent.com/rad1092/gh-dependency-risk/main/docs/assets/demo.gif)
-</details>
+
 
 ### 3. 재난 대피 안내 대시보드 (`project_dashboard`)
 <details>
@@ -53,8 +50,7 @@ layout: default
 - **핵심 기능**: 영남권 재난 특보와 대피소 데이터를 활용한 멀티페이지 대시보드입니다. 사용자의 위치에 맞는 대피소 추천, 안전 경로 안내, 그리고 지역별 재난 패턴 분석 기능을 시각적으로 제공합니다.
 - **링크**: [GitHub 저장소 바로가기](https://github.com/rad1092/project_dashboard)
 
-![Disaster Evacuation Dashboard Demo](/dashboard-demo.png)
-</details>
+
 
 ---
 
