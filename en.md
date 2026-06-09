@@ -34,41 +34,48 @@ body { background: var(--bg); }
 .pf a:hover { color: var(--accent); }
 .pf .mono { font-family: "Space Grotesk", ui-monospace, monospace; }
 
-.app { display: flex; align-items: flex-start; max-width: 1340px; margin: 0 auto; }
+.app { display: flex; align-items: flex-start; max-width: 1360px; margin: 0 auto; }
 
-.rail { position: sticky; top: 0; align-self: flex-start; height: 100vh; flex: 0 0 256px;
-  padding: 54px 30px 40px 44px; display: flex; flex-direction: column; }
+.rail { position: sticky; top: 0; align-self: flex-start; height: 100vh; flex: 0 0 264px;
+  padding: 56px 30px 40px 46px; display: flex; flex-direction: column; }
 .rail-name { font-family: var(--display); font-size: 1.8rem; font-weight: 600; letter-spacing: -.01em; line-height: 1.15; }
 .rail-name small { display: block; font-size: .82rem; font-weight: 500; color: var(--muted); margin-top: 4px; letter-spacing: 0; }
 .rail-role { color: var(--muted); font-size: .9rem; margin-top: 14px; max-width: 200px; }
 
-.rail-nav { margin-top: 42px; display: flex; flex-direction: column; gap: 4px; }
-.rail-link { display: flex; align-items: center; gap: 14px; padding: 7px 0; color: var(--muted);
-  font-family: var(--serif); font-size: .76rem; letter-spacing: .12em; text-transform: uppercase; transition: .2s; }
-.rail-link .bar { width: 26px; height: 1px; background: var(--line); transition: .2s; }
-.rail-link:hover { color: var(--text); }
-.rail-link:hover .bar { width: 44px; background: var(--text); }
-.rail-link.active { color: var(--accent); }
-.rail-link.active .bar { width: 48px; background: var(--accent); }
+/* project-centric rail */
+.rail-work { margin-top: 40px; display: flex; flex-direction: column; gap: 2px; }
+.rail-work .grp { font-family: var(--serif); font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+.work-link { display: block; padding: 10px 0 10px 16px; border-left: 2px solid var(--line); transition: .18s; }
+.work-link .wno { display: block; font-family: var(--serif); font-size: .68rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.work-link .wt { display: block; font-family: var(--display); font-size: 1.12rem; font-weight: 500; color: var(--text); margin-top: 2px; letter-spacing: -.01em; line-height: 1.2; }
+.work-link:hover { border-left-color: var(--text); }
+.work-link:hover .wno { color: var(--text); }
+.rail .work-link.active { border-left-color: var(--accent); }
+.rail .work-link.active .wt, .rail .work-link.active .wno { color: var(--accent); }
+
+.rail-sub { margin-top: 26px; padding-top: 22px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 8px 18px; }
+.rail-sub a { font-family: var(--serif); font-size: .74rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); transition: .15s; }
+.rail-sub a:hover { color: var(--text); }
+.rail .rail-sub a.active { color: var(--accent); }
 
 .rail-foot { margin-top: auto; display: flex; gap: 18px; font-size: .82rem; }
 .rail-foot a { color: var(--muted); }
 .rail-foot a:hover { color: var(--accent); }
 
-.view { flex: 1; min-width: 0; padding: 64px 64px 110px; }
+.view { flex: 1; min-width: 0; padding: 72px 72px 120px; }
 .view-panel { display: none; animation: fade .35s ease; }
 .view-panel.active { display: block; }
 @keyframes fade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 
 .kicker { font-family: var(--serif); font-size: .78rem; color: var(--accent); letter-spacing: .14em; text-transform: uppercase; margin: 0 0 14px; }
-.view-title { font-family: var(--display); font-size: 2.6rem; font-weight: 600; letter-spacing: -.01em; line-height: 1.12; margin: 0 0 26px; }
-.lead { color: var(--muted); font-size: 1.06rem; max-width: 70ch; }
+.view-title { font-family: var(--display); font-size: 2.8rem; font-weight: 600; letter-spacing: -.01em; line-height: 1.12; margin: 0 0 26px; }
+.lead { color: var(--muted); font-size: 1.08rem; max-width: 68ch; }
 .lead .hl { color: var(--text); }
 
-.about-hero { display: flex; gap: 52px; align-items: center; flex-wrap: wrap-reverse; }
-.about-text { flex: 1; min-width: 300px; }
-.about-photo { flex: 0 0 auto; width: 230px; height: 230px; border-radius: 50%; object-fit: cover; border: 1px solid var(--line); box-shadow: 0 18px 50px rgba(24,24,27,.14); }
-.about-head { font-family: var(--display); font-size: 2.9rem; font-weight: 600; letter-spacing: -.015em; line-height: 1.18; max-width: 20ch; margin: 0 0 28px; }
+.about-hero { display: grid; grid-template-columns: minmax(0, 1fr) 240px; gap: 56px; align-items: center; }
+.about-text { min-width: 0; }
+.about-photo { width: 240px; height: 240px; border-radius: 50%; object-fit: cover; border: 1px solid var(--line); box-shadow: 0 18px 50px rgba(24,24,27,.14); }
+.about-head { font-family: var(--display); font-size: 3.1rem; font-weight: 600; letter-spacing: -.015em; line-height: 1.16; margin: 0 0 28px; }
 .about-head .hl { color: var(--accent); }
 .chips { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 26px; }
 .chip { border: 1px solid var(--line); color: var(--text); padding: 7px 14px; border-radius: 999px; font-size: .84rem; }
@@ -151,17 +158,22 @@ body { background: var(--bg); }
 @media (max-width: 900px) {
   .app { flex-direction: column; max-width: none; }
   .rail { position: sticky; top: 0; z-index: 10; height: auto; width: 100%; flex-basis: auto;
-    background: rgba(255,255,255,.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line);
-    padding: 14px 20px; flex-direction: row; align-items: center; gap: 16px; }
-  .rail-name { font-size: 1.05rem; }
+    background: rgba(255,255,255,.94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line);
+    padding: 11px 16px; flex-direction: row; align-items: center; gap: 14px; }
+  .rail > div:first-child { display: flex; align-items: center; gap: 14px; flex: 1; min-width: 0; overflow-x: auto; }
+  .rail-name { font-size: 1rem; white-space: nowrap; }
   .rail-name small, .rail-role { display: none; }
-  .rail-nav { margin: 0; flex-direction: row; overflow-x: auto; gap: 2px; flex: 1; }
-  .rail-link { white-space: nowrap; padding: 6px 10px; font-size: .72rem; }
-  .rail-link .bar { display: none; }
-  .rail-foot { margin: 0; }
-  .view { padding: 30px 22px 80px; }
-  .about-hero { gap: 24px; }
-  .about-photo { width: 130px; height: 130px; }
+  .rail-work { margin: 0; flex-direction: row; gap: 4px; }
+  .rail-work .grp { display: none; }
+  .work-link { border-left: none; padding: 6px 10px; white-space: nowrap; }
+  .work-link .wno { display: none; }
+  .work-link .wt { font-size: .9rem; }
+  .rail-sub { margin: 0; padding: 0 0 0 10px; border-top: none; border-left: 1px solid var(--line); gap: 12px; flex-wrap: nowrap; }
+  .rail-sub a { white-space: nowrap; }
+  .rail-foot { margin: 0; flex: 0 0 auto; gap: 12px; font-size: .74rem; }
+  .view { padding: 30px 20px 80px; }
+  .about-hero { grid-template-columns: 1fr; gap: 22px; justify-items: start; }
+  .about-photo { width: 120px; height: 120px; order: -1; }
   .about-head { font-size: 2rem; }
   .view-title { font-size: 1.9rem; }
   .gallery.cols-2 { grid-template-columns: 1fr; }
@@ -177,14 +189,17 @@ body { background: var(--bg); }
     <div>
       <div class="rail-name">HongDae Kim<small>김홍대</small></div>
       <p class="rail-role">I build software that helps people take their next step.</p>
-      <nav class="rail-nav">
-        <a class="rail-link active" href="#about"><span class="bar"></span> About</a>
-        <a class="rail-link" href="#experience"><span class="bar"></span> Experience</a>
-        <a class="rail-link" href="#p1"><span class="bar"></span> Disaster Dashboard</a>
-        <a class="rail-link" href="#p2"><span class="bar"></span> FirstCall</a>
-        <a class="rail-link" href="#p3"><span class="bar"></span> gh-dep-risk</a>
-        <a class="rail-link" href="#more"><span class="bar"></span> Other Work</a>
-        <a class="rail-link" href="#contact"><span class="bar"></span> Contact</a>
+      <nav class="rail-work">
+        <div class="grp">Work</div>
+        <a class="nav-link work-link" href="#p1"><span class="wno">01 · Python</span><span class="wt">Disaster Dashboard</span></a>
+        <a class="nav-link work-link" href="#p2"><span class="wno">02 · Rust</span><span class="wt">FirstCall · API Workbench</span></a>
+        <a class="nav-link work-link" href="#p3"><span class="wno">03 · Go</span><span class="wt">gh-dep-risk</span></a>
+      </nav>
+      <nav class="rail-sub">
+        <a class="nav-link active" href="#about">About</a>
+        <a class="nav-link" href="#experience">Experience</a>
+        <a class="nav-link" href="#more">Other</a>
+        <a class="nav-link" href="#contact">Contact</a>
       </nav>
     </div>
     <div class="rail-foot">
@@ -490,7 +505,7 @@ body { background: var(--bg); }
     var panel = document.getElementById(v);
     if (!panel || !panel.classList.contains('view-panel')) v = 'about';
     document.querySelectorAll('.view-panel').forEach(function (p) { p.classList.toggle('active', p.id === v); });
-    document.querySelectorAll('.rail-link').forEach(function (b) { b.classList.toggle('active', b.getAttribute('href') === '#' + v); });
+    document.querySelectorAll('.nav-link').forEach(function (b) { b.classList.toggle('active', b.getAttribute('href') === '#' + v); });
     window.scrollTo(0, 0);
   }
   window.addEventListener('hashchange', showView);
