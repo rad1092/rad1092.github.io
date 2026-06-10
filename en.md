@@ -102,7 +102,8 @@ body { background: var(--bg); }
 .timeline::before { content: ""; position: absolute; left: 5px; top: 8px; bottom: 8px; width: 1px; background: var(--line); }
 .tl-item { position: relative; padding: 0 0 34px; }
 .tl-item:last-child { padding-bottom: 0; }
-.tl-item::before { content: ""; position: absolute; left: -28px; top: 6px; width: 11px; height: 11px; border-radius: 50%; background: var(--bg); border: 2px solid var(--accent); }
+.tl-item::before { content: ""; position: absolute; left: -28px; top: 6px; width: 11px; height: 11px; border-radius: 50%; background: var(--bg); border: 2px solid var(--accent); transition: background .18s; }
+.tl-item:hover::before { background: var(--accent); }
 .tl-when { font-family: var(--serif); font-size: .8rem; color: var(--accent); letter-spacing: .04em; }
 .tl-role { font-family: var(--display); font-size: 1.3rem; font-weight: 600; margin: 5px 0 3px; letter-spacing: -.01em; }
 .tl-role .org { color: var(--muted); font-weight: 400; font-size: .92rem; }
@@ -112,7 +113,8 @@ body { background: var(--bg); }
 .tl-detail b { color: var(--accent); font-family: var(--serif); font-size: .82rem; letter-spacing: .02em; }
 .certs-title { font-family: var(--serif); font-size: .76rem; color: var(--muted); letter-spacing: .12em; margin: 46px 0 14px; text-transform: uppercase; }
 .certs { display: flex; flex-wrap: wrap; gap: 10px; }
-.cert { border: 1px solid var(--line); border-radius: 10px; padding: 9px 15px; font-size: .94rem; }
+.cert { border: 1px solid var(--line); border-radius: 10px; padding: 9px 15px; font-size: .94rem; transition: border-color .15s; }
+.cert:hover { border-color: color-mix(in srgb, var(--accent) 50%, var(--line)); }
 
 .proj-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; flex-wrap: wrap; }
 .repo { font-family: var(--serif); font-size: .84rem; color: var(--muted); display: block; margin-top: 8px; letter-spacing: .02em; }
@@ -203,6 +205,10 @@ body { background: var(--bg); }
   .gallery.cols-2 { grid-template-columns: 1fr; }
   .archive { grid-template-columns: 1fr; }
   .pno { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pf *, .pf *::before, .pf *::after { animation: none !important; transition: none !important; }
 }
 </style>
 
@@ -367,6 +373,7 @@ body { background: var(--bg); }
         <div>
           <h2 class="view-title" style="margin-bottom:0;">Local-first API Workbench · FirstCall</h2>
           <code class="repo">rad1092/firstcall-local-api-workbench</code>
+          <div><span class="role-tag">Solo project · v0.1.0 release — Windows, macOS, Linux</span></div>
         </div>
         <div class="proj-links">
           <a href="https://github.com/rad1092/firstcall-local-api-workbench" target="_blank">GitHub ↗</a>
@@ -433,6 +440,7 @@ body { background: var(--bg); }
         <div>
           <h2 class="view-title" style="margin-bottom:0;">PR Dependency Risk Check · gh-dep-risk</h2>
           <code class="repo">rad1092/gh-dependency-risk</code>
+          <div><span class="role-tag">Solo project · v0.2.0 release</span></div>
         </div>
         <div class="proj-links"><a href="https://github.com/rad1092/gh-dependency-risk" target="_blank">GitHub ↗</a></div>
       </div>
@@ -473,7 +481,7 @@ body { background: var(--bg); }
             <li>Built it as a <b>GitHub CLI extension (one small binary)</b> — install is a single line</li>
             <li>Uses <b>GitHub's official security data first</b>, falling back to reading project files directly only when that's unavailable</li>
             <li>Clearly bounded what it checks (npm, pip, Go…) and the <b>support scope</b>, documented so it never over-analyzes into wrong answers</li>
-            <li>Posts results as a <b>clean PR comment</b> (updated, not duplicated), with automated tests for stability</li>
+            <li>Posts results as a <b>clean PR comment</b> (updated, not duplicated), verified with automated tests plus <b>live smoke tests against real fixture PRs</b> across npm, pnpm and Yarn</li>
           </ul>
         </div>
         <div class="case-block">
@@ -492,6 +500,18 @@ body { background: var(--bg); }
       <p class="kicker">More</p>
       <h2 class="view-title">Other Work</h2>
       <div class="archive">
+        <div class="arch-card">
+          <div class="top"><span class="folder">🦺</span><a class="ext" href="https://github.com/rad1092/minipr1_7" target="_blank">↗</a></div>
+          <h4><a href="https://github.com/rad1092/minipr1_7" target="_blank">Construction-Site PPE Detection</a></h4>
+          <p>Detects hardhats and safety vests on workers in photos, video and webcam feeds — person-box-based post-processing cuts false positives and tracks per-worker status</p>
+          <div class="tags"><span>Python</span><span>YOLO</span><span>Gradio</span><span>OpenCV</span></div>
+        </div>
+        <div class="arch-card">
+          <div class="top"><span class="folder">📈</span><a class="ext" href="https://github.com/rad1092/sec-alert-selfhosted" target="_blank">↗</a></div>
+          <h4><a href="https://github.com/rad1092/sec-alert-selfhosted" target="_blank">SEC Filing Alert Inbox</a></h4>
+          <p>Watches US SEC filings (8-K, Form 4) for a focused watchlist, shows why each one was flagged, and routes signals to Slack, webhooks or email — fully self-hosted</p>
+          <div class="tags"><span>Python</span><span>SQLite</span><span>Docker</span></div>
+        </div>
         <div class="arch-card">
           <div class="top"><span class="folder">🪞</span><a class="ext" href="https://github.com/rad1092/smart-mirror-pc123" target="_blank">↗</a></div>
           <h4><a href="https://github.com/rad1092/smart-mirror-pc123" target="_blank">Smart Mirror AIoT Workout Coaching</a></h4>

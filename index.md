@@ -105,7 +105,8 @@ body { background: var(--bg); }
 .timeline::before { content: ""; position: absolute; left: 5px; top: 8px; bottom: 8px; width: 1px; background: var(--line); }
 .tl-item { position: relative; padding: 0 0 34px; }
 .tl-item:last-child { padding-bottom: 0; }
-.tl-item::before { content: ""; position: absolute; left: -28px; top: 6px; width: 11px; height: 11px; border-radius: 50%; background: var(--bg); border: 2px solid var(--accent); }
+.tl-item::before { content: ""; position: absolute; left: -28px; top: 6px; width: 11px; height: 11px; border-radius: 50%; background: var(--bg); border: 2px solid var(--accent); transition: background .18s; }
+.tl-item:hover::before { background: var(--accent); }
 .tl-when { font-family: var(--serif); font-size: .8rem; color: var(--accent); letter-spacing: .04em; }
 .tl-role { font-family: var(--display); font-size: 1.3rem; font-weight: 600; margin: 5px 0 3px; letter-spacing: -.01em; }
 .tl-role .org { color: var(--muted); font-weight: 400; font-size: .92rem; }
@@ -115,7 +116,8 @@ body { background: var(--bg); }
 .tl-detail b { color: var(--accent); font-family: var(--serif); font-size: .82rem; letter-spacing: .02em; }
 .certs-title { font-family: var(--serif); font-size: .76rem; color: var(--muted); letter-spacing: .12em; margin: 46px 0 14px; text-transform: uppercase; }
 .certs { display: flex; flex-wrap: wrap; gap: 10px; }
-.cert { border: 1px solid var(--line); border-radius: 10px; padding: 9px 15px; font-size: .94rem; }
+.cert { border: 1px solid var(--line); border-radius: 10px; padding: 9px 15px; font-size: .94rem; transition: border-color .15s; }
+.cert:hover { border-color: color-mix(in srgb, var(--accent) 50%, var(--line)); }
 
 /* project view (single wide column) */
 .proj-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; flex-wrap: wrap; }
@@ -209,6 +211,10 @@ body { background: var(--bg); }
   .gallery.cols-2 { grid-template-columns: 1fr; }
   .archive { grid-template-columns: 1fr; }
   .pno { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pf *, .pf *::before, .pf *::after { animation: none !important; transition: none !important; }
 }
 </style>
 
@@ -373,6 +379,7 @@ body { background: var(--bg); }
         <div>
           <h2 class="view-title" style="margin-bottom:0;">Local-first API 워크벤치 · FirstCall</h2>
           <code class="repo">rad1092/firstcall-local-api-workbench</code>
+          <div><span class="role-tag">개인 프로젝트 · v0.1.0 릴리스 — 윈도우, 맥, 리눅스</span></div>
         </div>
         <div class="proj-links">
           <a href="https://github.com/rad1092/firstcall-local-api-workbench" target="_blank">GitHub ↗</a>
@@ -439,6 +446,7 @@ body { background: var(--bg); }
         <div>
           <h2 class="view-title" style="margin-bottom:0;">PR 의존성 리스크 점검 확장 · gh-dep-risk</h2>
           <code class="repo">rad1092/gh-dependency-risk</code>
+          <div><span class="role-tag">개인 프로젝트 · v0.2.0 릴리스</span></div>
         </div>
         <div class="proj-links"><a href="https://github.com/rad1092/gh-dependency-risk" target="_blank">GitHub ↗</a></div>
       </div>
@@ -479,7 +487,7 @@ body { background: var(--bg); }
             <li>서버 대신 <b>GitHub CLI 확장(작은 실행 파일 하나)</b>으로 만들어 설치 한 줄로 끝나게 했습니다</li>
             <li>먼저 <b>GitHub 공식 보안 데이터를 사용</b>하고, 불가능할 때만 프로젝트 파일을 직접 읽는 <b>대체 방식</b>으로 전환</li>
             <li>점검 대상(npm, pip, Go 등)과 <b>지원 범위를 명확히 한정</b>해 과한 분석으로 잘못된 결과를 내지 않도록 문서로 명시</li>
-            <li>결과는 <b>PR 댓글로 깔끔하게 정리</b>(중복 없이 갱신)하고 자동 테스트로 안정성을 검증</li>
+            <li>결과는 <b>PR 댓글로 깔끔하게 정리</b>(중복 없이 갱신)하고, 자동 테스트에 더해 npm과 pnpm, Yarn <b>실제 PR 픽스처 저장소로 스모크 테스트</b>를 돌려 안정성을 검증</li>
           </ul>
         </div>
         <div class="case-block">
@@ -498,6 +506,18 @@ body { background: var(--bg); }
       <p class="kicker">더 보기</p>
       <h2 class="view-title">그 외 작업</h2>
       <div class="archive">
+        <div class="arch-card">
+          <div class="top"><span class="folder">🦺</span><a class="ext" href="https://github.com/rad1092/minipr1_7" target="_blank">↗</a></div>
+          <h4><a href="https://github.com/rad1092/minipr1_7" target="_blank">건설현장 PPE 안전장구 감지</a></h4>
+          <p>사진과 동영상, 웹캠에서 작업자의 안전헬멧과 안전조끼 착용 여부를 감지하는 앱으로, 사람 박스 기준 후처리로 오탐을 줄이고 작업자별 착용 상태를 추적합니다</p>
+          <div class="tags"><span>Python</span><span>YOLO</span><span>Gradio</span><span>OpenCV</span></div>
+        </div>
+        <div class="arch-card">
+          <div class="top"><span class="folder">📈</span><a class="ext" href="https://github.com/rad1092/sec-alert-selfhosted" target="_blank">↗</a></div>
+          <h4><a href="https://github.com/rad1092/sec-alert-selfhosted" target="_blank">SEC 공시 알림 인박스</a></h4>
+          <p>관심 종목의 미국 SEC 공시(8-K, Form 4)를 감시해 플래그 사유와 함께 보여주고, Slack과 웹훅, 메일로 신호를 전달하는 셀프호스팅 도구입니다</p>
+          <div class="tags"><span>Python</span><span>SQLite</span><span>Docker</span></div>
+        </div>
         <div class="arch-card">
           <div class="top"><span class="folder">🪞</span><a class="ext" href="https://github.com/rad1092/smart-mirror-pc123" target="_blank">↗</a></div>
           <h4><a href="https://github.com/rad1092/smart-mirror-pc123" target="_blank">스마트 미러 AIoT 운동 코칭</a></h4>
