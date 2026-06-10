@@ -27,6 +27,7 @@ layout: default
   --display: "Fraunces", "Nanum Myeongjo", "Pretendard", serif;  /* editorial headings */
 }
 
+html { scroll-behavior: smooth; }
 body { background: var(--bg); }
 .pf { color: var(--text); font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI", "Apple SD Gothic Neo", sans-serif; line-height: 1.7; -webkit-font-smoothing: antialiased; word-break: keep-all; overflow-wrap: break-word; }
 .pf a { color: var(--text); text-decoration: none; }
@@ -35,60 +36,62 @@ body { background: var(--bg); }
 .pf ::selection { background: var(--accent); color: var(--accent-ink); }
 .pf a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
 
-/* subtle background grid (fills empty space without clutter) */
+/* subtle background grid */
 .pf::before { content: ""; position: fixed; inset: 0; z-index: 0; pointer-events: none;
   background-image: linear-gradient(to right, rgba(24,24,40,.031) 1px, transparent 1px),
                     linear-gradient(to bottom, rgba(24,24,40,.031) 1px, transparent 1px);
   background-size: 78px 78px; }
 
-/* ===== App shell: editorial left rail + wide content ===== */
-.app { display: flex; align-items: flex-start; max-width: 1360px; margin: 0 auto; position: relative; z-index: 1; }
+/* cursor spotlight (desktop only) */
+.glow { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
+@media (pointer: fine) {
+  .glow { background: radial-gradient(560px circle at var(--mx, 60%) var(--my, 20%), rgba(47,86,230,.05), transparent 70%); }
+}
 
-.rail { position: sticky; top: 0; align-self: flex-start; height: 100vh; flex: 0 0 264px;
-  padding: 56px 30px 40px 46px; display: flex; flex-direction: column; }
-.rail-name { font-family: var(--display); font-size: 1.8rem; font-weight: 600; letter-spacing: -.01em; line-height: 1.15; }
-.rail-name small { display: block; font-size: .82rem; font-weight: 500; color: var(--muted); margin-top: 4px; letter-spacing: 0; }
-.rail-role { color: var(--muted); font-size: .9rem; margin-top: 14px; max-width: 200px; }
+/* ===== Shell: fixed identity column + scrolling flow ===== */
+.shell { display: flex; max-width: 1340px; margin: 0 auto; position: relative; z-index: 1; gap: 36px; }
 
-/* project-centric rail */
-.rail-work { margin-top: 40px; display: flex; flex-direction: column; gap: 2px; }
-.rail-work .grp { font-family: var(--serif); font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
-.work-link { display: block; padding: 10px 0 10px 16px; border-left: 2px solid var(--line); transition: border-color .18s, padding-left .18s; }
-.work-link .wno { display: block; font-family: var(--serif); font-size: .68rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
-.work-link .wt { display: block; font-family: var(--display); font-size: 1.12rem; font-weight: 500; color: var(--text); margin-top: 2px; letter-spacing: -.01em; line-height: 1.2; }
-.work-link:hover { border-left-color: var(--text); padding-left: 20px; }
-.work-link:hover .wno { color: var(--text); }
-.rail .work-link.active { border-left-color: var(--accent); padding-left: 20px; }
-.rail .work-link.active .wt, .rail .work-link.active .wno { color: var(--accent); }
+.id { position: sticky; top: 0; align-self: flex-start; height: 100vh; flex: 0 0 340px;
+  padding: 76px 24px 56px 48px; display: flex; flex-direction: column; }
+.id-photo { width: 148px; height: 148px; border-radius: 50%; object-fit: cover; border: 1px solid var(--line);
+  box-shadow: 0 18px 50px rgba(24,24,27,.14); outline: 1px solid color-mix(in srgb, var(--accent) 32%, transparent); outline-offset: 10px; }
+.id-name { font-family: var(--display); font-size: 2.4rem; font-weight: 600; letter-spacing: -.015em; line-height: 1.1; margin: 32px 0 0; }
+.id-name small { display: block; font-family: var(--serif); font-size: .76rem; font-weight: 500; color: var(--muted); margin-top: 9px; letter-spacing: .12em; text-transform: uppercase; }
+.id-role { color: var(--muted); font-size: .95rem; margin: 16px 0 0; max-width: 235px; }
 
-.rail-sub { margin-top: 26px; padding-top: 22px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 8px 18px; }
-.rail-sub a { font-family: var(--serif); font-size: .74rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); transition: .15s; display: inline-flex; align-items: center; }
-.rail-sub a::before { content: ""; width: 0; height: 1px; background: var(--accent); margin-right: 0; transition: width .18s, margin-right .18s; }
-.rail-sub a:hover::before, .rail .rail-sub a.active::before { width: 14px; margin-right: 7px; }
-.rail-sub a:hover { color: var(--text); }
-.rail .rail-sub a.active { color: var(--accent); }
+.snav { margin-top: 44px; display: flex; flex-direction: column; gap: 2px; }
+.snav a { display: flex; align-items: center; gap: 12px; padding: 8px 0; font-family: var(--serif); font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); transition: color .18s; }
+.snav a::before { content: ""; width: 26px; height: 1px; background: var(--line); flex: 0 0 auto; transition: width .2s, background .2s; }
+.snav a:hover { color: var(--text); }
+.snav a:hover::before { width: 44px; background: var(--text); }
+.snav a.active { color: var(--accent); }
+.snav a.active::before { width: 44px; background: var(--accent); }
+.snav a em { font-style: normal; color: var(--accent); font-size: .66rem; }
 
-.rail-foot { margin-top: auto; display: flex; gap: 18px; font-size: .82rem; }
-.rail-foot a { color: var(--muted); }
-.rail-foot a:hover { color: var(--accent); }
+.id-foot { margin-top: auto; display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: .84rem; }
+.id-foot a { color: var(--muted); }
+.id-foot a:hover { color: var(--accent); }
 
-.view { flex: 1; min-width: 0; padding: 72px 72px 120px; }
-.view-panel { display: none; animation: fade .5s cubic-bezier(.22,1,.36,1); position: relative; }
-.view-panel.active { display: block; }
-@keyframes fade { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
-.pno { position: absolute; top: -18px; right: 0; font-family: var(--display); font-size: 8.5rem; font-weight: 600; line-height: 1; letter-spacing: -.04em; color: color-mix(in srgb, var(--accent) 7%, transparent); pointer-events: none; user-select: none; }
+.flow { flex: 1; min-width: 0; padding: 76px 56px 110px 0; }
+
+/* sections in flow */
+.block { position: relative; padding: 84px 0; border-top: 1px solid var(--line); scroll-margin-top: 0; }
+.block:first-child { border-top: none; padding-top: 0; }
+#about { display: flex; flex-direction: column; justify-content: center; min-height: min(640px, calc(100vh - 200px)); }
+
+/* reveal on scroll (only when JS is on) */
+.pf.js .block { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s cubic-bezier(.22,1,.36,1); }
+.pf.js .block.in { opacity: 1; transform: none; }
 
 .kicker { font-family: var(--serif); font-size: .78rem; color: var(--accent); letter-spacing: .14em; text-transform: uppercase; margin: 0 0 14px; display: flex; align-items: center; gap: 12px; }
 .kicker::before { content: ""; width: 28px; height: 1px; background: var(--accent); flex: 0 0 auto; }
-.view-title { font-family: var(--display); font-size: 2.8rem; font-weight: 600; letter-spacing: -.01em; line-height: 1.12; margin: 0 0 26px; text-wrap: balance; }
+.view-title { font-family: var(--display); font-size: 2.7rem; font-weight: 600; letter-spacing: -.01em; line-height: 1.12; margin: 0 0 26px; text-wrap: balance; }
 .lead { color: var(--muted); font-size: 1.08rem; max-width: 68ch; }
 .lead .hl { color: var(--text); }
+.pno { position: absolute; top: 56px; right: 0; font-family: var(--display); font-size: 8.5rem; font-weight: 600; line-height: 1; letter-spacing: -.04em; color: color-mix(in srgb, var(--accent) 7%, transparent); pointer-events: none; user-select: none; }
 
 /* about */
-.about-hero { display: grid; grid-template-columns: minmax(0, 1fr) 240px; gap: 56px; align-items: center; }
-.about-text { min-width: 0; }
-.about-photo { width: 240px; height: 240px; border-radius: 50%; object-fit: cover; border: 1px solid var(--line); box-shadow: 0 18px 50px rgba(24,24,27,.14); outline: 1px solid color-mix(in srgb, var(--accent) 32%, transparent); outline-offset: 12px; }
-.about-head { font-family: var(--display); font-size: 3.1rem; font-weight: 600; letter-spacing: -.015em; line-height: 1.16; margin: 0 0 28px; text-wrap: balance; }
+.about-head { font-family: var(--display); font-size: 3rem; font-weight: 600; letter-spacing: -.015em; line-height: 1.16; margin: 0 0 28px; text-wrap: balance; }
 .about-head .hl { color: var(--accent); }
 .chips { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 26px; }
 .chip { border: 1px solid var(--line); color: var(--text); padding: 7px 14px; border-radius: 999px; font-size: .84rem; transition: border-color .15s; }
@@ -119,7 +122,7 @@ body { background: var(--bg); }
 .cert { border: 1px solid var(--line); border-radius: 10px; padding: 9px 15px; font-size: .94rem; transition: border-color .15s; }
 .cert:hover { border-color: color-mix(in srgb, var(--accent) 50%, var(--line)); }
 
-/* project view (single wide column) */
+/* project blocks */
 .proj-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; flex-wrap: wrap; }
 .repo { font-family: var(--serif); font-size: .84rem; color: var(--muted); display: block; margin-top: 8px; letter-spacing: .02em; }
 .role-tag { display: inline-block; margin-top: 12px; font-size: .84rem; color: var(--accent); border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent); padding: 4px 12px; border-radius: 999px; }
@@ -154,7 +157,7 @@ body { background: var(--bg); }
 .metric b { display: block; font-family: var(--display); font-size: 2rem; font-weight: 600; color: var(--accent); letter-spacing: -.02em; line-height: 1; font-variant-numeric: tabular-nums; }
 .metric span { display: block; margin-top: 9px; font-size: .82rem; color: var(--muted); line-height: 1.4; }
 
-/* case-study narrative (replaces STAR tabs) */
+/* case-study narrative */
 .case { max-width: 820px; }
 .case-block { padding: 30px 0; border-top: 1px solid var(--line); }
 .case-block.flush { border-top: none; padding: 0 0 30px; }
@@ -169,7 +172,7 @@ body { background: var(--bg); }
 
 /* other projects */
 .archive { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; max-width: 920px; }
-.arch-card { border: 1px solid var(--line); border-radius: 14px; padding: 24px; background: var(--card); transition: transform .2s, border-color .2s, background .2s; }
+.arch-card { border: 1px solid var(--line); border-radius: 14px; padding: 24px; background: var(--card); transition: transform .2s, border-color .2s, background .2s, box-shadow .2s; }
 .arch-card:hover { transform: translateY(-5px); border-color: var(--accent); background: var(--bg-soft); box-shadow: 0 14px 34px rgba(24,24,27,.08); }
 .arch-card .top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
 .arch-card .folder { font-size: 1.5rem; }
@@ -182,30 +185,25 @@ body { background: var(--bg); }
 .arch-card .tags { display: flex; flex-wrap: wrap; gap: 9px; font-family: var(--serif); font-size: .74rem; color: var(--muted); }
 
 /* contact */
-.contact-big { margin-top: 22px; }
+.contact-big { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 14px; }
 .contact-big a { display: inline-block; padding: 14px 30px; border-radius: 999px; background: var(--accent); color: var(--accent-ink); font-weight: 600; transition: transform .18s, box-shadow .18s, filter .18s; }
 .contact-big a:hover { color: var(--accent-ink); filter: brightness(1.05); transform: translateY(-2px); box-shadow: 0 12px 30px color-mix(in srgb, var(--accent) 35%, transparent); }
+.contact-big a.ghost { background: transparent; color: var(--text); border: 1px solid var(--line); font-weight: 500; }
+.contact-big a.ghost:hover { color: var(--accent); border-color: var(--accent); box-shadow: none; filter: none; }
 .foot { color: var(--muted); font-size: .82rem; margin-top: 56px; }
 
-@media (max-width: 900px) {
-  .app { flex-direction: column; max-width: none; }
-  .rail { position: sticky; top: 0; z-index: 10; height: auto; width: 100%; flex-basis: auto;
-    background: rgba(255,255,255,.94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line);
-    padding: 11px 16px; flex-direction: row; align-items: center; gap: 14px; }
-  .rail > div:first-child { display: flex; align-items: center; gap: 14px; flex: 1; min-width: 0; overflow-x: auto; }
-  .rail-name { font-size: 1rem; white-space: nowrap; }
-  .rail-name small, .rail-role { display: none; }
-  .rail-work { margin: 0; flex-direction: row; gap: 4px; }
-  .rail-work .grp { display: none; }
-  .work-link { border-left: none; padding: 6px 10px; white-space: nowrap; }
-  .work-link .wno { display: none; }
-  .work-link .wt { font-size: .9rem; }
-  .rail-sub { margin: 0; padding: 0 0 0 10px; border-top: none; border-left: 1px solid var(--line); gap: 12px; flex-wrap: nowrap; }
-  .rail-sub a { white-space: nowrap; }
-  .rail-foot { margin: 0; flex: 0 0 auto; gap: 12px; font-size: .74rem; }
-  .view { padding: 30px 20px 80px; }
-  .about-hero { grid-template-columns: 1fr; gap: 22px; justify-items: start; }
-  .about-photo { width: 120px; height: 120px; order: -1; }
+@media (max-width: 920px) {
+  .shell { flex-direction: column; gap: 0; }
+  .id { position: relative; height: auto; flex-basis: auto; padding: 44px 22px 0; }
+  .id-photo { width: 96px; height: 96px; outline-offset: 7px; }
+  .id-name { font-size: 1.75rem; margin-top: 20px; }
+  .snav { flex-direction: row; flex-wrap: wrap; gap: 4px 18px; margin-top: 26px; }
+  .snav a::before { width: 14px; }
+  .snav a:hover::before, .snav a.active::before { width: 24px; }
+  .id-foot { margin-top: 22px; }
+  .flow { padding: 24px 22px 80px; }
+  .block { padding: 56px 0; scroll-margin-top: 12px; }
+  #about { min-height: 0; }
   .about-head { font-size: 2rem; }
   .view-title { font-size: 1.9rem; }
   .gallery.cols-2 { grid-template-columns: 1fr; }
@@ -214,54 +212,49 @@ body { background: var(--bg); }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
   .pf *, .pf *::before, .pf *::after { animation: none !important; transition: none !important; }
+  .pf.js .block { opacity: 1; transform: none; }
 }
 </style>
 
-<div class="pf" markdown="0">
-<div class="app">
+<div class="pf" id="pf" markdown="0">
+<div class="glow" id="glow"></div>
+<div class="shell">
 
-  <!-- ================= LEFT RAIL ================= -->
-  <aside class="rail">
-    <div>
-      <div class="rail-name">김홍대<small>HongDae Kim</small></div>
-      <p class="rail-role">사용자의 다음 한 걸음을 돕는 소프트웨어를 만듭니다</p>
-      <nav class="rail-work">
-        <div class="grp">Work</div>
-        <a class="nav-link work-link" href="#p1"><span class="wno">01 · Python</span><span class="wt">재난 대피 대시보드</span></a>
-        <a class="nav-link work-link" href="#p2"><span class="wno">02 · Rust</span><span class="wt">FirstCall</span></a>
-        <a class="nav-link work-link" href="#p3"><span class="wno">03 · Go</span><span class="wt">gh-dep-risk</span></a>
-      </nav>
-      <nav class="rail-sub">
-        <a class="nav-link active" href="#about">소개</a>
-        <a class="nav-link" href="#experience">경력</a>
-        <a class="nav-link" href="#more">그 외</a>
-        <a class="nav-link" href="#contact">연락</a>
-      </nav>
-    </div>
-    <div class="rail-foot">
-      <a href="https://github.com/rad1092" target="_blank">GitHub</a>
+  <!-- ================= IDENTITY (fixed) ================= -->
+  <aside class="id">
+    <img class="id-photo" src="/profile.png" alt="김홍대 프로필 사진">
+    <h1 class="id-name">김홍대<small>HongDae Kim</small></h1>
+    <p class="id-role">사용자의 다음 한 걸음을 돕는 소프트웨어를 만듭니다</p>
+    <nav class="snav">
+      <a class="active" href="#about">소개</a>
+      <a href="#experience">경력</a>
+      <a href="#p1"><em>01</em>재난 대피 대시보드</a>
+      <a href="#p2"><em>02</em>FirstCall</a>
+      <a href="#p3"><em>03</em>gh-dep-risk</a>
+      <a href="#more">그 외</a>
+      <a href="#contact">연락</a>
+    </nav>
+    <div class="id-foot">
+      <a href="https://github.com/rad1092" target="_blank">GitHub ↗</a>
+      <a href="mailto:rad174951@gmail.com">Email</a>
       <a href="/en/">EN</a>
     </div>
   </aside>
 
-  <!-- ================= VIEWS ================= -->
-  <main class="view">
+  <!-- ================= FLOW ================= -->
+  <main class="flow">
 
     <!-- ---------- ABOUT ---------- -->
-    <section class="view-panel active" id="about">
+    <section class="block" id="about">
       <p class="kicker">01 — 소개</p>
-      <div class="about-hero">
-        <div class="about-text">
-          <h1 class="about-head">현장 영업과 납품을 거쳐, 사람의 <span class="hl">다음 한 걸음</span>을 돕는 소프트웨어를 만듭니다</h1>
-          <p class="lead">
-            실험적인 학습 저장소에서 시작해 실제 사용할 수 있는 도구형 프로젝트까지 단계적으로 확장해 왔고,
-            <span class="hl">"정보 전달을 넘어 실제 행동을 돕는다"</span>는 관점으로 재난 대피 안내와 API 도구화,
-            의존성 보안 점검처럼 사용자의 다음 행동을 만들어 주는 소프트웨어에 집중합니다
-          </p>
-        </div>
-        <img class="about-photo" src="/profile.png" alt="김홍대 프로필 사진">
-      </div>
+      <h2 class="about-head">현장 영업과 납품을 거쳐, 사람의 <span class="hl">다음 한 걸음</span>을 돕는 소프트웨어를 만듭니다</h2>
+      <p class="lead">
+        실험적인 학습 저장소에서 시작해 실제 사용할 수 있는 도구형 프로젝트까지 단계적으로 확장해 왔고,
+        <span class="hl">"정보 전달을 넘어 실제 행동을 돕는다"</span>는 관점으로 재난 대피 안내와 API 도구화,
+        의존성 보안 점검처럼 사용자의 다음 행동을 만들어 주는 소프트웨어에 집중합니다
+      </p>
       <div class="chips">
         <span class="chip"><b>Python</b> Streamlit, Pandas, Folium</span>
         <span class="chip"><b>Rust</b> egui/eframe</span>
@@ -270,13 +263,13 @@ body { background: var(--bg); }
         <span class="chip"><b>AI</b> MCP, 에이전트 도구화</span>
       </div>
       <div class="cta">
-        <a class="primary" href="#p1">주요 프로젝트 보기 →</a>
+        <a class="primary" href="#p1">주요 프로젝트 보기 ↓</a>
         <a href="#experience">경력 보기</a>
       </div>
     </section>
 
     <!-- ---------- EXPERIENCE ---------- -->
-    <section class="view-panel" id="experience">
+    <section class="block" id="experience">
       <p class="kicker">02 — 경력과 이력</p>
       <h2 class="view-title">경력과 이력</h2>
       <div class="timeline">
@@ -305,7 +298,7 @@ body { background: var(--bg); }
     </section>
 
     <!-- ---------- PROJECT 1 : Disaster Dashboard ---------- -->
-    <section class="view-panel" id="p1">
+    <section class="block" id="p1">
       <span class="pno" aria-hidden="true">01</span>
       <p class="kicker">주요 프로젝트 01</p>
       <div class="proj-head">
@@ -372,7 +365,7 @@ body { background: var(--bg); }
     </section>
 
     <!-- ---------- PROJECT 2 : FirstCall ---------- -->
-    <section class="view-panel" id="p2">
+    <section class="block" id="p2">
       <span class="pno" aria-hidden="true">02</span>
       <p class="kicker">주요 프로젝트 02</p>
       <div class="proj-head">
@@ -439,7 +432,7 @@ body { background: var(--bg); }
     </section>
 
     <!-- ---------- PROJECT 3 : gh-dep-risk ---------- -->
-    <section class="view-panel" id="p3">
+    <section class="block" id="p3">
       <span class="pno" aria-hidden="true">03</span>
       <p class="kicker">주요 프로젝트 03</p>
       <div class="proj-head">
@@ -502,7 +495,7 @@ body { background: var(--bg); }
     </section>
 
     <!-- ---------- OTHER PROJECTS ---------- -->
-    <section class="view-panel" id="more">
+    <section class="block" id="more">
       <p class="kicker">더 보기</p>
       <h2 class="view-title">그 외 작업</h2>
       <div class="archive">
@@ -547,11 +540,14 @@ body { background: var(--bg); }
     </section>
 
     <!-- ---------- CONTACT ---------- -->
-    <section class="view-panel" id="contact">
+    <section class="block" id="contact">
       <p class="kicker">연락</p>
       <h2 class="view-title">함께 일해요</h2>
       <p class="lead">새로운 협업이나 프로젝트 제안은 언제든 환영하니 편하게 연락 주세요</p>
-      <div class="contact-big"><a href="https://github.com/rad1092" target="_blank">GitHub @rad1092 →</a></div>
+      <div class="contact-big">
+        <a href="mailto:rad174951@gmail.com">이메일 보내기 →</a>
+        <a class="ghost" href="https://github.com/rad1092" target="_blank">GitHub @rad1092 ↗</a>
+      </div>
       <p class="foot">Built with Jekyll · Designed &amp; developed by HongDae Kim — with a little help from AI</p>
     </section>
 
@@ -561,15 +557,38 @@ body { background: var(--bg); }
 
 <script>
 (function () {
-  function showView() {
-    var v = (location.hash || '#about').replace('#', '');
-    var panel = document.getElementById(v);
-    if (!panel || !panel.classList.contains('view-panel')) v = 'about';
-    document.querySelectorAll('.view-panel').forEach(function (p) { p.classList.toggle('active', p.id === v); });
-    document.querySelectorAll('.nav-link').forEach(function (b) { b.classList.toggle('active', b.getAttribute('href') === '#' + v); });
-    window.scrollTo(0, 0);
+  var pf = document.getElementById('pf');
+  pf.classList.add('js');
+
+  var sections = document.querySelectorAll('.flow section[id]');
+  var links = document.querySelectorAll('.snav a');
+
+  function setActive(id) {
+    links.forEach(function (l) { l.classList.toggle('active', l.getAttribute('href') === '#' + id); });
   }
-  window.addEventListener('hashchange', showView);
-  showView();
+
+  if ('IntersectionObserver' in window) {
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) setActive(e.target.id); });
+    }, { rootMargin: '-30% 0px -60% 0px' });
+    sections.forEach(function (s) { spy.observe(s); });
+
+    var reveal = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); reveal.unobserve(e.target); }
+      });
+    }, { rootMargin: '0px 0px -8% 0px' });
+    sections.forEach(function (s) { reveal.observe(s); });
+  } else {
+    sections.forEach(function (s) { s.classList.add('in'); });
+  }
+
+  var glow = document.getElementById('glow');
+  if (glow && window.matchMedia('(pointer: fine)').matches) {
+    window.addEventListener('mousemove', function (ev) {
+      glow.style.setProperty('--mx', ev.clientX + 'px');
+      glow.style.setProperty('--my', ev.clientY + 'px');
+    }, { passive: true });
+  }
 })();
 </script>
