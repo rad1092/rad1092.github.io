@@ -184,6 +184,7 @@ body { background: var(--bg); }
 .arch-card p { color: var(--muted); font-size: .92rem; margin: 0 0 16px; }
 .arch-card .tags { display: flex; flex-wrap: wrap; gap: 9px; font-family: var(--serif); font-size: .74rem; color: var(--muted); }
 
+.arch-card .tool-subtitle { color: var(--accent); font-size: .84rem; margin-top: -3px; }
 .arch-card .tool-links { display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: .84rem; }
 .arch-card .tool-links a { color: var(--accent); }
 
@@ -373,66 +374,20 @@ body { background: var(--bg); }
       <span class="pno" aria-hidden="true">02</span>
       <p class="kicker">주요 프로젝트 02</p>
       <div class="proj-head">
-        <div>
-          <h2 class="view-title" style="margin-bottom:0;">Local-first API 워크벤치 · FirstCall</h2>
-          <code class="repo">rad1092/firstcall-local-api-workbench</code>
-          <div><span class="role-tag">개인 프로젝트 · v0.1.0 릴리스 — 윈도우, 맥, 리눅스</span></div>
-        </div>
-        <div class="proj-links">
-          <a href="https://github.com/rad1092/firstcall-local-api-workbench" target="_blank">GitHub ↗</a>
-          <a href="https://github.com/rad1092/firstcall-local-api-workbench/releases" target="_blank">Releases ↗</a>
-        </div>
+        <div><h2 class="view-title" style="margin-bottom:0;">API를 로컬 MCP 도구로 · FirstCall</h2><code class="repo">rad1092/firstcall-local-api-workbench</code><div><span class="role-tag">개인 프로젝트 · v0.3.1 · macOS Apple Silicon</span></div></div>
+        <div class="proj-links"><a href="https://github.com/rad1092/firstcall-local-api-workbench">GitHub ↗</a><a href="https://github.com/rad1092/firstcall-local-api-workbench/releases/tag/v0.3.1">v0.3.1 ↗</a></div>
       </div>
-      <div class="stack"><span>Rust 2024</span><span>egui / eframe</span><span>firstcall-cli</span><span>GitHub Actions</span></div>
-
-      <p class="summary">여러 곳에서 만든 <b>API 호출을 내 컴퓨터 안에서 검증</b>하고, 안전한 형태로 정리해 재사용하게 해주는 도구입니다</p>
-
-      <div class="metrics">
-        <div class="metric"><b>8</b><span>지원 입력 형식 (curl, OpenAPI, Postman 등)</span></div>
-        <div class="metric"><b>2</b><span>사용 방식 — 데스크톱 GUI, CLI</span></div>
-        <div class="metric"><b>3</b><span>OS 릴리스 (윈도우, 맥, 리눅스)</span></div>
-      </div>
-
-      <div class="media">
-        <div class="gallery cols-2">
-          <figure><img src="/assets/projects/firstcall-gui-workbench.gif" alt="FirstCall 데스크톱 GUI 데모" loading="lazy"><figcaption>데스크톱 화면 — 요청을 가져와 검증하고 정리하는 흐름</figcaption></figure>
-          <figure><img src="/assets/projects/firstcall-cli-demo.gif" alt="FirstCall CLI 데모" loading="lazy"><figcaption>명령어 도구 — 실제 실행 결과</figcaption></figure>
-        </div>
-      </div>
-
+      <div class="stack"><span>Rust</span><span>egui / eframe</span><span>firstcall-cli</span><span>MCP</span></div>
+      <p class="summary">API 요청을 가져와 검증하고 용도와 입력을 설명해, <b>AI 클라이언트가 실제로 호출할 수 있는 로컬 MCP 도구</b>로 내보냅니다.</p><p class="context">기존 API를 AI 작업 흐름에 연결하려는 개발자를 위한 도구입니다. curl·OpenAPI 요청에서 인증과 일반 입력을 구분하고, 함께 제공하는 네이티브 CLI가 내보낸 도구를 실행합니다.</p>
+      <div class="metrics"><div class="metric"><b>2</b><span>요청 입력 — curl·OpenAPI</span></div><div class="metric"><b>2</b><span>사용 방식 — 데스크톱 GUI·CLI</span></div><div class="metric"><b>1</b><span>현재 배포 대상 — macOS Apple Silicon</span></div></div>
       <div class="ai-note"><span class="badge">AI</span><span>Rust 코어 설계와 여러 입력 형식 처리, 테스트, 문서 작성 과정에서 <b>Claude를 페어 프로그래밍 파트너</b>로 활용했고, 무엇을 만들지와 지켜야 할 규칙은 제가 정하면서 반복 구현과 예외 상황 점검 속도를 AI로 끌어올렸습니다</span></div>
-
       <div class="case">
-        <div class="case-block flush">
-          <h3 class="case-h">문제</h3>
-          <p>API 요청은 주소와 인증키, 형식이 제각각이라 <b>재사용 가능한 형태로 안전하게 모아둘</b> 도구가 마땅치 않았고, 특히 AI 에이전트나 자동화에 API를 넘길 때 <b>인증키가 그대로 노출</b>되거나 <b>검증 안 된 요청</b>이 섞일 위험이 컸으며, 요청을 외부 클라우드에 올리지 않고 <b>내 컴퓨터 안에서만 처리</b>하고 싶은 보안 요구도 있었습니다</p>
-        </div>
-        <div class="case-block">
-          <h3 class="case-h">내 역할 — <span class="sub">개인 프로젝트, 설계부터 배포까지</span></h3>
-          <ul>
-            <li>curl, OpenAPI, Postman 등 <b>형식이 다른 요청을 한 흐름으로 받아</b> 로컬에서 검증하는 구조를 설계</li>
-            <li>검증에 성공한 것만 <b>'레시피'로 저장</b>하고 민감 정보를 지운 패키지로 내보내는 흐름을 정의</li>
-            <li>사람용 <b>화면(GUI)</b>과 자동화용 <b>명령어(CLI)</b>를 하나의 코어 위에 모두 제공</li>
-          </ul>
-        </div>
-        <div class="case-block">
-          <h3 class="case-h">한 일</h3>
-          <ul>
-            <li>Rust로 핵심 로직을 만들고 그 위에 <b>두 가지 사용 방식</b>을 올렸습니다 — 클릭으로 쓰는 <b>데스크톱 화면</b>과 자동화용 <b>명령어 도구(firstcall-cli)</b></li>
-            <li>"가져오기 → 검증 → 레시피로 저장 → 민감정보 제거 후 내보내기 → 다시 검증"으로 이어지는 <b>안전 흐름</b>을 구조로 못박았습니다</li>
-            <li>가져온 요청 안의 <b>스크립트와 설정 파일은 절대 실행하지 않도록</b> 처리해 악성 코드가 끼어들 여지를 차단(공급망 보안)</li>
-            <li>민감 정보는 환경변수로만 다루고, 자동 테스트와 보안 점검을 GitHub Actions로 <b>릴리스 때마다 검증</b></li>
-          </ul>
-        </div>
-        <div class="case-block">
-          <h3 class="case-h">결과</h3>
-          <ul>
-            <li>화면과 명령어 도구를 모두 담은 <b>v0.1.0 정식 배포본</b>을 윈도우와 맥, 리눅스용으로 출시</li>
-            <li>명령어 도구가 결과를 <b>기계가 읽기 좋은 형식(JSON)</b>으로도 내보내 자동화와 AI 파이프라인에 바로 연결 가능</li>
-            <li>"검증된, 민감정보 없는 요청만 밖으로 나간다"는 원칙을 <b>도구가 스스로 강제</b>하도록 설계</li>
-          </ul>
-        </div>
+        <div class="case-block flush"><h3 class="case-h">문제</h3><p>HTTP 요청을 AI 도구로 연결하려면 주소뿐 아니라 검증한 동작, 이해할 수 있는 입력과 연결 설정이 필요합니다. FirstCall은 요청 이력과 레시피를 로컬에 저장하며, 요청 검증과 도구 호출은 사용자가 선택한 API로 직접 보냅니다.</p></div>
+        <div class="case-block"><h3 class="case-h">사용 흐름</h3><p>요청을 읽고 입력을 채워 실제 검증 요청을 보냅니다. 성공한 요청에 도구 설명을 붙여 새 MCP 패키지로 내보내고, AI 클라이언트에 연결 설정과 인증 환경 변수를 제공합니다. 런타임이 함께 들어 있어 데스크톱 내보내기에 코드 빌드나 npm 설치가 필요하지 않습니다.</p></div>
+        <div class="case-block"><h3 class="case-h">v0.3.1에서 달라진 점</h3><p>선택 query·header를 비워 두면 해당 항목 전체가 요청에서 생략됩니다. 지정한 값과 필수 입력 검사는 유지합니다. 패키지나 앱을 옮긴 뒤에는 <code>connect --package</code>로 현재 절대 경로의 연결 설정을 다시 얻을 수 있으며, 이 작업은 패키지를 수정하거나 API를 호출하지 않습니다.</p></div>
+        <div class="case-block"><h3 class="case-h">지원 범위와 직접 해보기</h3><p>v0.3.1은 macOS Apple Silicon 앱·CLI 배포판이며 ad-hoc 무결성 서명만 있고 Apple 공증은 없습니다. <b>Try an example</b>에서 공개 GitHub 저장소 조회를 검증하고 MCP 도구로 내보내며 시작할 수 있습니다. 런타임은 GET·HEAD를 기본 허용하며 쓰기는 명시적으로 허용해야 합니다. 이번 버전의 Windows·Linux·Intel Mac 바이너리는 제공하지 않습니다.</p></div>
       </div>
+      <div class="cta"><a class="primary" href="https://github.com/rad1092/firstcall-local-api-workbench/releases/tag/v0.3.1">v0.3.1 다운로드 ↗</a><a href="https://github.com/rad1092/firstcall-local-api-workbench/blob/main/docs/cli-lifecycle.md">CLI·MCP 사용 흐름 ↗</a></div>
     </section>
 
     <!-- ---------- PROJECT 3 : gh-dep-risk ---------- -->
@@ -501,57 +456,80 @@ body { background: var(--bg); }
     <!-- ---------- RECENT TOOLS ---------- -->
     <section class="block" id="recent-tools">
       <p class="kicker">2026.10 — 오픈소스</p>
-      <h2 class="view-title">최근 공개한 도구</h2>
-      <p class="lead">문서 개정, 파일 충돌, 작업 계획과 코드 변경처럼 직접 확인하고 결정해야 하는 일을 도구로 옮겼습니다. 최근 공개한 7개 프로젝트는 데스크톱 앱부터 CLI·라이브러리까지 이어지며, 각 저장소에서 지원 범위와 시작 방법을 확인할 수 있습니다.</p>
+      <h2 class="view-title">도구 모음과 최근 업데이트</h2>
+      <p class="lead">API 연결, 문서·파일 검토, 작업 계획과 소프트웨어 테스트·디버깅을 위한 9개 프로젝트입니다. 현재 공개 릴리스와 직접 따라 할 수 있는 시작 경로를 연결했습니다. 사전 공개 여부와 운영체제별 범위는 각 안내에서 확인할 수 있습니다.</p>
       <div class="archive">
         <div class="arch-card">
+          <div class="top"><span class="mono">FC</span><a class="ext" href="https://github.com/rad1092/firstcall-local-api-workbench" target="_blank" rel="noopener noreferrer" aria-label="FirstCall GitHub">↗</a></div>
+          <h4><a href="https://github.com/rad1092/firstcall-local-api-workbench">FirstCall</a></h4>
+
+          <p>API를 AI 클라이언트에 연결하려는 개발자가 curl·OpenAPI 요청을 실제로 검증하고, 용도와 입력을 설명한 로컬 MCP 도구로 내보냅니다.</p>
+          <p class="tool-links"><a href="https://github.com/rad1092/firstcall-local-api-workbench/releases/tag/v0.3.1">v0.3.1 · 다운로드 ↗</a><a href="https://github.com/rad1092/firstcall-local-api-workbench/blob/main/docs/cli-lifecycle.md">직접 해보기 ↗</a></p>
+          <div class="tags"><span>Rust · GUI · CLI · MCP</span></div>
+        </div>
+        <div class="arch-card">
           <div class="top"><span class="mono">AN</span><a class="ext" href="https://github.com/rad1092/annotrail" target="_blank" rel="noopener noreferrer" aria-label="Annotrail GitHub">↗</a></div>
-          <h4><a href="https://github.com/rad1092/annotrail" target="_blank" rel="noopener noreferrer">Annotrail</a></h4>
+          <h4><a href="https://github.com/rad1092/annotrail">Annotrail</a></h4>
+          <p class="tool-subtitle">PDF 주석 이전</p>
           <p>논문·교재 개정판을 읽는 사용자가 이전 PDF의 하이라이트와 댓글을 새 PDF의 텍스트와 대조하고, 승인한 주석을 새 파일로 옮깁니다.</p>
-          <p class="tool-links"><a href="https://github.com/rad1092/annotrail/releases">설치·릴리스 · 사전 공개판 ↗</a><a href="https://github.com/rad1092/annotrail/blob/main/README.md#review-workflow">사용 안내 ↗</a></p>
+          <p class="tool-links"><a href="https://github.com/rad1092/annotrail/releases/tag/v0.1.3">v0.1.3 preview · 다운로드 ↗</a><a href="https://github.com/rad1092/annotrail/tree/main/examples/review-demo">직접 해보기 ↗</a></p>
           <div class="tags"><span>Java · PDFBox</span></div>
         </div>
         <div class="arch-card">
           <div class="top"><span class="mono">CB</span><a class="ext" href="https://github.com/rad1092/conflictbench" target="_blank" rel="noopener noreferrer" aria-label="ConflictBench GitHub">↗</a></div>
-          <h4><a href="https://github.com/rad1092/conflictbench" target="_blank" rel="noopener noreferrer">ConflictBench</a></h4>
+          <h4><a href="https://github.com/rad1092/conflictbench">ConflictBench</a></h4>
+          <p class="tool-subtitle">Syncthing 충돌 검토</p>
           <p>Syncthing 사용자가 충돌 파일의 텍스트·이미지·메타데이터를 비교하고, 원본 유지·충돌본 사용·둘 다 보존 중 하나를 직접 선택합니다.</p>
-          <p class="tool-links"><a href="https://github.com/rad1092/conflictbench/releases">설치·릴리스 ↗</a><a href="https://github.com/rad1092/conflictbench/blob/main/docs/QUICKSTART.ko.md">사용 안내 ↗</a></p>
+          <p class="tool-links"><a href="https://github.com/rad1092/conflictbench/releases/tag/v0.1.0">v0.1.0 · 다운로드 ↗</a><a href="https://github.com/rad1092/conflictbench/blob/main/docs/FIRST-RUN.md">직접 해보기 ↗</a></p>
           <div class="tags"><span>C++ · Qt</span></div>
         </div>
         <div class="arch-card">
           <div class="top"><span class="mono">SS</span><a class="ext" href="https://github.com/rad1092/shopshift" target="_blank" rel="noopener noreferrer" aria-label="ShopShift GitHub">↗</a></div>
-          <h4><a href="https://github.com/rad1092/shopshift" target="_blank" rel="noopener noreferrer">ShopShift</a></h4>
+          <h4><a href="https://github.com/rad1092/shopshift">ShopShift</a></h4>
+
           <p>소규모 작업장의 계획 담당자가 ERP에서 내보낸 CSV·XLSX로 일일 작업을 배치하고, 잠금과 수동 시작 시각을 유지하며 충돌과 대안을 검토합니다.</p>
-          <p class="tool-links"><a href="https://github.com/rad1092/shopshift/releases">설치·릴리스 ↗</a><a href="https://github.com/rad1092/shopshift/blob/main/docs/QUICKSTART.ko.md">사용 안내 ↗</a></p>
+          <p class="tool-links"><a href="https://github.com/rad1092/shopshift/releases/tag/v0.1.0">v0.1.0 · 다운로드 ↗</a><a href="https://github.com/rad1092/shopshift#daily-workflow">직접 해보기 ↗</a></p>
           <div class="tags"><span>Python · PySide6 · OR-Tools</span></div>
         </div>
         <div class="arch-card">
           <div class="top"><span class="mono">TP</span><a class="ext" href="https://github.com/rad1092/treeport" target="_blank" rel="noopener noreferrer" aria-label="Treeport GitHub">↗</a></div>
-          <h4><a href="https://github.com/rad1092/treeport" target="_blank" rel="noopener noreferrer">Treeport</a></h4>
+          <h4><a href="https://github.com/rad1092/treeport">Treeport</a></h4>
+
           <p>내보내기·압축·배포 파이프라인 개발자가 폴더, ZIP 또는 JSONL 목록의 이름 충돌과 경로 길이를 대상 모델에 맞춰 읽기 전용으로 검사합니다.</p>
-          <p class="tool-links"><a href="https://github.com/rad1092/treeport/releases">설치·릴리스 ↗</a><a href="https://github.com/rad1092/treeport/blob/main/README.ko.md">사용 안내 ↗</a></p>
+          <p class="tool-links"><a href="https://github.com/rad1092/treeport/releases/tag/v0.1.3">v0.1.3 · 다운로드 ↗</a><a href="https://github.com/rad1092/treeport/blob/main/docs/first-run.md">직접 해보기 ↗</a></p>
           <div class="tags"><span>Go · CLI</span></div>
         </div>
         <div class="arch-card">
           <div class="top"><span class="mono">LC</span><a class="ext" href="https://github.com/rad1092/lifecase" target="_blank" rel="noopener noreferrer" aria-label="Lifecase GitHub">↗</a></div>
-          <h4><a href="https://github.com/rad1092/lifecase" target="_blank" rel="noopener noreferrer">Lifecase</a></h4>
+          <h4><a href="https://github.com/rad1092/lifecase">Lifecase</a></h4>
+
           <p>하위 프로세스를 실행하는 앱 개발자가 제어된 네이티브 fixture로 프로세스 종료, 출력 EOF, 취소와 자식 프로세스 정리를 각각 테스트합니다.</p>
-          <p class="tool-links"><a href="https://github.com/rad1092/lifecase/releases">설치·릴리스 ↗</a><a href="https://github.com/rad1092/lifecase/blob/main/dotnet/README.md">사용 안내 ↗</a></p>
+          <p class="tool-links"><a href="https://github.com/rad1092/lifecase/releases/tag/v0.1.3">v0.1.3 · 다운로드 ↗</a><a href="https://github.com/rad1092/lifecase#run-the-net-contracts">직접 해보기 ↗</a></p>
           <div class="tags"><span>C++ · .NET · Go</span></div>
         </div>
         <div class="arch-card">
           <div class="top"><span class="mono">PS</span><a class="ext" href="https://github.com/rad1092/paperstager" target="_blank" rel="noopener noreferrer" aria-label="PaperStager GitHub">↗</a></div>
-          <h4><a href="https://github.com/rad1092/paperstager" target="_blank" rel="noopener noreferrer">PaperStager</a></h4>
+          <h4><a href="https://github.com/rad1092/paperstager">PaperStager</a></h4>
+
           <p>묶음 PDF를 정리하는 사용자가 페이지 미리보기로 문서 경계를 나누고, 텍스트 규칙으로 제안된 파일명을 검토한 뒤 승인하여 내보냅니다.</p>
-          <p class="tool-links"><a href="https://github.com/rad1092/paperstager/releases">설치·릴리스 · 사전 공개판 ↗</a><a href="https://github.com/rad1092/paperstager/blob/main/docs/QUICKSTART.ko.md">사용 안내 ↗</a></p>
+          <p class="tool-links"><a href="https://github.com/rad1092/paperstager/releases/tag/v0.1.1">v0.1.1 preview · 다운로드 ↗</a><a href="https://github.com/rad1092/paperstager#get-started">직접 해보기 ↗</a></p>
           <div class="tags"><span>C# · Avalonia</span></div>
         </div>
         <div class="arch-card">
           <div class="top"><span class="mono">SP</span><a class="ext" href="https://github.com/rad1092/serdeproof" target="_blank" rel="noopener noreferrer" aria-label="SerdeProof GitHub">↗</a></div>
-          <h4><a href="https://github.com/rad1092/serdeproof" target="_blank" rel="noopener noreferrer">SerdeProof</a></h4>
+          <h4><a href="https://github.com/rad1092/serdeproof">SerdeProof</a></h4>
+
           <p>Java 개발팀이 실제 DTO·매퍼 설정·페이로드 코퍼스를 두 직렬화 빌드에서 실행해 입력 수용, JSON 차이와 생산자·소비자 조합을 비교합니다.</p>
-          <p class="tool-links"><a href="https://github.com/rad1092/serdeproof/releases">설치·릴리스 ↗</a><a href="https://github.com/rad1092/serdeproof/blob/main/docs/QUICKSTART.ko.md">사용 안내 ↗</a></p>
+          <p class="tool-links"><a href="https://github.com/rad1092/serdeproof/releases/tag/v0.1.1">v0.1.1 · 다운로드 ↗</a><a href="https://github.com/rad1092/serdeproof#try-the-release-without-building">직접 해보기 ↗</a></p>
           <div class="tags"><span>Java 17 · CLI</span></div>
+        </div>
+        <div class="arch-card">
+          <div class="top"><span class="mono">MA</span><a class="ext" href="https://github.com/rad1092/matcha" target="_blank" rel="noopener noreferrer" aria-label="Matcha GitHub">↗</a></div>
+          <h4><a href="https://github.com/rad1092/matcha">Matcha</a></h4>
+
+          <p>게임보이 홈브루 개발자와 에뮬레이터 학습자가 CPU·메모리·화면을 관찰하고, 저장 상태를 재생하거나 MCP 도구로 같은 실행을 반복합니다.</p>
+          <p class="tool-links"><a href="https://github.com/rad1092/matcha/releases/tag/v0.1.1">v0.1.1 · 다운로드 ↗</a><a href="https://github.com/rad1092/matcha/blob/main/docs/MCP-HOMEBREW.md">직접 해보기 ↗</a></p>
+          <div class="tags"><span>Rust · WASM · MCP</span></div>
         </div>
       </div>
       <p class="lead" style="margin-top:20px;font-size:.92rem;"><a href="https://whago.net/software" style="color:var(--accent);">WHAGO에서 도구별 사용 흐름 비교하기 ↗</a></p>
