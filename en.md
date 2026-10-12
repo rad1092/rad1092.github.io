@@ -185,6 +185,7 @@ body { background: var(--bg); }
 .arch-card p { color: var(--muted); font-size: .92rem; margin: 0 0 16px; }
 .arch-card .tags { display: flex; flex-wrap: wrap; gap: 9px; font-family: var(--serif); font-size: .74rem; color: var(--muted); }
 
+.arch-card .tool-subtitle { color: var(--accent); font-size: .84rem; margin-top: -3px; }
 .arch-card .tool-links { display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: .84rem; }
 .arch-card .tool-links a { color: var(--accent); }
 
@@ -374,66 +375,20 @@ body { background: var(--bg); }
       <span class="pno" aria-hidden="true">02</span>
       <p class="kicker">Featured Project 02</p>
       <div class="proj-head">
-        <div>
-          <h2 class="view-title" style="margin-bottom:0;">Local-first API Workbench · FirstCall</h2>
-          <code class="repo">rad1092/firstcall-local-api-workbench</code>
-          <div><span class="role-tag">Solo project · v0.1.0 release — Windows, macOS, Linux</span></div>
-        </div>
-        <div class="proj-links">
-          <a href="https://github.com/rad1092/firstcall-local-api-workbench" target="_blank">GitHub ↗</a>
-          <a href="https://github.com/rad1092/firstcall-local-api-workbench/releases" target="_blank">Releases ↗</a>
-        </div>
+        <div><h2 class="view-title" style="margin-bottom:0;">API to a local MCP tool · FirstCall</h2><code class="repo">rad1092/firstcall-local-api-workbench</code><div><span class="role-tag">Solo project · v0.3.1 · Apple Silicon macOS</span></div></div>
+        <div class="proj-links"><a href="https://github.com/rad1092/firstcall-local-api-workbench">GitHub ↗</a><a href="https://github.com/rad1092/firstcall-local-api-workbench/releases/tag/v0.3.1">v0.3.1 ↗</a></div>
       </div>
-      <div class="stack"><span>Rust 2024</span><span>egui / eframe</span><span>firstcall-cli</span><span>GitHub Actions</span></div>
-
-      <p class="summary">A tool that lets you <b>verify API calls on your own machine</b> and keep them in a safe, reusable form.</p>
-
-      <div class="metrics">
-        <div class="metric"><b>8</b><span>input formats (curl, OpenAPI, Postman…)</span></div>
-        <div class="metric"><b>2</b><span>surfaces — desktop GUI, CLI</span></div>
-        <div class="metric"><b>3</b><span>OS releases (Windows, macOS, Linux)</span></div>
-      </div>
-
-      <div class="media">
-        <div class="gallery cols-2">
-          <figure><img src="/assets/projects/firstcall-gui-workbench.gif" alt="FirstCall desktop GUI demo" loading="lazy"><figcaption>Desktop app — importing, verifying and organizing requests</figcaption></figure>
-          <figure><img src="/assets/projects/firstcall-cli-demo.gif" alt="FirstCall CLI demo" loading="lazy"><figcaption>Command-line tool — actual run output</figcaption></figure>
-        </div>
-      </div>
-
+      <div class="stack"><span>Rust</span><span>egui / eframe</span><span>firstcall-cli</span><span>MCP</span></div>
+      <p class="summary">Turn an API request into <b>a tool an AI client can actually call</b>: import, verify, describe and export a local MCP connection.</p><p class="context">For developers connecting existing APIs to AI workflows. FirstCall accepts curl or OpenAPI, separates authentication from tool inputs, and runs the exported tool through its bundled native CLI.</p>
+      <div class="metrics"><div class="metric"><b>2</b><span>Request sources — curl and OpenAPI</span></div><div class="metric"><b>2</b><span>Use through desktop GUI or CLI</span></div><div class="metric"><b>1</b><span>Current binary target — Apple Silicon macOS</span></div></div>
       <div class="ai-note"><span class="badge">AI</span><span>I used <b>Claude as a pair-programming partner</b> for the Rust core, handling many input formats, tests and docs. I decided <em>what</em> to build and which rules to hold; AI sped up the repetitive implementation and edge-case checking.</span></div>
-
       <div class="case">
-        <div class="case-block flush">
-          <h3 class="case-h">The problem</h3>
-          <p>API requests differ in address, auth key and format every time, so there was no good way to <b>collect them in a reusable, safe form</b>. Handing APIs to AI agents or automation risked <b>exposing auth keys</b> or mixing in <b>unverified requests</b> — and there was a security need to <b>keep requests on my own machine</b> rather than a cloud.</p>
-        </div>
-        <div class="case-block">
-          <h3 class="case-h">My role — <span class="sub">solo project, design to release</span></h3>
-          <ul>
-            <li>Designed a flow to accept <b>differently formatted requests</b> (curl, OpenAPI, Postman) and verify them locally</li>
-            <li>Defined saving only verified requests as <b>reusable "recipes"</b> and exporting them with secrets stripped</li>
-            <li>Provided both a <b>GUI</b> for people and a <b>CLI</b> for automation on one shared core</li>
-          </ul>
-        </div>
-        <div class="case-block">
-          <h3 class="case-h">What I did</h3>
-          <ul>
-            <li>Built the core in Rust, then two ways to use it — a <b>desktop app</b> you click through, and an automation <b>command-line tool (firstcall-cli)</b></li>
-            <li>Locked in a <b>safe flow</b>: import → verify → save as recipe → strip secrets and export → re-verify</li>
-            <li>Made sure <b>scripts and config files inside imported requests are never executed</b>, blocking malicious code (supply-chain safety)</li>
-            <li>Handled secrets via environment variables only, with automated tests and security checks running <b>on every release</b> via GitHub Actions</li>
-          </ul>
-        </div>
-        <div class="case-block">
-          <h3 class="case-h">Result</h3>
-          <ul>
-            <li>Shipped a <b>v0.1.0 release</b> with both the app and CLI, for Windows, macOS and Linux</li>
-            <li>The CLI also outputs results in a <b>machine-readable format (JSON)</b>, wiring straight into automation / AI pipelines</li>
-            <li>The <b>tool itself enforces</b> "only verified, secret-free requests leave the machine"</li>
-          </ul>
-        </div>
+        <div class="case-block flush"><h3 class="case-h">The problem</h3><p>An HTTP request needs more than a URL to become a useful AI tool: a tested operation, understandable inputs and an explicit connection. FirstCall keeps request history and recipes locally while verification and tool calls connect to the API you choose.</p></div>
+        <div class="case-block"><h3 class="case-h">The workflow</h3><p>Read a request, enter its inputs, and send a real verification call. Then describe the tool and export a new MCP package. Add its server entry to your client and supply authentication through that client’s environment. The companion runtime is included; desktop exports need no generated-code build or npm setup.</p></div>
+        <div class="case-block"><h3 class="case-h">What changed in v0.3.1</h3><p>Blank optional query and header inputs are omitted from the request; provided values and required-input checks are retained. After moving a package or the app, <code>connect --package</code> emits an updated absolute-path configuration without rewriting the package or calling the API.</p></div>
+        <div class="case-block"><h3 class="case-h">Scope and a reproducible start</h3><p>v0.3.1 provides an Apple Silicon macOS app and CLI with ad-hoc integrity signing, without Apple notarization. Start with <b>Try an example</b> to verify a public GitHub repository lookup and export it as an MCP tool. The runtime defaults to GET/HEAD; writes require explicit opt-in. Current Windows, Linux and Intel Mac binaries are not included.</p></div>
       </div>
+      <div class="cta"><a class="primary" href="https://github.com/rad1092/firstcall-local-api-workbench/releases/tag/v0.3.1">Download v0.3.1 ↗</a><a href="https://github.com/rad1092/firstcall-local-api-workbench/blob/main/docs/cli-lifecycle.md">Follow the CLI/MCP workflow ↗</a></div>
     </section>
 
     <!-- ---------- PROJECT 3 : gh-dep-risk ---------- -->
@@ -502,57 +457,80 @@ body { background: var(--bg); }
     <!-- ---------- RECENT TOOLS ---------- -->
     <section class="block" id="recent-tools">
       <p class="kicker">2026.10 — Open source</p>
-      <h2 class="view-title">Recent tools</h2>
-      <p class="lead">I build tools around concrete review steps: checking revised documents, comparing files and plans, and testing software changes. These seven projects include desktop apps, CLIs and libraries; each repository documents its scope and how to get started.</p>
+      <h2 class="view-title">Tools and recent updates</h2>
+      <p class="lead">Nine projects for concrete tasks: connecting APIs, reviewing documents and files, planning work, and testing or debugging software. Each links to its current public release and a reproducible starting point. Preview releases and platform limits are stated in the project guides.</p>
       <div class="archive">
         <div class="arch-card">
+          <div class="top"><span class="mono">FC</span><a class="ext" href="https://github.com/rad1092/firstcall-local-api-workbench" target="_blank" rel="noopener noreferrer" aria-label="FirstCall GitHub">↗</a></div>
+          <h4><a href="https://github.com/rad1092/firstcall-local-api-workbench">FirstCall</a></h4>
+
+          <p>For developers connecting APIs to AI clients: verify curl or OpenAPI requests, describe the tool and its inputs, and export a local MCP connection. v0.3.1 targets Apple Silicon macOS.</p>
+          <p class="tool-links"><a href="https://github.com/rad1092/firstcall-local-api-workbench/releases/tag/v0.3.1">v0.3.1 · Download ↗</a><a href="https://github.com/rad1092/firstcall-local-api-workbench/blob/main/docs/cli-lifecycle.md">Try the example ↗</a></p>
+          <div class="tags"><span>Rust · GUI · CLI · MCP</span></div>
+        </div>
+        <div class="arch-card">
           <div class="top"><span class="mono">AN</span><a class="ext" href="https://github.com/rad1092/annotrail" target="_blank" rel="noopener noreferrer" aria-label="Annotrail GitHub">↗</a></div>
-          <h4><a href="https://github.com/rad1092/annotrail" target="_blank" rel="noopener noreferrer">Annotrail</a></h4>
+          <h4><a href="https://github.com/rad1092/annotrail">Annotrail</a></h4>
+          <p class="tool-subtitle">PDF annotation transfer</p>
           <p>For readers comparing paper drafts or course notes: match embedded highlights and comments to a revised PDF, review each suggestion, and export approved annotations to a new file.</p>
-          <p class="tool-links"><a href="https://github.com/rad1092/annotrail/releases">Install / releases · Prerelease ↗</a><a href="https://github.com/rad1092/annotrail/blob/main/README.md#review-workflow">Usage guide ↗</a></p>
+          <p class="tool-links"><a href="https://github.com/rad1092/annotrail/releases/tag/v0.1.3">v0.1.3 preview · Download ↗</a><a href="https://github.com/rad1092/annotrail/tree/main/examples/review-demo">Try the example ↗</a></p>
           <div class="tags"><span>Java · PDFBox</span></div>
         </div>
         <div class="arch-card">
           <div class="top"><span class="mono">CB</span><a class="ext" href="https://github.com/rad1092/conflictbench" target="_blank" rel="noopener noreferrer" aria-label="ConflictBench GitHub">↗</a></div>
-          <h4><a href="https://github.com/rad1092/conflictbench" target="_blank" rel="noopener noreferrer">ConflictBench</a></h4>
+          <h4><a href="https://github.com/rad1092/conflictbench">ConflictBench</a></h4>
+          <p class="tool-subtitle">Syncthing conflict review</p>
           <p>For Syncthing users: compare conflict files as text, images or metadata, then choose to keep the original, use the conflict, or keep both, with backups outside the synced folder.</p>
-          <p class="tool-links"><a href="https://github.com/rad1092/conflictbench/releases">Install / releases ↗</a><a href="https://github.com/rad1092/conflictbench/blob/main/README.md">Usage guide ↗</a></p>
+          <p class="tool-links"><a href="https://github.com/rad1092/conflictbench/releases/tag/v0.1.0">v0.1.0 · Download ↗</a><a href="https://github.com/rad1092/conflictbench/blob/main/docs/FIRST-RUN.md">Try the example ↗</a></p>
           <div class="tags"><span>C++ · Qt</span></div>
         </div>
         <div class="arch-card">
           <div class="top"><span class="mono">SS</span><a class="ext" href="https://github.com/rad1092/shopshift" target="_blank" rel="noopener noreferrer" aria-label="ShopShift GitHub">↗</a></div>
-          <h4><a href="https://github.com/rad1092/shopshift" target="_blank" rel="noopener noreferrer">ShopShift</a></h4>
+          <h4><a href="https://github.com/rad1092/shopshift">ShopShift</a></h4>
+
           <p>For a small shop’s planner: import ERP CSV/XLSX exports, preserve manual starts and locks across reimports, inspect schedule conflicts, and compare daily-plan scenarios offline.</p>
-          <p class="tool-links"><a href="https://github.com/rad1092/shopshift/releases">Install / releases ↗</a><a href="https://github.com/rad1092/shopshift/blob/main/README.md">Usage guide ↗</a></p>
+          <p class="tool-links"><a href="https://github.com/rad1092/shopshift/releases/tag/v0.1.0">v0.1.0 · Download ↗</a><a href="https://github.com/rad1092/shopshift#daily-workflow">Try the example ↗</a></p>
           <div class="tags"><span>Python · PySide6 · OR-Tools</span></div>
         </div>
         <div class="arch-card">
           <div class="top"><span class="mono">TP</span><a class="ext" href="https://github.com/rad1092/treeport" target="_blank" rel="noopener noreferrer" aria-label="Treeport GitHub">↗</a></div>
-          <h4><a href="https://github.com/rad1092/treeport" target="_blank" rel="noopener noreferrer">Treeport</a></h4>
+          <h4><a href="https://github.com/rad1092/treeport">Treeport</a></h4>
+
           <p>For export and packaging pipelines: check directory trees, ZIP entries or JSONL manifests for destination name collisions and path budgets without renaming, copying or extracting files.</p>
-          <p class="tool-links"><a href="https://github.com/rad1092/treeport/releases">Install / releases ↗</a><a href="https://github.com/rad1092/treeport/blob/main/README.md">Usage guide ↗</a></p>
+          <p class="tool-links"><a href="https://github.com/rad1092/treeport/releases/tag/v0.1.3">v0.1.3 · Download ↗</a><a href="https://github.com/rad1092/treeport/blob/main/docs/first-run.md">Try the example ↗</a></p>
           <div class="tags"><span>Go · CLI</span></div>
         </div>
         <div class="arch-card">
           <div class="top"><span class="mono">LC</span><a class="ext" href="https://github.com/rad1092/lifecase" target="_blank" rel="noopener noreferrer" aria-label="Lifecase GitHub">↗</a></div>
-          <h4><a href="https://github.com/rad1092/lifecase" target="_blank" rel="noopener noreferrer">Lifecase</a></h4>
+          <h4><a href="https://github.com/rad1092/lifecase">Lifecase</a></h4>
+
           <p>For applications that run subprocesses: use controlled native fixtures to test exit, stdout/stderr EOF, cancellation and descendant cleanup, with a .NET/CliWrap example and optional Go verifier.</p>
-          <p class="tool-links"><a href="https://github.com/rad1092/lifecase/releases">Install / releases ↗</a><a href="https://github.com/rad1092/lifecase/blob/main/dotnet/README.md">Usage guide ↗</a></p>
+          <p class="tool-links"><a href="https://github.com/rad1092/lifecase/releases/tag/v0.1.3">v0.1.3 · Download ↗</a><a href="https://github.com/rad1092/lifecase#run-the-net-contracts">Try the example ↗</a></p>
           <div class="tags"><span>C++ · .NET · Go</span></div>
         </div>
         <div class="arch-card">
           <div class="top"><span class="mono">PS</span><a class="ext" href="https://github.com/rad1092/paperstager" target="_blank" rel="noopener noreferrer" aria-label="PaperStager GitHub">↗</a></div>
-          <h4><a href="https://github.com/rad1092/paperstager" target="_blank" rel="noopener noreferrer">PaperStager</a></h4>
+          <h4><a href="https://github.com/rad1092/paperstager">PaperStager</a></h4>
+
           <p>For people organizing PDF batches: mark document boundaries with page thumbnails, review names suggested by text rules, and approve an export of separate PDFs plus a manifest.</p>
-          <p class="tool-links"><a href="https://github.com/rad1092/paperstager/releases">Install / releases · Prerelease ↗</a><a href="https://github.com/rad1092/paperstager/blob/main/README.md">Usage guide ↗</a></p>
+          <p class="tool-links"><a href="https://github.com/rad1092/paperstager/releases/tag/v0.1.1">v0.1.1 preview · Download ↗</a><a href="https://github.com/rad1092/paperstager#get-started">Try the example ↗</a></p>
           <div class="tags"><span>C# · Avalonia</span></div>
         </div>
         <div class="arch-card">
           <div class="top"><span class="mono">SP</span><a class="ext" href="https://github.com/rad1092/serdeproof" target="_blank" rel="noopener noreferrer" aria-label="SerdeProof GitHub">↗</a></div>
-          <h4><a href="https://github.com/rad1092/serdeproof" target="_blank" rel="noopener noreferrer">SerdeProof</a></h4>
+          <h4><a href="https://github.com/rad1092/serdeproof">SerdeProof</a></h4>
+
           <p>For Java teams upgrading serializers: run real DTOs, mapper settings and a payload corpus in separate JVMs, comparing accepted inputs, JSON changes and four producer–consumer combinations.</p>
-          <p class="tool-links"><a href="https://github.com/rad1092/serdeproof/releases">Install / releases ↗</a><a href="https://github.com/rad1092/serdeproof/blob/main/README.md">Usage guide ↗</a></p>
+          <p class="tool-links"><a href="https://github.com/rad1092/serdeproof/releases/tag/v0.1.1">v0.1.1 · Download ↗</a><a href="https://github.com/rad1092/serdeproof#try-the-release-without-building">Try the example ↗</a></p>
           <div class="tags"><span>Java 17 · CLI</span></div>
+        </div>
+        <div class="arch-card">
+          <div class="top"><span class="mono">MA</span><a class="ext" href="https://github.com/rad1092/matcha" target="_blank" rel="noopener noreferrer" aria-label="Matcha GitHub">↗</a></div>
+          <h4><a href="https://github.com/rad1092/matcha">Matcha</a></h4>
+
+          <p>For homebrew developers and emulator learners: inspect Game Boy CPU, memory and video, replay saved state, and drive repeatable debugging sessions through MCP. Some DMG/CGB timing remains unsupported.</p>
+          <p class="tool-links"><a href="https://github.com/rad1092/matcha/releases/tag/v0.1.1">v0.1.1 · Download ↗</a><a href="https://github.com/rad1092/matcha/blob/main/docs/MCP-HOMEBREW.md">Try the example ↗</a></p>
+          <div class="tags"><span>Rust · WASM · MCP</span></div>
         </div>
       </div>
       <p class="lead" style="margin-top:20px;font-size:.92rem;"><a href="https://whago.net/software" style="color:var(--accent);">Compare the tools at WHAGO ↗</a></p>
