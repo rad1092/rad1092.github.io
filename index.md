@@ -184,6 +184,9 @@ body { background: var(--bg); }
 .arch-card p { color: var(--muted); font-size: .92rem; margin: 0 0 16px; }
 .arch-card .tags { display: flex; flex-wrap: wrap; gap: 9px; font-family: var(--serif); font-size: .74rem; color: var(--muted); }
 
+.arch-card .tool-links { display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: .84rem; }
+.arch-card .tool-links a { color: var(--accent); }
+
 /* contact */
 .contact-big { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 14px; }
 .contact-big a { display: inline-block; padding: 14px 30px; border-radius: 999px; background: var(--accent); color: var(--accent-ink); font-weight: 600; transition: transform .18s, box-shadow .18s, filter .18s; }
@@ -233,6 +236,7 @@ body { background: var(--bg); }
       <a href="#p1"><em>01</em>재난 대피 대시보드</a>
       <a href="#p2"><em>02</em>FirstCall</a>
       <a href="#p3"><em>03</em>gh-dep-risk</a>
+      <a href="#recent-tools">최근 도구</a>
       <a href="#more">그 외</a>
       <a href="#contact">연락</a>
     </nav>
@@ -494,6 +498,65 @@ body { background: var(--bg); }
       </div>
     </section>
 
+    <!-- ---------- RECENT TOOLS ---------- -->
+    <section class="block" id="recent-tools">
+      <p class="kicker">2026.10 — 오픈소스</p>
+      <h2 class="view-title">최근 공개한 도구</h2>
+      <p class="lead">문서 개정, 파일 충돌, 작업 계획과 코드 변경처럼 직접 확인하고 결정해야 하는 일을 도구로 옮겼습니다. 최근 공개한 7개 프로젝트는 데스크톱 앱부터 CLI·라이브러리까지 이어지며, 각 저장소에서 지원 범위와 시작 방법을 확인할 수 있습니다.</p>
+      <div class="archive">
+        <div class="arch-card">
+          <div class="top"><span class="mono">AN</span><a class="ext" href="https://github.com/rad1092/annotrail" target="_blank" rel="noopener noreferrer" aria-label="Annotrail GitHub">↗</a></div>
+          <h4><a href="https://github.com/rad1092/annotrail" target="_blank" rel="noopener noreferrer">Annotrail</a></h4>
+          <p>논문·교재 개정판을 읽는 사용자가 이전 PDF의 하이라이트와 댓글을 새 PDF의 텍스트와 대조하고, 승인한 주석을 새 파일로 옮깁니다.</p>
+          <p class="tool-links"><a href="https://github.com/rad1092/annotrail/releases">설치·릴리스 · 사전 공개판 ↗</a><a href="https://github.com/rad1092/annotrail/blob/main/README.md#review-workflow">사용 안내 ↗</a></p>
+          <div class="tags"><span>Java · PDFBox</span></div>
+        </div>
+        <div class="arch-card">
+          <div class="top"><span class="mono">CB</span><a class="ext" href="https://github.com/rad1092/conflictbench" target="_blank" rel="noopener noreferrer" aria-label="ConflictBench GitHub">↗</a></div>
+          <h4><a href="https://github.com/rad1092/conflictbench" target="_blank" rel="noopener noreferrer">ConflictBench</a></h4>
+          <p>Syncthing 사용자가 충돌 파일의 텍스트·이미지·메타데이터를 비교하고, 원본 유지·충돌본 사용·둘 다 보존 중 하나를 직접 선택합니다.</p>
+          <p class="tool-links"><a href="https://github.com/rad1092/conflictbench/releases">설치·릴리스 ↗</a><a href="https://github.com/rad1092/conflictbench/blob/main/docs/QUICKSTART.ko.md">사용 안내 ↗</a></p>
+          <div class="tags"><span>C++ · Qt</span></div>
+        </div>
+        <div class="arch-card">
+          <div class="top"><span class="mono">SS</span><a class="ext" href="https://github.com/rad1092/shopshift" target="_blank" rel="noopener noreferrer" aria-label="ShopShift GitHub">↗</a></div>
+          <h4><a href="https://github.com/rad1092/shopshift" target="_blank" rel="noopener noreferrer">ShopShift</a></h4>
+          <p>소규모 작업장의 계획 담당자가 ERP에서 내보낸 CSV·XLSX로 일일 작업을 배치하고, 잠금과 수동 시작 시각을 유지하며 충돌과 대안을 검토합니다.</p>
+          <p class="tool-links"><a href="https://github.com/rad1092/shopshift/releases">설치·릴리스 ↗</a><a href="https://github.com/rad1092/shopshift/blob/main/docs/QUICKSTART.ko.md">사용 안내 ↗</a></p>
+          <div class="tags"><span>Python · PySide6 · OR-Tools</span></div>
+        </div>
+        <div class="arch-card">
+          <div class="top"><span class="mono">TP</span><a class="ext" href="https://github.com/rad1092/treeport" target="_blank" rel="noopener noreferrer" aria-label="Treeport GitHub">↗</a></div>
+          <h4><a href="https://github.com/rad1092/treeport" target="_blank" rel="noopener noreferrer">Treeport</a></h4>
+          <p>내보내기·압축·배포 파이프라인 개발자가 폴더, ZIP 또는 JSONL 목록의 이름 충돌과 경로 길이를 대상 모델에 맞춰 읽기 전용으로 검사합니다.</p>
+          <p class="tool-links"><a href="https://github.com/rad1092/treeport/releases">설치·릴리스 ↗</a><a href="https://github.com/rad1092/treeport/blob/main/README.ko.md">사용 안내 ↗</a></p>
+          <div class="tags"><span>Go · CLI</span></div>
+        </div>
+        <div class="arch-card">
+          <div class="top"><span class="mono">LC</span><a class="ext" href="https://github.com/rad1092/lifecase" target="_blank" rel="noopener noreferrer" aria-label="Lifecase GitHub">↗</a></div>
+          <h4><a href="https://github.com/rad1092/lifecase" target="_blank" rel="noopener noreferrer">Lifecase</a></h4>
+          <p>하위 프로세스를 실행하는 앱 개발자가 제어된 네이티브 fixture로 프로세스 종료, 출력 EOF, 취소와 자식 프로세스 정리를 각각 테스트합니다.</p>
+          <p class="tool-links"><a href="https://github.com/rad1092/lifecase/releases">설치·릴리스 ↗</a><a href="https://github.com/rad1092/lifecase/blob/main/dotnet/README.md">사용 안내 ↗</a></p>
+          <div class="tags"><span>C++ · .NET · Go</span></div>
+        </div>
+        <div class="arch-card">
+          <div class="top"><span class="mono">PS</span><a class="ext" href="https://github.com/rad1092/paperstager" target="_blank" rel="noopener noreferrer" aria-label="PaperStager GitHub">↗</a></div>
+          <h4><a href="https://github.com/rad1092/paperstager" target="_blank" rel="noopener noreferrer">PaperStager</a></h4>
+          <p>묶음 PDF를 정리하는 사용자가 페이지 미리보기로 문서 경계를 나누고, 텍스트 규칙으로 제안된 파일명을 검토한 뒤 승인하여 내보냅니다.</p>
+          <p class="tool-links"><a href="https://github.com/rad1092/paperstager/releases">설치·릴리스 · 사전 공개판 ↗</a><a href="https://github.com/rad1092/paperstager/blob/main/docs/QUICKSTART.ko.md">사용 안내 ↗</a></p>
+          <div class="tags"><span>C# · Avalonia</span></div>
+        </div>
+        <div class="arch-card">
+          <div class="top"><span class="mono">SP</span><a class="ext" href="https://github.com/rad1092/serdeproof" target="_blank" rel="noopener noreferrer" aria-label="SerdeProof GitHub">↗</a></div>
+          <h4><a href="https://github.com/rad1092/serdeproof" target="_blank" rel="noopener noreferrer">SerdeProof</a></h4>
+          <p>Java 개발팀이 실제 DTO·매퍼 설정·페이로드 코퍼스를 두 직렬화 빌드에서 실행해 입력 수용, JSON 차이와 생산자·소비자 조합을 비교합니다.</p>
+          <p class="tool-links"><a href="https://github.com/rad1092/serdeproof/releases">설치·릴리스 ↗</a><a href="https://github.com/rad1092/serdeproof/blob/main/docs/QUICKSTART.ko.md">사용 안내 ↗</a></p>
+          <div class="tags"><span>Java 17 · CLI</span></div>
+        </div>
+      </div>
+      <p class="lead" style="margin-top:20px;font-size:.92rem;"><a href="https://whago.net/software" style="color:var(--accent);">WHAGO에서 도구별 사용 흐름 비교하기 ↗</a></p>
+    </section>
+
     <!-- ---------- OTHER PROJECTS ---------- -->
     <section class="block" id="more">
       <p class="kicker">더 보기</p>
@@ -512,8 +575,8 @@ body { background: var(--bg); }
           <div class="tags"><span>Python</span><span>SQLite</span><span>Docker</span></div>
         </div>
         <div class="arch-card">
-          <div class="top"><span class="folder">🪞</span><a class="ext" href="https://github.com/rad1092/smart-mirror-pc123" target="_blank">↗</a></div>
-          <h4><a href="https://github.com/rad1092/smart-mirror-pc123" target="_blank">스마트 미러 AIoT 운동 코칭</a></h4>
+          <div class="top"><span class="folder">🪞</span><a class="ext" href="https://github.com/rad1092/smart-mirror" target="_blank">↗</a></div>
+          <h4><a href="https://github.com/rad1092/smart-mirror" target="_blank">스마트 미러 AIoT 운동 코칭</a></h4>
           <p>화면과 비전 게이트웨이, AI 코칭 엔진을 한 저장소로 묶은 통합본으로, 자세 분석과 운동 루틴 생성, 실시간 코칭을 연결합니다</p>
           <div class="tags"><span>Python</span><span>WebSocket</span><span>SQLite</span><span>AIoT</span></div>
         </div>
@@ -545,7 +608,7 @@ body { background: var(--bg); }
       <h2 class="view-title">함께 일해요</h2>
       <p class="lead">새로운 협업이나 프로젝트 제안은 언제든 환영하니 편하게 연락 주세요</p>
       <div class="contact-big">
-        <a href="mailto:rad174951@gmail.com">이메일 보내기 →</a>
+        <a href="mailto:rad174951@gmail.com">문의 · rad174951@gmail.com →</a>
         <a class="ghost" href="https://github.com/rad1092" target="_blank">GitHub @rad1092 ↗</a>
       </div>
       <p class="foot">Built with Jekyll · Designed &amp; developed by HongDae Kim — with a little help from AI</p>

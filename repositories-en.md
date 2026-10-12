@@ -9,8 +9,15 @@ The list below is based on my public repositories.
 
 | Repository | Summary | Tech | Link |
 |---|---|---|---|
+| Annotrail | For readers comparing paper drafts or course notes: match embedded highlights and comments to a revised PDF, review each suggestion, and export approved annotations to a new file. | Java · PDFBox | [Project](https://github.com/rad1092/annotrail) · [Install](https://github.com/rad1092/annotrail/releases) · [Guide](https://github.com/rad1092/annotrail/blob/main/README.md#review-workflow) |
+| ConflictBench | For Syncthing users: compare conflict files as text, images or metadata, then choose to keep the original, use the conflict, or keep both, with backups outside the synced folder. | C++ · Qt | [Project](https://github.com/rad1092/conflictbench) · [Install](https://github.com/rad1092/conflictbench/releases) · [Guide](https://github.com/rad1092/conflictbench/blob/main/README.md) |
+| ShopShift | For a small shop’s planner: import ERP CSV/XLSX exports, preserve manual starts and locks across reimports, inspect schedule conflicts, and compare daily-plan scenarios offline. | Python · PySide6 · OR-Tools | [Project](https://github.com/rad1092/shopshift) · [Install](https://github.com/rad1092/shopshift/releases) · [Guide](https://github.com/rad1092/shopshift/blob/main/README.md) |
+| Treeport | For export and packaging pipelines: check directory trees, ZIP entries or JSONL manifests for destination name collisions and path budgets without renaming, copying or extracting files. | Go · CLI | [Project](https://github.com/rad1092/treeport) · [Install](https://github.com/rad1092/treeport/releases) · [Guide](https://github.com/rad1092/treeport/blob/main/README.md) |
+| Lifecase | For applications that run subprocesses: use controlled native fixtures to test exit, stdout/stderr EOF, cancellation and descendant cleanup, with a .NET/CliWrap example and optional Go verifier. | C++ · .NET · Go | [Project](https://github.com/rad1092/lifecase) · [Install](https://github.com/rad1092/lifecase/releases) · [Guide](https://github.com/rad1092/lifecase/blob/main/dotnet/README.md) |
+| PaperStager | For people organizing PDF batches: mark document boundaries with page thumbnails, review names suggested by text rules, and approve an export of separate PDFs plus a manifest. | C# · Avalonia | [Project](https://github.com/rad1092/paperstager) · [Install](https://github.com/rad1092/paperstager/releases) · [Guide](https://github.com/rad1092/paperstager/blob/main/README.md) |
+| SerdeProof | For Java teams upgrading serializers: run real DTOs, mapper settings and a payload corpus in separate JVMs, comparing accepted inputs, JSON changes and four producer–consumer combinations. | Java 17 · CLI | [Project](https://github.com/rad1092/serdeproof) · [Install](https://github.com/rad1092/serdeproof/releases) · [Guide](https://github.com/rad1092/serdeproof/blob/main/README.md) |
 | job-coach-agent | Job coaching agent project | Python | [Open](https://github.com/rad1092/job-coach-agent) |
-| smart-mirror-pc123 | Integrated smart mirror repository (PC1/PC2/PC3) | Python | [Open](https://github.com/rad1092/smart-mirror-pc123) |
+| smart-mirror | Integrated smart mirror repository (PC1/PC2/PC3) | Python | [Open](https://github.com/rad1092/smart-mirror) |
 | pp_second | Personal Python practice/experiment repository | Python | [Open](https://github.com/rad1092/pp_second) |
 | firstcall-local-api-workbench | Local-first API recipe workbench | Rust | [Open](https://github.com/rad1092/firstcall-local-api-workbench) |
 | project_dashboard | Project dashboard repository | HTML | [Open](https://github.com/rad1092/project_dashboard) |
@@ -30,5 +37,7 @@ The list below is based on my public repositories.
 | gh-dep-risk-smoke-comments | Smoke-test comment fixtures for gh-dep-risk | - | [Open](https://github.com/rad1092/gh-dep-risk-smoke-comments) |
 | First_two | File-analysis module experiment repository | Python | [Open](https://github.com/rad1092/First_two) |
 | rad1092.github.io | Personal portfolio GitHub Pages repository | - | [Open](https://github.com/rad1092/rad1092.github.io) |
+
+Questions about these projects: [rad174951@gmail.com](mailto:rad174951@gmail.com) · [WHAGO](https://whago.net/software)
 
 [<- Back to Main](/en/)
