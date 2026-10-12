@@ -185,6 +185,9 @@ body { background: var(--bg); }
 .arch-card p { color: var(--muted); font-size: .92rem; margin: 0 0 16px; }
 .arch-card .tags { display: flex; flex-wrap: wrap; gap: 9px; font-family: var(--serif); font-size: .74rem; color: var(--muted); }
 
+.arch-card .tool-links { display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: .84rem; }
+.arch-card .tool-links a { color: var(--accent); }
+
 /* contact */
 .contact-big { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 14px; }
 .contact-big a { display: inline-block; padding: 14px 30px; border-radius: 999px; background: var(--accent); color: var(--accent-ink); font-weight: 600; transition: transform .18s, box-shadow .18s, filter .18s; }
@@ -234,6 +237,7 @@ body { background: var(--bg); }
       <a href="#p1"><em>01</em>Disaster Dashboard</a>
       <a href="#p2"><em>02</em>FirstCall</a>
       <a href="#p3"><em>03</em>gh-dep-risk</a>
+      <a href="#recent-tools">Recent tools</a>
       <a href="#more">Other</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -495,6 +499,65 @@ body { background: var(--bg); }
       </div>
     </section>
 
+    <!-- ---------- RECENT TOOLS ---------- -->
+    <section class="block" id="recent-tools">
+      <p class="kicker">2026.10 — Open source</p>
+      <h2 class="view-title">Recent tools</h2>
+      <p class="lead">I build tools around concrete review steps: checking revised documents, comparing files and plans, and testing software changes. These seven projects include desktop apps, CLIs and libraries; each repository documents its scope and how to get started.</p>
+      <div class="archive">
+        <div class="arch-card">
+          <div class="top"><span class="mono">AN</span><a class="ext" href="https://github.com/rad1092/annotrail" target="_blank" rel="noopener noreferrer" aria-label="Annotrail GitHub">↗</a></div>
+          <h4><a href="https://github.com/rad1092/annotrail" target="_blank" rel="noopener noreferrer">Annotrail</a></h4>
+          <p>For readers comparing paper drafts or course notes: match embedded highlights and comments to a revised PDF, review each suggestion, and export approved annotations to a new file.</p>
+          <p class="tool-links"><a href="https://github.com/rad1092/annotrail/releases">Install / releases · Prerelease ↗</a><a href="https://github.com/rad1092/annotrail/blob/main/README.md#review-workflow">Usage guide ↗</a></p>
+          <div class="tags"><span>Java · PDFBox</span></div>
+        </div>
+        <div class="arch-card">
+          <div class="top"><span class="mono">CB</span><a class="ext" href="https://github.com/rad1092/conflictbench" target="_blank" rel="noopener noreferrer" aria-label="ConflictBench GitHub">↗</a></div>
+          <h4><a href="https://github.com/rad1092/conflictbench" target="_blank" rel="noopener noreferrer">ConflictBench</a></h4>
+          <p>For Syncthing users: compare conflict files as text, images or metadata, then choose to keep the original, use the conflict, or keep both, with backups outside the synced folder.</p>
+          <p class="tool-links"><a href="https://github.com/rad1092/conflictbench/releases">Install / releases ↗</a><a href="https://github.com/rad1092/conflictbench/blob/main/README.md">Usage guide ↗</a></p>
+          <div class="tags"><span>C++ · Qt</span></div>
+        </div>
+        <div class="arch-card">
+          <div class="top"><span class="mono">SS</span><a class="ext" href="https://github.com/rad1092/shopshift" target="_blank" rel="noopener noreferrer" aria-label="ShopShift GitHub">↗</a></div>
+          <h4><a href="https://github.com/rad1092/shopshift" target="_blank" rel="noopener noreferrer">ShopShift</a></h4>
+          <p>For a small shop’s planner: import ERP CSV/XLSX exports, preserve manual starts and locks across reimports, inspect schedule conflicts, and compare daily-plan scenarios offline.</p>
+          <p class="tool-links"><a href="https://github.com/rad1092/shopshift/releases">Install / releases ↗</a><a href="https://github.com/rad1092/shopshift/blob/main/README.md">Usage guide ↗</a></p>
+          <div class="tags"><span>Python · PySide6 · OR-Tools</span></div>
+        </div>
+        <div class="arch-card">
+          <div class="top"><span class="mono">TP</span><a class="ext" href="https://github.com/rad1092/treeport" target="_blank" rel="noopener noreferrer" aria-label="Treeport GitHub">↗</a></div>
+          <h4><a href="https://github.com/rad1092/treeport" target="_blank" rel="noopener noreferrer">Treeport</a></h4>
+          <p>For export and packaging pipelines: check directory trees, ZIP entries or JSONL manifests for destination name collisions and path budgets without renaming, copying or extracting files.</p>
+          <p class="tool-links"><a href="https://github.com/rad1092/treeport/releases">Install / releases ↗</a><a href="https://github.com/rad1092/treeport/blob/main/README.md">Usage guide ↗</a></p>
+          <div class="tags"><span>Go · CLI</span></div>
+        </div>
+        <div class="arch-card">
+          <div class="top"><span class="mono">LC</span><a class="ext" href="https://github.com/rad1092/lifecase" target="_blank" rel="noopener noreferrer" aria-label="Lifecase GitHub">↗</a></div>
+          <h4><a href="https://github.com/rad1092/lifecase" target="_blank" rel="noopener noreferrer">Lifecase</a></h4>
+          <p>For applications that run subprocesses: use controlled native fixtures to test exit, stdout/stderr EOF, cancellation and descendant cleanup, with a .NET/CliWrap example and optional Go verifier.</p>
+          <p class="tool-links"><a href="https://github.com/rad1092/lifecase/releases">Install / releases ↗</a><a href="https://github.com/rad1092/lifecase/blob/main/dotnet/README.md">Usage guide ↗</a></p>
+          <div class="tags"><span>C++ · .NET · Go</span></div>
+        </div>
+        <div class="arch-card">
+          <div class="top"><span class="mono">PS</span><a class="ext" href="https://github.com/rad1092/paperstager" target="_blank" rel="noopener noreferrer" aria-label="PaperStager GitHub">↗</a></div>
+          <h4><a href="https://github.com/rad1092/paperstager" target="_blank" rel="noopener noreferrer">PaperStager</a></h4>
+          <p>For people organizing PDF batches: mark document boundaries with page thumbnails, review names suggested by text rules, and approve an export of separate PDFs plus a manifest.</p>
+          <p class="tool-links"><a href="https://github.com/rad1092/paperstager/releases">Install / releases · Prerelease ↗</a><a href="https://github.com/rad1092/paperstager/blob/main/README.md">Usage guide ↗</a></p>
+          <div class="tags"><span>C# · Avalonia</span></div>
+        </div>
+        <div class="arch-card">
+          <div class="top"><span class="mono">SP</span><a class="ext" href="https://github.com/rad1092/serdeproof" target="_blank" rel="noopener noreferrer" aria-label="SerdeProof GitHub">↗</a></div>
+          <h4><a href="https://github.com/rad1092/serdeproof" target="_blank" rel="noopener noreferrer">SerdeProof</a></h4>
+          <p>For Java teams upgrading serializers: run real DTOs, mapper settings and a payload corpus in separate JVMs, comparing accepted inputs, JSON changes and four producer–consumer combinations.</p>
+          <p class="tool-links"><a href="https://github.com/rad1092/serdeproof/releases">Install / releases ↗</a><a href="https://github.com/rad1092/serdeproof/blob/main/README.md">Usage guide ↗</a></p>
+          <div class="tags"><span>Java 17 · CLI</span></div>
+        </div>
+      </div>
+      <p class="lead" style="margin-top:20px;font-size:.92rem;"><a href="https://whago.net/software" style="color:var(--accent);">Compare the tools at WHAGO ↗</a></p>
+    </section>
+
     <!-- ---------- OTHER PROJECTS ---------- -->
     <section class="block" id="more">
       <p class="kicker">More</p>
@@ -513,8 +576,8 @@ body { background: var(--bg); }
           <div class="tags"><span>Python</span><span>SQLite</span><span>Docker</span></div>
         </div>
         <div class="arch-card">
-          <div class="top"><span class="folder">🪞</span><a class="ext" href="https://github.com/rad1092/smart-mirror-pc123" target="_blank">↗</a></div>
-          <h4><a href="https://github.com/rad1092/smart-mirror-pc123" target="_blank">Smart Mirror AIoT Workout Coaching</a></h4>
+          <div class="top"><span class="folder">🪞</span><a class="ext" href="https://github.com/rad1092/smart-mirror" target="_blank">↗</a></div>
+          <h4><a href="https://github.com/rad1092/smart-mirror" target="_blank">Smart Mirror AIoT Workout Coaching</a></h4>
           <p>An integrated repo wiring a display, a vision gateway and an AI coaching engine — connecting pose analysis, routine generation and real-time coaching</p>
           <div class="tags"><span>Python</span><span>WebSocket</span><span>SQLite</span><span>AIoT</span></div>
         </div>
@@ -546,7 +609,7 @@ body { background: var(--bg); }
       <h2 class="view-title">Let's work together</h2>
       <p class="lead">I'm always open to new collaborations and project ideas — feel free to reach out</p>
       <div class="contact-big">
-        <a href="mailto:rad174951@gmail.com">Send an email →</a>
+        <a href="mailto:rad174951@gmail.com">Email · rad174951@gmail.com →</a>
         <a class="ghost" href="https://github.com/rad1092" target="_blank">GitHub @rad1092 ↗</a>
       </div>
       <p class="foot">Built with Jekyll · Designed &amp; developed by HongDae Kim — with a little help from AI</p>
