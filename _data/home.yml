@@ -1,0 +1,146 @@
+featured: [firstcall, matcha, smart-mirror, gh-dep-risk]
+
+en:
+  title: HongDae Kim
+  description: I build developer tools and desktop apps, and connect them to AI.
+  statement: I build developer tools and desktop apps, and connect them to AI.
+  lead: >-
+    Eleven of them are released on GitHub, written in Rust, Go, Python,
+    TypeScript, C++, Java and C#, with tests and CI on every system they
+    support. I publish them under the name WHAGO.
+  work_title: Selected work
+  more_title: More projects
+  more_intro: Other tools I released under WHAGO, and an earlier team project.
+  more_link: All tools at whago.net
+  tools:
+    - name: SerdeProof
+      href: https://whago.net/software/serdeproof
+      text: See how your JSON changes before moving to Jackson 3 or Spring Boot 4.
+      stack: Java command-line tool
+    - name: Annotrail
+      href: https://whago.net/software/annotrail
+      text: Move highlights and notes from an old PDF to its revised edition.
+      stack: Java desktop app
+    - name: ConflictBench
+      href: https://whago.net/software/conflictbench
+      text: Compare Syncthing conflict files and keep the right version, with a backup.
+      stack: C++ and Qt desktop app
+    - name: PaperStager
+      href: https://whago.net/software/paperstager
+      text: Split a PDF batch into documents and name each file from its text.
+      stack: C# and Avalonia desktop app
+    - name: RepoLens
+      href: https://whago.net/software/repolens
+      text: Fail a pull request only when it adds a new maintenance problem.
+      stack: TypeScript CLI and GitHub Action
+    - name: Treeport
+      href: https://whago.net/software/treeport
+      text: Check file names before a folder or repository moves to another OS.
+      stack: Go command-line tool
+    - name: Disaster evacuation dashboard
+      href: https://github.com/rad1092/project_dashboard
+      text: Shelter recommendations and walking routes for the Yeongnam region. I designed the architecture and the backend in a team of four.
+      stack: Python and Streamlit, team project
+  how_title: How I work
+  how:
+    - >-
+      I start from the rules a tool has to keep and write them down where both
+      people and coding agents read them: the README, the tests and a
+      CONTRIBUTING file.
+    - >-
+      Coding agents, mostly Codex and Claude Code, write much of the code. I
+      review every change, and nothing is released until the tests and CI pass
+      on each system the tool supports.
+    - >-
+      AI is also what several of these tools are for. FirstCall turns APIs into
+      tools for AI clients, Matcha gives Claude an emulator it can drive, and the
+      smart mirror passes pose data to an AI coach.
+  hire_title: Work with me
+  hire_intro: I take on freelance and contract work in three areas.
+  hire:
+    - title: Desktop apps for macOS, Windows and Linux
+      text: Like Annotrail, ConflictBench and PaperStager, in Rust, Qt, Avalonia or Java.
+    - title: Command-line tools, GitHub Actions and CI
+      text: Like gh-dep-risk, RepoLens and Treeport.
+    - title: MCP servers and AI integrations
+      text: Connecting an existing API or app to AI clients, like FirstCall and Matcha.
+  hire_cta: Email me what you need
+  background_title: Before software
+  background:
+    - >-
+      About four years in sales management at a construction-supply company
+      (2016–2017 and 2022–2025).
+    - >-
+      A year studying Spanish at UNAM in Mexico City, and excavator, forklift
+      and large-vehicle licences.
+
+ko:
+  title: 김홍대
+  description: 개발 도구와 데스크톱 앱을 만들고, AI와 연결합니다.
+  statement: 개발 도구와 데스크톱 앱을 만들고, AI와 연결합니다.
+  lead: >-
+    GitHub에 릴리스한 도구가 11개 있습니다. Rust, Go, Python, TypeScript, C++,
+    Java, C#으로 만들었고, 지원하는 운영체제마다 테스트와 CI를 돌립니다. WHAGO라는
+    이름으로 배포합니다.
+  work_title: 대표 작업
+  more_title: 다른 프로젝트
+  more_intro: WHAGO로 배포한 다른 도구와, 이전에 했던 팀 프로젝트입니다.
+  more_link: whago.net에서 전체 보기
+  tools:
+    - name: SerdeProof
+      href: https://whago.net/ko/software/serdeproof
+      text: Jackson 3나 Spring Boot 4로 옮기기 전에 JSON이 어떻게 바뀌는지 봅니다.
+      stack: Java CLI
+    - name: Annotrail
+      href: https://whago.net/ko/software/annotrail
+      text: 이전 PDF의 하이라이트와 메모를 개정판으로 옮깁니다.
+      stack: Java 데스크톱 앱
+    - name: ConflictBench
+      href: https://whago.net/ko/software/conflictbench
+      text: Syncthing 충돌 파일을 비교하고, 백업한 뒤 맞는 버전을 남깁니다.
+      stack: C++·Qt 데스크톱 앱
+    - name: PaperStager
+      href: https://whago.net/ko/software/paperstager
+      text: 합쳐진 PDF를 문서별로 나누고 본문 텍스트로 파일 이름을 붙입니다.
+      stack: C#·Avalonia 데스크톱 앱
+    - name: RepoLens
+      href: https://whago.net/ko/software/repolens
+      text: PR이 새로 들여온 유지보수 문제가 있을 때만 실패합니다.
+      stack: TypeScript CLI와 GitHub Action
+    - name: Treeport
+      href: https://whago.net/ko/software/treeport
+      text: 폴더나 저장소를 다른 OS로 옮기기 전에 파일 이름을 검사합니다.
+      stack: Go CLI
+    - name: 재난 대피 안내 대시보드
+      href: https://github.com/rad1092/project_dashboard
+      text: 영남권 대피소 추천과 도보 경로 안내. 4인 팀에서 아키텍처와 백엔드를 맡았습니다.
+      stack: Python·Streamlit, 팀 프로젝트
+  how_title: 일하는 방식
+  how:
+    - >-
+      도구가 지켜야 할 규칙부터 정하고, 사람과 코딩 에이전트가 함께 읽는 곳에 적어
+      둡니다. README, 테스트, CONTRIBUTING 파일입니다.
+    - >-
+      코드의 상당 부분은 코딩 에이전트(주로 Codex와 Claude Code)가 씁니다. 모든 변경을
+      직접 검토하고, 도구가 지원하는 운영체제마다 테스트와 CI가 통과해야 릴리스합니다.
+    - >-
+      AI는 이 도구들이 다루는 대상이기도 합니다. FirstCall은 API를 AI 클라이언트용
+      도구로 바꾸고, Matcha는 Claude가 조작할 수 있는 에뮬레이터를 주고, 스마트 미러는
+      자세 데이터를 AI 코치에게 넘깁니다.
+  hire_title: 외주·협업
+  hire_intro: 세 가지 분야의 외주와 계약 작업을 맡습니다.
+  hire:
+    - title: macOS·Windows·Linux 데스크톱 앱
+      text: Annotrail, ConflictBench, PaperStager처럼 Rust, Qt, Avalonia, Java로 만듭니다.
+    - title: CLI 도구, GitHub Actions, CI
+      text: gh-dep-risk, RepoLens, Treeport 같은 도구입니다.
+    - title: MCP 서버와 AI 연동
+      text: FirstCall, Matcha처럼 기존 API나 앱을 AI 클라이언트에 연결합니다.
+  hire_cta: 필요한 내용을 이메일로 보내기
+  background_title: 개발 이전
+  background:
+    - >-
+      건설 자재 회사에서 약 4년간 영업관리를 했습니다(2016–2017, 2022–2025).
+    - >-
+      멕시코 UNAM에서 1년간 스페인어를 공부했고, 굴삭기·지게차·1종 대형 면허가
+      있습니다.

@@ -1,0 +1,33 @@
+# Interface text. Page copy lives in home.yml and projects.yml.
+en:
+  name: HongDae Kim
+  skip: Skip to content
+  email: Email
+  language: Language
+  case_study: Case study
+  source: Source
+  download: Download
+  install: Install
+  play: Play in your browser
+  role: Role
+  built_with: Built with
+  runs_on: Runs on
+  status: Status
+  next: Next project
+  home: Home
+ko:
+  name: 김홍대
+  skip: 본문으로 건너뛰기
+  email: 이메일
+  language: 언어
+  case_study: 자세히
+  source: 소스 코드
+  download: 내려받기
+  install: 설치
+  play: 브라우저에서 실행
+  role: 역할
+  built_with: 기술
+  runs_on: 실행 환경
+  status: 상태
+  next: 다음 프로젝트
+  home: 홈

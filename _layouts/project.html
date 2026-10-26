@@ -1,0 +1,44 @@
+---
+layout: default
+---
+{%- include urls.html -%}
+{%- assign t = site.data.t[page.lang] -%}
+{%- assign p = site.data.projects[page.project] -%}
+{%- assign c = p[page.lang] -%}
+{%- assign name = p.name[page.lang] | default: p.name -%}
+{%- if page.lang == "ko" %}{% assign base = "/ko" %}{% else %}{% assign base = "" %}{% endif -%}
+<article class="case">
+  <header class="case__head">
+    <h1>{{ name }}</h1>
+    <p class="case__line">{{ c.line }}</p>
+    <p class="project__links">
+      {%- if p.play %}<a class="button" href="{{ p.play }}">{{ t.play }}</a>{% endif %}
+      {%- if p.download %}<a class="button" href="{{ p.download }}">{{ t.download }}</a>{% endif %}
+      {%- if p.install %}<a class="button" href="{{ p.install }}">{{ t.install }}</a>{% endif %}
+      <a href="{{ p.source }}">{{ t.source }}</a>
+    </p>
+  </header>
+  <figure class="case__media">{% include media.html m=p.media.case %}</figure>
+  <dl class="facts">
+    <div><dt>{{ t.role }}</dt><dd>{{ c.facts.role }}</dd></div>
+    <div><dt>{{ t.built_with }}</dt><dd>{{ c.facts.built_with }}</dd></div>
+    <div><dt>{{ t.runs_on }}</dt><dd>{{ c.facts.runs_on }}</dd></div>
+    <div><dt>{{ t.status }}</dt><dd>{{ c.facts.status }}</dd></div>
+  </dl>
+  <div class="case__body">
+{{ content }}
+  </div>
+  {%- assign featured = site.data.home.featured -%}
+  {%- for id in featured -%}
+    {%- if id == page.project -%}
+      {%- assign next_index = forloop.index -%}
+    {%- endif -%}
+  {%- endfor -%}
+  {%- if next_index >= featured.size %}{% assign next_index = 0 %}{% endif -%}
+  {%- assign next_id = featured[next_index] -%}
+  {%- assign next = site.data.projects[next_id] -%}
+  <nav class="case__next" aria-label="{{ t.next }}">
+    <span>{{ t.next }}</span>
+    <a href="{{ base }}/projects/{{ next_id }}/">{{ next.name[page.lang] | default: next.name }}</a>
+  </nav>
+</article>

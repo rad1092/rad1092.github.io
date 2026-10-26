@@ -1,0 +1,176 @@
+# The four projects shown large on the home page, each with a case study page.
+firstcall:
+  name: FirstCall
+  source: https://github.com/rad1092/firstcall
+  download: https://github.com/rad1092/firstcall/releases/latest
+  media:
+    home: &firstcall_gif
+      type: image
+      src: /assets/media/firstcall.gif
+      width: 960
+      height: 615
+      alt:
+        en: FirstCall reading a GitHub API request, sending it, and exporting it as an MCP tool
+        ko: GitHub API 요청을 읽고 보낸 뒤 MCP 도구로 내보내는 FirstCall
+    case: *firstcall_gif
+  en:
+    line: Turn an API request into a tool an AI client can call.
+    text: >-
+      Paste a curl command, an OpenAPI operation or a browser HAR, send it once
+      with real inputs, and export it as a local MCP tool. One server can carry
+      all your tools, and a token you enter once stays in the OS keychain.
+    meta: Rust desktop app and command-line tool for macOS, Windows and Linux.
+    facts:
+      role: Solo. Design, code and releases.
+      built_with: Rust, egui, reqwest, SQLite, MCP over stdio
+      runs_on: macOS (Apple Silicon and Intel), Windows, Linux
+      status: Released. 301 tests and CI on all three systems.
+  ko:
+    line: API 요청 하나를 AI가 부를 수 있는 도구로 만듭니다.
+    text: >-
+      curl 명령, OpenAPI 작업, 브라우저 HAR을 붙여넣고 실제 값으로 한 번 보내 본 뒤
+      로컬 MCP 도구로 내보냅니다. 서버 하나에 도구를 여러 개 담을 수 있고, 토큰은
+      한 번만 입력하면 OS 키체인에 저장됩니다.
+    meta: Rust로 만든 데스크톱 앱과 CLI. macOS, Windows, Linux.
+    facts:
+      role: 혼자 설계, 개발, 릴리스
+      built_with: Rust, egui, reqwest, SQLite, stdio MCP
+      runs_on: macOS (Apple Silicon, Intel), Windows, Linux
+      status: 릴리스됨. 테스트 301개, 세 운영체제에서 CI
+
+matcha:
+  name: Matcha
+  source: https://github.com/rad1092/matcha
+  play: https://play.whago.net/
+  media:
+    home: &matcha_player
+      type: image
+      src: /assets/media/matcha-web-player.png
+      width: 1280
+      height: 800
+      alt:
+        en: The Matcha web player running a homebrew game next to its CPU, disassembly and frame timing panels
+        ko: 홈브루 게임 옆에 CPU, 디스어셈블리, 프레임 타이밍 패널을 띄운 Matcha 웹 플레이어
+    case: *matcha_player
+    extra:
+      type: image
+      src: /assets/media/matcha-claude-2048.gif
+      width: 320
+      height: 344
+      alt:
+        en: Claude playing 2048 through Matcha's MCP tools, one button press at a time
+        ko: Matcha의 MCP 도구로 버튼을 하나씩 눌러 2048을 플레이하는 Claude
+  en:
+    line: A Game Boy emulator you can see inside, and that Claude can play.
+    text: >-
+      It runs in the browser with a live debugger for the CPU, memory, video and
+      sound. Through 17 MCP tools, Claude can play, test and debug Game Boy
+      software. The core passes all 498,000 single-step CPU tests.
+    meta: Rust core compiled to WebAssembly, with an MCP server in Node.
+    facts:
+      role: Solo. Emulator core, web player, MCP server and test tooling.
+      built_with: Rust (no_std), WebAssembly, JavaScript, Node
+      runs_on: Any modern browser, Claude through MCP, and the command line
+      status: Live at play.whago.net. 498,000 of 498,000 SM83 single-step tests.
+  ko:
+    line: 속을 들여다볼 수 있고, Claude가 직접 플레이하는 게임보이 에뮬레이터.
+    text: >-
+      브라우저에서 바로 돌아가고 CPU, 메모리, 화면, 소리를 실시간 디버거로 볼 수
+      있습니다. MCP 도구 17개로 Claude가 게임보이 소프트웨어를 플레이하고 테스트하고
+      디버깅합니다. 코어는 SM83 단일 명령 테스트 498,000개를 모두 통과합니다.
+    meta: Rust 코어를 WebAssembly로 빌드하고, MCP 서버는 Node로 만들었습니다.
+    facts:
+      role: 혼자 에뮬레이터 코어, 웹 플레이어, MCP 서버, 테스트 도구
+      built_with: Rust (no_std), WebAssembly, JavaScript, Node
+      runs_on: 최신 브라우저, MCP로 Claude, 명령줄
+      status: play.whago.net에서 실행 중. SM83 단일 명령 테스트 498,000개 전부 통과
+
+smart-mirror:
+  name:
+    en: Smart mirror vision gateway
+    ko: 스마트 미러 비전 게이트웨이
+  source: https://github.com/rad1092/smart-mirror
+  media:
+    home: &mirror_live
+      type: video
+      src: /assets/media/smart-mirror-live.mp4
+      poster: /assets/media/smart-mirror-live-poster.jpg
+      width: 640
+      height: 360
+      alt:
+        en: The smart mirror counting squats and showing posture feedback in real time
+        ko: 스쿼트 횟수를 세고 자세 피드백을 실시간으로 보여주는 스마트 미러
+    case: *mirror_live
+    extra:
+      type: video
+      src: /assets/media/smart-mirror-routine.mp4
+      poster: /assets/media/smart-mirror-routine-poster.jpg
+      width: 720
+      height: 404
+      alt:
+        en: Entering a profile on the mirror, which the AI coaching server turns into a routine
+        ko: 거울에서 프로필을 입력하면 AI 코칭 서버가 운동 루틴을 만드는 화면
+  en:
+    line: Real-time exercise coaching on a smart mirror, built by a team of three.
+    text: >-
+      I built the part in the middle. It analyses posture from the camera with
+      MediaPipe, counts repetitions, streams live feedback to the mirror over
+      WebSocket, keeps each user's records, and calls the AI coaching server.
+    meta: Python, FastAPI, MediaPipe, OpenCV and SQLite.
+    facts:
+      role: The vision gateway (one of three parts) and the combined repository
+      built_with: Python, FastAPI, MediaPipe, OpenCV, SQLite, WebSocket
+      runs_on: Three machines, one each for the mirror UI, this gateway and the AI coaching server
+      status: Team project, demonstrated end to end. 10 pytest modules for the gateway.
+  ko:
+    line: 스마트 미러로 운동 자세를 실시간 코칭하는 3인 팀 프로젝트.
+    text: >-
+      그중 가운데 파트를 만들었습니다. 카메라 영상에서 MediaPipe로 자세를 분석하고
+      반복 횟수를 세고, WebSocket으로 거울 화면에 실시간 피드백을 보내고, 사용자
+      기록을 저장하고, AI 코칭 서버를 호출합니다.
+    meta: Python, FastAPI, MediaPipe, OpenCV, SQLite.
+    facts:
+      role: 세 파트 중 비전 게이트웨이와 통합 저장소 담당
+      built_with: Python, FastAPI, MediaPipe, OpenCV, SQLite, WebSocket
+      runs_on: 거울 화면, 게이트웨이, AI 코칭 서버가 각각 다른 PC에서 실행
+      status: 팀 프로젝트, 처음부터 끝까지 시연 완료. 게이트웨이 pytest 모듈 10개
+
+gh-dep-risk:
+  name: gh-dep-risk
+  source: https://github.com/rad1092/gh-dep-risk
+  install: https://github.com/rad1092/gh-dep-risk#install
+  media:
+    home: &depgh_demo
+      type: video
+      src: /assets/media/gh-dep-risk.mp4
+      poster: /assets/media/gh-dep-risk-poster.png
+      width: 1040
+      height: 720
+      alt:
+        en: gh dep-risk checking a pull request in the terminal and listing what to check first
+        ko: 터미널에서 PR을 검사하고 먼저 확인할 항목을 보여주는 gh dep-risk
+    case: *depgh_demo
+  en:
+    line: Scores a pull request's dependency changes and says what to check first.
+    text: >-
+      A GitHub CLI extension. Every point in a score names the signal behind it,
+      such as an install script or a version published a few days ago, and the
+      report starts with the three things a reviewer should check.
+    meta: Go. A GitHub CLI extension and a GitHub Action.
+    facts:
+      role: Solo. Design, code and releases.
+      built_with: Go, GitHub CLI extension API, GitHub Dependency Review API
+      runs_on: macOS, Windows and Linux through the GitHub CLI, or in GitHub Actions
+      status: Released. Install smoke tests run against real pull requests.
+  ko:
+    line: PR의 의존성 변경에 점수를 매기고, 먼저 확인할 것을 알려줍니다.
+    text: >-
+      GitHub CLI 확장입니다. 설치 스크립트, 며칠 전에 배포된 버전처럼 어떤 신호에서
+      몇 점이 나왔는지 모두 보여주고, 보고서는 리뷰어가 먼저 확인할 세 가지로
+      시작합니다.
+    meta: Go로 만든 GitHub CLI 확장과 GitHub Action.
+    facts:
+      role: 혼자 설계, 개발, 릴리스
+      built_with: Go, GitHub CLI 확장 API, GitHub Dependency Review API
+      runs_on: GitHub CLI가 도는 macOS, Windows, Linux, 또는 GitHub Actions
+      status: 릴리스됨. 실제 PR로 설치 스모크 테스트
