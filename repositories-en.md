@@ -5,40 +5,52 @@ permalink: /repositories-en/
 
 # GitHub Repositories
 
-The list below is based on my public repositories.
+Public repositories under `@rad1092`. Release links always point to the latest public release.
+
+## Products
 
 | Repository | Summary | Tech | Link |
 |---|---|---|---|
-| FirstCall | For developers connecting APIs to AI clients: verify curl or OpenAPI requests, describe the tool and its inputs, and export a local MCP connection. v0.3.1 targets Apple Silicon macOS. | Rust · GUI · CLI · MCP | [Project](https://github.com/rad1092/firstcall-local-api-workbench) · [v0.3.1](https://github.com/rad1092/firstcall-local-api-workbench/releases/tag/v0.3.1) · [Example](https://github.com/rad1092/firstcall-local-api-workbench/blob/main/docs/cli-lifecycle.md) |
-| Annotrail · PDF annotation transfer | For readers comparing paper drafts or course notes: match embedded highlights and comments to a revised PDF, review each suggestion, and export approved annotations to a new file. | Java · PDFBox | [Project](https://github.com/rad1092/annotrail) · [v0.1.3 preview](https://github.com/rad1092/annotrail/releases/tag/v0.1.3) · [Example](https://github.com/rad1092/annotrail/tree/main/examples/review-demo) |
-| ConflictBench · Syncthing conflict review | For Syncthing users: compare conflict files as text, images or metadata, then choose to keep the original, use the conflict, or keep both, with backups outside the synced folder. | C++ · Qt | [Project](https://github.com/rad1092/conflictbench) · [v0.1.0](https://github.com/rad1092/conflictbench/releases/tag/v0.1.0) · [Example](https://github.com/rad1092/conflictbench/blob/main/docs/FIRST-RUN.md) |
-| ShopShift | For a small shop’s planner: import ERP CSV/XLSX exports, preserve manual starts and locks across reimports, inspect schedule conflicts, and compare daily-plan scenarios offline. | Python · PySide6 · OR-Tools | [Project](https://github.com/rad1092/shopshift) · [v0.1.0](https://github.com/rad1092/shopshift/releases/tag/v0.1.0) · [Example](https://github.com/rad1092/shopshift#daily-workflow) |
-| Treeport | For export and packaging pipelines: check directory trees, ZIP entries or JSONL manifests for destination name collisions and path budgets without renaming, copying or extracting files. | Go · CLI | [Project](https://github.com/rad1092/treeport) · [v0.1.3](https://github.com/rad1092/treeport/releases/tag/v0.1.3) · [Example](https://github.com/rad1092/treeport/blob/main/docs/first-run.md) |
-| Lifecase | For applications that run subprocesses: use controlled native fixtures to test exit, stdout/stderr EOF, cancellation and descendant cleanup, with a .NET/CliWrap example and optional Go verifier. | C++ · .NET · Go | [Project](https://github.com/rad1092/lifecase) · [v0.1.3](https://github.com/rad1092/lifecase/releases/tag/v0.1.3) · [Example](https://github.com/rad1092/lifecase#run-the-net-contracts) |
-| PaperStager | For people organizing PDF batches: mark document boundaries with page thumbnails, review names suggested by text rules, and approve an export of separate PDFs plus a manifest. | C# · Avalonia | [Project](https://github.com/rad1092/paperstager) · [v0.1.1 preview](https://github.com/rad1092/paperstager/releases/tag/v0.1.1) · [Example](https://github.com/rad1092/paperstager#get-started) |
-| SerdeProof | For Java teams upgrading serializers: run real DTOs, mapper settings and a payload corpus in separate JVMs, comparing accepted inputs, JSON changes and four producer–consumer combinations. | Java 17 · CLI | [Project](https://github.com/rad1092/serdeproof) · [v0.1.1](https://github.com/rad1092/serdeproof/releases/tag/v0.1.1) · [Example](https://github.com/rad1092/serdeproof#try-the-release-without-building) |
-| Matcha | For homebrew developers and emulator learners: inspect Game Boy CPU, memory and video, replay saved state, and drive repeatable debugging sessions through MCP. Some DMG/CGB timing remains unsupported. | Rust · WASM · MCP | [Project](https://github.com/rad1092/matcha) · [v0.1.1](https://github.com/rad1092/matcha/releases/tag/v0.1.1) · [Example](https://github.com/rad1092/matcha/blob/main/docs/MCP-HOMEBREW.md) |
-| job-coach-agent | Job coaching agent project | Python | [Open](https://github.com/rad1092/job-coach-agent) |
-| smart-mirror | Integrated smart mirror repository (PC1/PC2/PC3) | Python | [Open](https://github.com/rad1092/smart-mirror) |
-| pp_second | Personal Python practice/experiment repository | Python | [Open](https://github.com/rad1092/pp_second) |
-| project_dashboard | Project dashboard repository | HTML | [Open](https://github.com/rad1092/project_dashboard) |
-| smart-mirror-aiot-coaching | Smart mirror AIoT coaching system | Python | [Open](https://github.com/rad1092/smart-mirror-aiot-coaching) |
-| streamlit-v2 | Streamlit app practice repository | Python | [Open](https://github.com/rad1092/streamlit-v2) |
-| dep-risk-live-e2e | Dependency risk e2e validation (deprecated) | - | [Open](https://github.com/rad1092/dep-risk-live-e2e) |
-| First_one | Early Python learning repository | Python | [Open](https://github.com/rad1092/First_one) |
-| first_three | Analyzer-design experiment repository | Python | [Open](https://github.com/rad1092/first_three) |
-| gh-dependency-risk | GitHub CLI extension for PR dependency risk review | Go | [Open](https://github.com/rad1092/gh-dependency-risk) |
-| minipr1_7 | Mini-project practice repository | Python | [Open](https://github.com/rad1092/minipr1_7) |
-| plotly_class | Plotly learning/practice repository | - | [Open](https://github.com/rad1092/plotly_class) |
-| firstcall-api-lookup-mcp | Read-only API lookup MCP server | JavaScript | [Open](https://github.com/rad1092/firstcall-api-lookup-mcp) |
-| gh-dep-risk-smoke-matrix | Smoke-test matrix fixtures for gh-dep-risk | - | [Open](https://github.com/rad1092/gh-dep-risk-smoke-matrix) |
-| streamlit-class | Streamlit class/practice repository | - | [Open](https://github.com/rad1092/streamlit-class) |
-| ascii-diagram-editor | ASCII diagram editor | TypeScript | [Open](https://github.com/rad1092/ascii-diagram-editor) |
-| sec-alert-selfhosted | Self-hosted security alert experiment | Python | [Open](https://github.com/rad1092/sec-alert-selfhosted) |
-| gh-dep-risk-smoke-comments | Smoke-test comment fixtures for gh-dep-risk | - | [Open](https://github.com/rad1092/gh-dep-risk-smoke-comments) |
-| First_two | File-analysis module experiment repository | Python | [Open](https://github.com/rad1092/First_two) |
-| rad1092.github.io | Personal portfolio GitHub Pages repository | - | [Open](https://github.com/rad1092/rad1092.github.io) |
+| FirstCall | For developers connecting APIs to AI clients: verify curl or OpenAPI requests, describe the tool and its inputs, and export a local MCP connection. One server can serve many tools. | Rust · GUI · CLI · MCP | [Project](https://github.com/rad1092/firstcall) · [Release](https://github.com/rad1092/firstcall/releases/latest) · [Example](https://github.com/rad1092/firstcall/blob/main/docs/cli-lifecycle.md) |
+| Matcha | For homebrew developers and emulator learners: inspect Game Boy CPU, memory and video, replay saved state, and drive repeatable debugging sessions through MCP. | Rust · WASM · MCP | [Project](https://github.com/rad1092/matcha) · [Release](https://github.com/rad1092/matcha/releases/latest) · [Example](https://github.com/rad1092/matcha/blob/main/docs/MCP-HOMEBREW.md) |
+| SerdeProof | See how your JSON changes before moving to Jackson 3 or Spring Boot 4: run real DTOs, mapper settings and payloads in two serializer builds and compare the output and producer–consumer combinations. | Java 17 · CLI | [Project](https://github.com/rad1092/serdeproof) · [Release](https://github.com/rad1092/serdeproof/releases/latest) · [Example](https://github.com/rad1092/serdeproof#try-the-release-without-building) |
+| gh-dep-risk | A GitHub CLI extension: give it a pull request number and it scores each new dependency, shows why, and lists what to check first. | Go · GitHub CLI | [Project](https://github.com/rad1092/gh-dep-risk) · [Release](https://github.com/rad1092/gh-dep-risk/releases/latest) |
+| RepoLens | Fails a pull request only when it adds a new maintenance problem to a Node repository: an unpinned action, a write-scoped token, a script CI never runs. | TypeScript · CLI · GitHub Action | [Project](https://github.com/rad1092/repolens) · [Release](https://github.com/rad1092/repolens/releases/latest) |
+| Treeport | Check a ZIP, folder or Git repository for name collisions and path lengths before it moves to another operating system, without renaming, copying or extracting anything. | Go · CLI | [Project](https://github.com/rad1092/treeport) · [Release](https://github.com/rad1092/treeport/releases/latest) · [Example](https://github.com/rad1092/treeport/blob/main/docs/first-run.md) |
+| Annotrail | For readers of revised papers or course notes: match highlights and comments from an old PDF to the new one's text, review each suggestion, and export the approved annotations. Works on PDFs with selectable text. | Java · PDFBox | [Project](https://github.com/rad1092/annotrail) · [Release](https://github.com/rad1092/annotrail/releases/latest) · [Example](https://github.com/rad1092/annotrail/tree/main/examples/review-demo) |
+| ConflictBench | For Syncthing users: compare changed lines, images or metadata in conflict files, then keep the original, use the conflict, or keep both. | C++ · Qt | [Project](https://github.com/rad1092/conflictbench) · [Release](https://github.com/rad1092/conflictbench/releases/latest) · [Example](https://github.com/rad1092/conflictbench/blob/main/docs/FIRST-RUN.md) |
+| PaperStager | For PDF batches with selectable text: mark document boundaries with page thumbnails, review names suggested by text rules, and approve an export of separate PDFs plus a manifest. No OCR. | C# · Avalonia | [Project](https://github.com/rad1092/paperstager) · [Release](https://github.com/rad1092/paperstager/releases/latest) · [Example](https://github.com/rad1092/paperstager#get-started) |
 
-Questions about these projects: [rad174951@gmail.com](mailto:rad174951@gmail.com) · [WHAGO](https://whago.net/software)
+## Lab
 
-[<- Back to Main](/en/)
+| Repository | Summary | Tech | Link |
+|---|---|---|---|
+| ShopShift | For a small shop's planner: import ERP CSV/XLSX exports, keep manual starts and locks, and review conflicts and alternatives offline. Not yet validated in a real shop. | Python · PySide6 · OR-Tools | [Project](https://github.com/rad1092/shopshift) · [Release](https://github.com/rad1092/shopshift/releases/latest) · [Example](https://github.com/rad1092/shopshift#daily-workflow) |
+| Lifecase | Reproduce the CI step that never finishes because a process the tool started still holds its pipes, with Node and Python tests. Archived (read-only). | C++ · Node · Python · Go | [Project](https://github.com/rad1092/lifecase) · [Release](https://github.com/rad1092/lifecase/releases/latest) · [Example](https://github.com/rad1092/lifecase#try-it-with-node-or-python) |
+
+## Site and supporting repositories
+
+| Repository | Summary | Link |
+|---|---|---|
+| whago-home | Source for [whago.net](https://whago.net) | [Open](https://github.com/rad1092/whago-home) |
+| gh-dep-risk-smoke-matrix | Pull request fixtures for gh-dep-risk's install smoke test and demo | [Open](https://github.com/rad1092/gh-dep-risk-smoke-matrix) |
+| gh-dep-risk-smoke-comments | Pull request comment smoke test run before gh-dep-risk releases | [Open](https://github.com/rad1092/gh-dep-risk-smoke-comments) |
+| rad1092.github.io | This portfolio | [Open](https://github.com/rad1092/rad1092.github.io) |
+
+## Team projects
+
+| Repository | Summary | Tech | Link |
+|---|---|---|---|
+| project_dashboard | Disaster shelter recommendation dashboard (4-person team, backend and architecture lead) | Python · Streamlit | [Open](https://github.com/rad1092/project_dashboard) |
+| smart-mirror | Integrated smart mirror repository (PC1, PC2, PC3) with demo material | Python | [Open](https://github.com/rad1092/smart-mirror) |
+
+## Retired (archived)
+
+| Repository | Summary | Link |
+|---|---|---|
+| daymark | A retired app, kept read-only with its source and releases. | [Open](https://github.com/rad1092/daymark) |
+| siteboard | A retired app, kept read-only with its source and releases. | [Open](https://github.com/rad1092/siteboard) |
+
+Contact: [rad174951@gmail.com](mailto:rad174951@gmail.com) · [WHAGO](https://whago.net)
+
+[<- Back to main](/en/)

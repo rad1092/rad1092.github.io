@@ -5,40 +5,52 @@ permalink: /repositories/
 
 # 깃허브 저장소 목록
 
-아래 목록은 `@rad1092` 공개 저장소를 기준으로 정리했습니다.
+`@rad1092`의 공개 저장소입니다. 릴리스 링크는 항상 최신 공개 릴리스로 연결됩니다.
+
+## 제품
 
 | 저장소 | 요약 | 기술 | 링크 |
 |---|---|---|---|
-| FirstCall | API를 AI 클라이언트에 연결하려는 개발자가 curl·OpenAPI 요청을 실제로 검증하고, 용도와 입력을 설명한 로컬 MCP 도구로 내보냅니다. | Rust · GUI · CLI · MCP | [프로젝트](https://github.com/rad1092/firstcall-local-api-workbench) · [v0.3.1](https://github.com/rad1092/firstcall-local-api-workbench/releases/tag/v0.3.1) · [실습](https://github.com/rad1092/firstcall-local-api-workbench/blob/main/docs/cli-lifecycle.md) |
-| Annotrail · PDF 주석 이전 | 논문·교재 개정판을 읽는 사용자가 이전 PDF의 하이라이트와 댓글을 새 PDF의 텍스트와 대조하고, 승인한 주석을 새 파일로 옮깁니다. | Java · PDFBox | [프로젝트](https://github.com/rad1092/annotrail) · [v0.1.3 preview](https://github.com/rad1092/annotrail/releases/tag/v0.1.3) · [실습](https://github.com/rad1092/annotrail/tree/main/examples/review-demo) |
-| ConflictBench · Syncthing 충돌 검토 | Syncthing 사용자가 충돌 파일의 텍스트·이미지·메타데이터를 비교하고, 원본 유지·충돌본 사용·둘 다 보존 중 하나를 직접 선택합니다. | C++ · Qt | [프로젝트](https://github.com/rad1092/conflictbench) · [v0.1.0](https://github.com/rad1092/conflictbench/releases/tag/v0.1.0) · [실습](https://github.com/rad1092/conflictbench/blob/main/docs/FIRST-RUN.md) |
-| ShopShift | 소규모 작업장의 계획 담당자가 ERP에서 내보낸 CSV·XLSX로 일일 작업을 배치하고, 잠금과 수동 시작 시각을 유지하며 충돌과 대안을 검토합니다. | Python · PySide6 · OR-Tools | [프로젝트](https://github.com/rad1092/shopshift) · [v0.1.0](https://github.com/rad1092/shopshift/releases/tag/v0.1.0) · [실습](https://github.com/rad1092/shopshift#daily-workflow) |
-| Treeport | 내보내기·압축·배포 파이프라인 개발자가 폴더, ZIP 또는 JSONL 목록의 이름 충돌과 경로 길이를 대상 모델에 맞춰 읽기 전용으로 검사합니다. | Go · CLI | [프로젝트](https://github.com/rad1092/treeport) · [v0.1.3](https://github.com/rad1092/treeport/releases/tag/v0.1.3) · [실습](https://github.com/rad1092/treeport/blob/main/docs/first-run.md) |
-| Lifecase | 하위 프로세스를 실행하는 앱 개발자가 제어된 네이티브 fixture로 프로세스 종료, 출력 EOF, 취소와 자식 프로세스 정리를 각각 테스트합니다. | C++ · .NET · Go | [프로젝트](https://github.com/rad1092/lifecase) · [v0.1.3](https://github.com/rad1092/lifecase/releases/tag/v0.1.3) · [실습](https://github.com/rad1092/lifecase#run-the-net-contracts) |
-| PaperStager | 묶음 PDF를 정리하는 사용자가 페이지 미리보기로 문서 경계를 나누고, 텍스트 규칙으로 제안된 파일명을 검토한 뒤 승인하여 내보냅니다. | C# · Avalonia | [프로젝트](https://github.com/rad1092/paperstager) · [v0.1.1 preview](https://github.com/rad1092/paperstager/releases/tag/v0.1.1) · [실습](https://github.com/rad1092/paperstager#get-started) |
-| SerdeProof | Java 개발팀이 실제 DTO·매퍼 설정·페이로드 코퍼스를 두 직렬화 빌드에서 실행해 입력 수용, JSON 차이와 생산자·소비자 조합을 비교합니다. | Java 17 · CLI | [프로젝트](https://github.com/rad1092/serdeproof) · [v0.1.1](https://github.com/rad1092/serdeproof/releases/tag/v0.1.1) · [실습](https://github.com/rad1092/serdeproof#try-the-release-without-building) |
-| Matcha | 게임보이 홈브루 개발자와 에뮬레이터 학습자가 CPU·메모리·화면을 관찰하고, 저장 상태를 재생하거나 MCP 도구로 같은 실행을 반복합니다. | Rust · WASM · MCP | [프로젝트](https://github.com/rad1092/matcha) · [v0.1.1](https://github.com/rad1092/matcha/releases/tag/v0.1.1) · [실습](https://github.com/rad1092/matcha/blob/main/docs/MCP-HOMEBREW.md) |
-| job-coach-agent | 취업 코칭 에이전트 프로젝트 | Python | [바로가기](https://github.com/rad1092/job-coach-agent) |
-| smart-mirror | PC1/PC2/PC3 통합 스마트미러 저장소 | Python | [바로가기](https://github.com/rad1092/smart-mirror) |
-| pp_second | 개인 Python 실습/실험 저장소 | Python | [바로가기](https://github.com/rad1092/pp_second) |
-| project_dashboard | 프로젝트 대시보드 구성 | HTML | [바로가기](https://github.com/rad1092/project_dashboard) |
-| smart-mirror-aiot-coaching | 스마트미러 AIoT 코칭 시스템 | Python | [바로가기](https://github.com/rad1092/smart-mirror-aiot-coaching) |
-| streamlit-v2 | Streamlit 기반 앱 실습 | Python | [바로가기](https://github.com/rad1092/streamlit-v2) |
-| dep-risk-live-e2e | 의존성 리스크 e2e 검증(Deprecated) | - | [바로가기](https://github.com/rad1092/dep-risk-live-e2e) |
-| First_one | 초기 Python 학습 저장소 | Python | [바로가기](https://github.com/rad1092/First_one) |
-| first_three | 분석기 설계 실험 저장소 | Python | [바로가기](https://github.com/rad1092/first_three) |
-| gh-dependency-risk | PR 의존성 리스크 검토용 GitHub CLI 확장 | Go | [바로가기](https://github.com/rad1092/gh-dependency-risk) |
-| minipr1_7 | 미니 프로젝트 실습 저장소 | Python | [바로가기](https://github.com/rad1092/minipr1_7) |
-| plotly_class | Plotly 학습/실습 저장소 | - | [바로가기](https://github.com/rad1092/plotly_class) |
-| firstcall-api-lookup-mcp | 읽기 전용 API 조회 MCP 서버 | JavaScript | [바로가기](https://github.com/rad1092/firstcall-api-lookup-mcp) |
-| gh-dep-risk-smoke-matrix | gh-dep-risk 스모크 테스트 매트릭스 | - | [바로가기](https://github.com/rad1092/gh-dep-risk-smoke-matrix) |
-| streamlit-class | Streamlit 수업/실습 저장소 | - | [바로가기](https://github.com/rad1092/streamlit-class) |
-| ascii-diagram-editor | ASCII 다이어그램 편집기 | TypeScript | [바로가기](https://github.com/rad1092/ascii-diagram-editor) |
-| sec-alert-selfhosted | 보안 알림 셀프호스팅 실험 | Python | [바로가기](https://github.com/rad1092/sec-alert-selfhosted) |
-| gh-dep-risk-smoke-comments | gh-dep-risk 코멘트 스모크 테스트 | - | [바로가기](https://github.com/rad1092/gh-dep-risk-smoke-comments) |
-| First_two | 파일 분석 모듈 실험 저장소 | Python | [바로가기](https://github.com/rad1092/First_two) |
-| rad1092.github.io | 개인 포트폴리오 GitHub Pages 저장소 | - | [바로가기](https://github.com/rad1092/rad1092.github.io) |
+| FirstCall | API를 AI 클라이언트에 연결하려는 개발자가 curl·OpenAPI 요청을 실제로 검증하고, 용도와 입력을 설명한 로컬 MCP 도구로 내보냅니다. 서버 하나로 여러 도구를 제공합니다. | Rust · GUI · CLI · MCP | [프로젝트](https://github.com/rad1092/firstcall) · [릴리스](https://github.com/rad1092/firstcall/releases/latest) · [실습](https://github.com/rad1092/firstcall/blob/main/docs/cli-lifecycle.md) |
+| Matcha | 게임보이 홈브루 개발자와 에뮬레이터 학습자가 CPU·메모리·화면을 관찰하고, 저장 상태를 재생하거나 MCP 도구로 같은 실행을 반복합니다. | Rust · WASM · MCP | [프로젝트](https://github.com/rad1092/matcha) · [릴리스](https://github.com/rad1092/matcha/releases/latest) · [실습](https://github.com/rad1092/matcha/blob/main/docs/MCP-HOMEBREW.md) |
+| SerdeProof | Jackson 3·Spring Boot 4로 옮기기 전에 실제 DTO·매퍼 설정·페이로드로 두 직렬화 빌드의 JSON 차이와 생산자·소비자 조합을 비교합니다. | Java 17 · CLI | [프로젝트](https://github.com/rad1092/serdeproof) · [릴리스](https://github.com/rad1092/serdeproof/releases/latest) · [실습](https://github.com/rad1092/serdeproof#try-the-release-without-building) |
+| gh-dep-risk | PR 번호 하나로 새로 들어온 의존성의 위험 점수와 근거, 먼저 확인할 항목을 보여 주는 GitHub CLI 확장입니다. | Go · GitHub CLI | [프로젝트](https://github.com/rad1092/gh-dep-risk) · [릴리스](https://github.com/rad1092/gh-dep-risk/releases/latest) |
+| RepoLens | Node 저장소의 PR이 고정되지 않은 액션, 쓰기 권한 토큰, CI가 안 돌리는 스크립트 같은 새 유지보수 문제를 들여올 때만 실패시킵니다. | TypeScript · CLI · GitHub Action | [프로젝트](https://github.com/rad1092/repolens) · [릴리스](https://github.com/rad1092/repolens/releases/latest) |
+| Treeport | ZIP·폴더·Git 저장소를 다른 OS로 옮기기 전에 이름 충돌과 경로 길이를 읽기 전용으로 검사합니다. | Go · CLI | [프로젝트](https://github.com/rad1092/treeport) · [릴리스](https://github.com/rad1092/treeport/releases/latest) · [실습](https://github.com/rad1092/treeport/blob/main/docs/first-run.md) |
+| Annotrail | 논문·교재 개정판에서 이전 PDF의 하이라이트와 댓글을 새 PDF의 텍스트와 대조하고, 승인한 주석을 새 파일로 옮깁니다. 선택 가능한 텍스트가 있는 PDF가 대상입니다. | Java · PDFBox | [프로젝트](https://github.com/rad1092/annotrail) · [릴리스](https://github.com/rad1092/annotrail/releases/latest) · [실습](https://github.com/rad1092/annotrail/tree/main/examples/review-demo) |
+| ConflictBench | Syncthing 충돌 파일의 바뀐 줄·이미지·메타데이터를 비교하고, 원본 유지·충돌본 사용·둘 다 보존 중 하나를 직접 선택합니다. | C++ · Qt | [프로젝트](https://github.com/rad1092/conflictbench) · [릴리스](https://github.com/rad1092/conflictbench/releases/latest) · [실습](https://github.com/rad1092/conflictbench/blob/main/docs/FIRST-RUN.md) |
+| PaperStager | 텍스트가 있는 묶음 PDF를 페이지 미리보기로 문서별로 나누고, 텍스트 규칙으로 제안된 파일명을 검토한 뒤 승인하여 내보냅니다. OCR은 없습니다. | C# · Avalonia | [프로젝트](https://github.com/rad1092/paperstager) · [릴리스](https://github.com/rad1092/paperstager/releases/latest) · [실습](https://github.com/rad1092/paperstager#get-started) |
 
-프로젝트 문의: [rad174951@gmail.com](mailto:rad174951@gmail.com) · [WHAGO](https://whago.net/software)
+## 실험실
+
+| 저장소 | 요약 | 기술 | 링크 |
+|---|---|---|---|
+| ShopShift | 소규모 작업장의 계획 담당자가 ERP에서 내보낸 CSV·XLSX로 일일 작업을 배치하고, 충돌과 대안을 오프라인으로 검토합니다. 실제 작업장 검증 전 단계입니다. | Python · PySide6 · OR-Tools | [프로젝트](https://github.com/rad1092/shopshift) · [릴리스](https://github.com/rad1092/shopshift/releases/latest) · [실습](https://github.com/rad1092/shopshift#daily-workflow) |
+| Lifecase | CI 단계가 끝나지 않는 문제(자식은 끝났는데 손자 프로세스가 파이프를 잡고 있는 상황)를 Node·Python 테스트로 재현합니다. 보관(읽기 전용). | C++ · Node · Python · Go | [프로젝트](https://github.com/rad1092/lifecase) · [릴리스](https://github.com/rad1092/lifecase/releases/latest) · [실습](https://github.com/rad1092/lifecase#try-it-with-node-or-python) |
+
+## 사이트와 지원 저장소
+
+| 저장소 | 요약 | 링크 |
+|---|---|---|
+| whago-home | [whago.net](https://whago.net) 사이트 소스 | [바로가기](https://github.com/rad1092/whago-home) |
+| gh-dep-risk-smoke-matrix | gh-dep-risk 설치 스모크 테스트와 데모가 쓰는 PR 픽스처 | [바로가기](https://github.com/rad1092/gh-dep-risk-smoke-matrix) |
+| gh-dep-risk-smoke-comments | gh-dep-risk 릴리스 전 PR 댓글 스모크 테스트 | [바로가기](https://github.com/rad1092/gh-dep-risk-smoke-comments) |
+| rad1092.github.io | 이 포트폴리오 | [바로가기](https://github.com/rad1092/rad1092.github.io) |
+
+## 팀 프로젝트
+
+| 저장소 | 요약 | 기술 | 링크 |
+|---|---|---|---|
+| project_dashboard | 재난 대피소 추천 대시보드 (4인 팀, 백엔드·아키텍처 담당) | Python · Streamlit | [바로가기](https://github.com/rad1092/project_dashboard) |
+| smart-mirror | PC1·PC2·PC3을 통합한 스마트미러 저장소와 시연 자료 | Python | [바로가기](https://github.com/rad1092/smart-mirror) |
+
+## 개발 종료(보관)
+
+| 저장소 | 요약 | 링크 |
+|---|---|---|
+| daymark | 개발을 종료한 앱. 읽기 전용으로 소스와 릴리스를 보관합니다. | [바로가기](https://github.com/rad1092/daymark) |
+| siteboard | 개발을 종료한 앱. 읽기 전용으로 소스와 릴리스를 보관합니다. | [바로가기](https://github.com/rad1092/siteboard) |
+
+프로젝트 문의: [rad174951@gmail.com](mailto:rad174951@gmail.com) · [WHAGO](https://whago.net/ko/)
 
 [<- 메인으로 돌아가기](/)
