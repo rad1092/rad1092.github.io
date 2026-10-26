@@ -6,7 +6,6 @@ layout: default
 {%- assign h = site.data.home[page.lang] -%}
 {%- if page.lang == "ko" %}{% assign base = "/ko" %}{% else %}{% assign base = "" %}{% endif -%}
 <section class="intro">
-  <img class="intro__photo" src="{{ '/profile.png' | relative_url }}" width="303" height="303" alt="{{ t.name }}">
   <h1 class="intro__statement">{{ h.statement }}</h1>
   <p class="intro__lead">{{ h.lead }}</p>
 </section>
