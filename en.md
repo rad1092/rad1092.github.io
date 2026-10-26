@@ -138,9 +138,6 @@ body { background: var(--bg); }
 .context { color: var(--muted); margin: 0 0 22px; max-width: 72ch; font-size: 1.04rem; }
 .context b { color: var(--text); }
 
-.ai-note { display: flex; gap: 13px; align-items: flex-start; margin: 0 0 30px; padding: 15px 18px; border: 1px solid color-mix(in srgb, var(--accent) 28%, transparent); border-radius: 12px; font-size: .94rem; color: var(--muted); max-width: 760px; background: color-mix(in srgb, var(--accent) 5%, transparent); }
-.ai-note .badge { flex: 0 0 auto; font-family: var(--serif); font-size: .68rem; font-weight: 700; color: var(--accent-ink); background: var(--accent); padding: 3px 8px; border-radius: 6px; margin-top: 2px; letter-spacing: .05em; }
-.ai-note b { color: var(--text); }
 
 .media { margin: 0 0 30px; }
 .gallery { display: grid; gap: 14px; }
@@ -231,14 +228,14 @@ body { background: var(--bg); }
   <aside class="id">
     <img class="id-photo" src="/profile.png" alt="HongDae Kim">
     <h1 class="id-name">HongDae Kim<small>김홍대</small></h1>
-    <p class="id-role">I build software that helps people take their next step</p>
+    <p class="id-role">Software developer building developer tools and desktop apps</p>
     <nav class="snav">
       <a class="active" href="#about">About</a>
       <a href="#experience">Experience</a>
       <a href="#p1"><em>01</em>Disaster Dashboard</a>
       <a href="#p2"><em>02</em>FirstCall</a>
       <a href="#p3"><em>03</em>gh-dep-risk</a>
-      <a href="#recent-tools">Recent tools</a>
+      <a href="#recent-tools">WHAGO tools</a>
       <a href="#more">Other</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -255,18 +252,19 @@ body { background: var(--bg); }
     <!-- ---------- ABOUT ---------- -->
     <section class="block" id="about">
       <p class="kicker">01 — About</p>
-      <h2 class="about-head">After years in field sales and delivery, I build software that helps people take their <span class="hl">next step</span>.</h2>
+      <h2 class="about-head">I design, build and ship <span class="hl">developer tools and desktop apps</span> people can download and use.</h2>
       <p class="lead">
-        I started from small learning repositories and grew step by step toward real, usable tools.
-        Guided by the idea of <span class="hl">"going beyond delivering information to driving action,"</span>
-        I focus on software — disaster evacuation guidance, API tooling, dependency-risk checks — that helps users act.
+        Eleven tools in Rust, Go, Python, TypeScript, C++, Java and C# are published as GitHub releases, most of them for macOS, Windows and Linux.
+        On team projects I led the backend and architecture; on my own projects I also own the tests, CI and releases.
       </p>
       <div class="chips">
         <span class="chip"><b>Python</b> Streamlit, Pandas, Folium</span>
         <span class="chip"><b>Rust</b> egui/eframe</span>
         <span class="chip"><b>Go</b> GitHub CLI</span>
-        <span class="chip"><b>DevOps</b> GitHub Actions</span>
-        <span class="chip"><b>AI</b> MCP, agent tooling</span>
+        <span class="chip"><b>TypeScript</b> Node, Next.js</span>
+        <span class="chip"><b>C++</b> Qt</span>
+        <span class="chip"><b>DevOps</b> GitHub Actions, Nginx</span>
+        <span class="chip"><b>MCP</b> servers, tool packaging</span>
       </div>
       <div class="cta">
         <a class="primary" href="#p1">View Projects ↓</a>
@@ -282,7 +280,7 @@ body { background: var(--bg); }
         <div class="tl-item">
           <div class="tl-when">2016.07 – 2017.07, 2022.04 – 2025.04 — ~4 years total</div>
           <div class="tl-role">Sales Management, Materials Delivery <span class="org">— Hyosang Safety Trading</span></div>
-          <p class="tl-desc">At a company supplying materials and safety equipment to construction sites, I started in materials delivery and grew into sales management over about four years. I handled clients directly, coordinated schedules, inventory and deadlines, and turned on-site needs into process and data.</p>
+          <p class="tl-desc">At a supplier of construction materials and safety equipment, I started in materials delivery and moved into sales management.</p>
           <ul class="tl-detail">
             <li><b>2022.04 – 2025.04</b> Sales management + materials delivery — client sales management, schedule and inventory coordination, direct customer handling</li>
             <li><b>2016.07 – 2017.07</b> Materials delivery — on-site construction materials delivery</li>
@@ -291,15 +289,15 @@ body { background: var(--bg); }
         <div class="tl-item">
           <div class="tl-when">2017.07 – 2018.07</div>
           <div class="tl-role">Exchange Student (language study) <span class="org">— UNAM CEPE, National Autonomous University of Mexico</span></div>
-          <p class="tl-desc">Spent a year as an exchange student at UNAM's Centre for Teaching Foreigners (CEPE) studying Spanish and Mexican culture — learning to adapt quickly and communicate across languages and cultures.</p>
+          <p class="tl-desc">A year studying Spanish at UNAM's Centre for Teaching Foreigners (CEPE).</p>
         </div>
       </div>
 
       <div class="certs-title">Licenses &amp; Certifications</div>
       <div class="certs">
-        <span class="cert">🚜 Excavator Operation</span>
-        <span class="cert">🏗️ Forklift Operation</span>
-        <span class="cert">🚛 Class 1 Large Vehicle License</span>
+        <span class="cert">Excavator Operation</span>
+        <span class="cert">Forklift Operation</span>
+        <span class="cert">Class 1 Large Vehicle License</span>
       </div>
     </section>
 
@@ -333,8 +331,6 @@ body { background: var(--bg); }
           <figure><img src="/assets/projects/dashboard-demo-4-route.png" alt="Route" loading="lazy"><figcaption>④ Alert (high-wind advisory) — walking safe-route guidance</figcaption></figure>
         </div>
       </div>
-
-      <div class="ai-note"><span class="badge">AI</span><span>Much of the stack was new to me, so I <b>leaned on AI tools to ramp up implementation quickly.</b> This is where I built the practical muscle of learning a new tool on the job and driving it with AI as a partner.</span></div>
 
       <div class="case">
         <div class="case-block flush">
@@ -375,20 +371,19 @@ body { background: var(--bg); }
       <span class="pno" aria-hidden="true">02</span>
       <p class="kicker">Featured Project 02</p>
       <div class="proj-head">
-        <div><h2 class="view-title" style="margin-bottom:0;">API to a local MCP tool · FirstCall</h2><code class="repo">rad1092/firstcall-local-api-workbench</code><div><span class="role-tag">Solo project · v0.3.1 · Apple Silicon macOS</span></div></div>
-        <div class="proj-links"><a href="https://github.com/rad1092/firstcall-local-api-workbench">GitHub ↗</a><a href="https://github.com/rad1092/firstcall-local-api-workbench/releases/tag/v0.3.1">v0.3.1 ↗</a></div>
+        <div><h2 class="view-title" style="margin-bottom:0;">API to a local MCP tool · FirstCall</h2><code class="repo">rad1092/firstcall</code><div><span class="role-tag">Solo project · v0.4.0 · macOS, Windows, Linux</span></div></div>
+        <div class="proj-links"><a href="https://github.com/rad1092/firstcall">GitHub ↗</a><a href="https://github.com/rad1092/firstcall/releases/latest">Latest release ↗</a></div>
       </div>
       <div class="stack"><span>Rust</span><span>egui / eframe</span><span>firstcall-cli</span><span>MCP</span></div>
       <p class="summary">Turn an API request into <b>a tool an AI client can actually call</b>: import, verify, describe and export a local MCP connection.</p><p class="context">For developers connecting existing APIs to AI workflows. FirstCall accepts curl or OpenAPI, separates authentication from tool inputs, and runs the exported tool through its bundled native CLI.</p>
-      <div class="metrics"><div class="metric"><b>2</b><span>Request sources — curl and OpenAPI</span></div><div class="metric"><b>2</b><span>Use through desktop GUI or CLI</span></div><div class="metric"><b>1</b><span>Current binary target — Apple Silicon macOS</span></div></div>
-      <div class="ai-note"><span class="badge">AI</span><span>I used <b>Claude as a pair-programming partner</b> for the Rust core, handling many input formats, tests and docs. I decided <em>what</em> to build and which rules to hold; AI sped up the repetitive implementation and edge-case checking.</span></div>
+      <div class="metrics"><div class="metric"><b>2</b><span>Request sources — curl and OpenAPI</span></div><div class="metric"><b>2</b><span>Use through desktop GUI or CLI</span></div><div class="metric"><b>4</b><span>Binary targets — macOS (Apple Silicon, Intel), Windows, Linux</span></div></div>
       <div class="case">
         <div class="case-block flush"><h3 class="case-h">The problem</h3><p>An HTTP request needs more than a URL to become a useful AI tool: a tested operation, understandable inputs and an explicit connection. FirstCall keeps request history and recipes locally while verification and tool calls connect to the API you choose.</p></div>
         <div class="case-block"><h3 class="case-h">The workflow</h3><p>Read a request, enter its inputs, and send a real verification call. Then describe the tool and export a new MCP package. Add its server entry to your client and supply authentication through that client’s environment. The companion runtime is included; desktop exports need no generated-code build or npm setup.</p></div>
-        <div class="case-block"><h3 class="case-h">What changed in v0.3.1</h3><p>Blank optional query and header inputs are omitted from the request; provided values and required-input checks are retained. After moving a package or the app, <code>connect --package</code> emits an updated absolute-path configuration without rewriting the package or calling the API.</p></div>
-        <div class="case-block"><h3 class="case-h">Scope and a reproducible start</h3><p>v0.3.1 provides an Apple Silicon macOS app and CLI with ad-hoc integrity signing, without Apple notarization. Start with <b>Try an example</b> to verify a public GitHub repository lookup and export it as an MCP tool. The runtime defaults to GET/HEAD; writes require explicit opt-in. Current Windows, Linux and Intel Mac binaries are not included.</p></div>
+        <div class="case-block"><h3 class="case-h">What changed in v0.4.0</h3><p>One server now serves many tools (<code>--toolbox</code>). Tokens entered in the app are saved per API in the OS keychain and read by <code>serve</code>, so a secret is entered once. When verification fails, the screen says why and what to do next.</p></div>
+        <div class="case-block"><h3 class="case-h">Scope and a reproducible start</h3><p>From v0.4.0 the app and CLI ship for macOS (Apple Silicon and Intel), Windows and Linux, without code signing or Apple notarization. Start with <b>Try an example</b> to verify a public GitHub repository lookup and export it as an MCP tool. The runtime defaults to GET/HEAD; writes require explicit opt-in.</p></div>
       </div>
-      <div class="cta"><a class="primary" href="https://github.com/rad1092/firstcall-local-api-workbench/releases/tag/v0.3.1">Download v0.3.1 ↗</a><a href="https://github.com/rad1092/firstcall-local-api-workbench/blob/main/docs/cli-lifecycle.md">Follow the CLI/MCP workflow ↗</a></div>
+      <div class="cta"><a class="primary" href="https://github.com/rad1092/firstcall/releases/latest">Download the latest release ↗</a><a href="https://github.com/rad1092/firstcall/blob/main/docs/cli-lifecycle.md">Follow the CLI/MCP workflow ↗</a></div>
     </section>
 
     <!-- ---------- PROJECT 3 : gh-dep-risk ---------- -->
@@ -398,10 +393,10 @@ body { background: var(--bg); }
       <div class="proj-head">
         <div>
           <h2 class="view-title" style="margin-bottom:0;">PR Dependency Risk Check · gh-dep-risk</h2>
-          <code class="repo">rad1092/gh-dependency-risk</code>
-          <div><span class="role-tag">Solo project · v0.2.0 release</span></div>
+          <code class="repo">rad1092/gh-dep-risk</code>
+          <div><span class="role-tag">Solo project · v0.3.0 release</span></div>
         </div>
-        <div class="proj-links"><a href="https://github.com/rad1092/gh-dependency-risk" target="_blank">GitHub ↗</a></div>
+        <div class="proj-links"><a href="https://github.com/rad1092/gh-dep-risk" target="_blank">GitHub ↗</a></div>
       </div>
       <div class="stack"><span>Go</span><span>GitHub CLI Extension</span><span>Dependency Review API</span><span>GitHub Actions</span></div>
 
@@ -418,8 +413,6 @@ body { background: var(--bg); }
           <figure><img src="/assets/projects/gh-dependency-risk-demo.gif" alt="gh-dep-risk terminal demo" loading="lazy"><figcaption>Terminal demo — checking PR dependencies and summarizing</figcaption></figure>
         </div>
       </div>
-
-      <div class="ai-note"><span class="badge">AI</span><span>I used AI to organize the <b>different ways each tool records its libraries</b> (npm, pip, Go…) and to cover edge cases with tests quickly. I personally decided the scope — what to support and what to explicitly leave out.</span></div>
 
       <div class="case">
         <div class="case-block flush">
@@ -456,16 +449,16 @@ body { background: var(--bg); }
 
     <!-- ---------- RECENT TOOLS ---------- -->
     <section class="block" id="recent-tools">
-      <p class="kicker">2026.10 — Open source</p>
-      <h2 class="view-title">Tools and recent updates</h2>
-      <p class="lead">Nine projects for concrete tasks: connecting APIs, reviewing documents and files, planning work, and testing or debugging software. Each links to its current public release and a reproducible starting point. Preview releases and platform limits are stated in the project guides.</p>
+      <p class="kicker">WHAGO</p>
+      <h2 class="view-title">Tools I ship</h2>
+      <p class="lead">Tools I publish under the name WHAGO. Each card links to the latest release and an example you can follow.</p>
       <div class="archive">
         <div class="arch-card">
-          <div class="top"><span class="mono">FC</span><a class="ext" href="https://github.com/rad1092/firstcall-local-api-workbench" target="_blank" rel="noopener noreferrer" aria-label="FirstCall GitHub">↗</a></div>
-          <h4><a href="https://github.com/rad1092/firstcall-local-api-workbench">FirstCall</a></h4>
+          <div class="top"><span class="mono">FC</span><a class="ext" href="https://github.com/rad1092/firstcall" target="_blank" rel="noopener noreferrer" aria-label="FirstCall GitHub">↗</a></div>
+          <h4><a href="https://github.com/rad1092/firstcall">FirstCall</a></h4>
 
-          <p>For developers connecting APIs to AI clients: verify curl or OpenAPI requests, describe the tool and its inputs, and export a local MCP connection. v0.3.1 targets Apple Silicon macOS.</p>
-          <p class="tool-links"><a href="https://github.com/rad1092/firstcall-local-api-workbench/releases/tag/v0.3.1">v0.3.1 · Download ↗</a><a href="https://github.com/rad1092/firstcall-local-api-workbench/blob/main/docs/cli-lifecycle.md">Try the example ↗</a></p>
+          <p>For developers connecting APIs to AI clients: verify curl or OpenAPI requests, describe the tool and its inputs, and export a local MCP connection. Builds for macOS, Windows and Linux.</p>
+          <p class="tool-links"><a href="https://github.com/rad1092/firstcall/releases/latest">Latest release ↗</a><a href="https://github.com/rad1092/firstcall/blob/main/docs/cli-lifecycle.md">Try the example ↗</a></p>
           <div class="tags"><span>Rust · GUI · CLI · MCP</span></div>
         </div>
         <div class="arch-card">
@@ -473,7 +466,7 @@ body { background: var(--bg); }
           <h4><a href="https://github.com/rad1092/annotrail">Annotrail</a></h4>
           <p class="tool-subtitle">PDF annotation transfer</p>
           <p>For readers comparing paper drafts or course notes: match embedded highlights and comments to a revised PDF, review each suggestion, and export approved annotations to a new file.</p>
-          <p class="tool-links"><a href="https://github.com/rad1092/annotrail/releases/tag/v0.1.3">v0.1.3 preview · Download ↗</a><a href="https://github.com/rad1092/annotrail/tree/main/examples/review-demo">Try the example ↗</a></p>
+          <p class="tool-links"><a href="https://github.com/rad1092/annotrail/releases/latest">Latest release ↗</a><a href="https://github.com/rad1092/annotrail/tree/main/examples/review-demo">Try the example ↗</a></p>
           <div class="tags"><span>Java · PDFBox</span></div>
         </div>
         <div class="arch-card">
@@ -481,15 +474,16 @@ body { background: var(--bg); }
           <h4><a href="https://github.com/rad1092/conflictbench">ConflictBench</a></h4>
           <p class="tool-subtitle">Syncthing conflict review</p>
           <p>For Syncthing users: compare conflict files as text, images or metadata, then choose to keep the original, use the conflict, or keep both, with backups outside the synced folder.</p>
-          <p class="tool-links"><a href="https://github.com/rad1092/conflictbench/releases/tag/v0.1.0">v0.1.0 · Download ↗</a><a href="https://github.com/rad1092/conflictbench/blob/main/docs/FIRST-RUN.md">Try the example ↗</a></p>
+          <p class="tool-links"><a href="https://github.com/rad1092/conflictbench/releases/latest">Latest release ↗</a><a href="https://github.com/rad1092/conflictbench/blob/main/docs/FIRST-RUN.md">Try the example ↗</a></p>
           <div class="tags"><span>C++ · Qt</span></div>
         </div>
         <div class="arch-card">
           <div class="top"><span class="mono">SS</span><a class="ext" href="https://github.com/rad1092/shopshift" target="_blank" rel="noopener noreferrer" aria-label="ShopShift GitHub">↗</a></div>
           <h4><a href="https://github.com/rad1092/shopshift">ShopShift</a></h4>
 
+          <p class="tool-subtitle">Lab</p>
           <p>For a small shop’s planner: import ERP CSV/XLSX exports, preserve manual starts and locks across reimports, inspect schedule conflicts, and compare daily-plan scenarios offline.</p>
-          <p class="tool-links"><a href="https://github.com/rad1092/shopshift/releases/tag/v0.1.0">v0.1.0 · Download ↗</a><a href="https://github.com/rad1092/shopshift#daily-workflow">Try the example ↗</a></p>
+          <p class="tool-links"><a href="https://github.com/rad1092/shopshift/releases/latest">Latest release ↗</a><a href="https://github.com/rad1092/shopshift#daily-workflow">Try the example ↗</a></p>
           <div class="tags"><span>Python · PySide6 · OR-Tools</span></div>
         </div>
         <div class="arch-card">
@@ -497,23 +491,24 @@ body { background: var(--bg); }
           <h4><a href="https://github.com/rad1092/treeport">Treeport</a></h4>
 
           <p>For export and packaging pipelines: check directory trees, ZIP entries or JSONL manifests for destination name collisions and path budgets without renaming, copying or extracting files.</p>
-          <p class="tool-links"><a href="https://github.com/rad1092/treeport/releases/tag/v0.1.3">v0.1.3 · Download ↗</a><a href="https://github.com/rad1092/treeport/blob/main/docs/first-run.md">Try the example ↗</a></p>
+          <p class="tool-links"><a href="https://github.com/rad1092/treeport/releases/latest">Latest release ↗</a><a href="https://github.com/rad1092/treeport/blob/main/docs/first-run.md">Try the example ↗</a></p>
           <div class="tags"><span>Go · CLI</span></div>
         </div>
         <div class="arch-card">
           <div class="top"><span class="mono">LC</span><a class="ext" href="https://github.com/rad1092/lifecase" target="_blank" rel="noopener noreferrer" aria-label="Lifecase GitHub">↗</a></div>
           <h4><a href="https://github.com/rad1092/lifecase">Lifecase</a></h4>
 
-          <p>For applications that run subprocesses: use controlled native fixtures to test exit, stdout/stderr EOF, cancellation and descendant cleanup, with a .NET/CliWrap example and optional Go verifier.</p>
-          <p class="tool-links"><a href="https://github.com/rad1092/lifecase/releases/tag/v0.1.3">v0.1.3 · Download ↗</a><a href="https://github.com/rad1092/lifecase#run-the-net-contracts">Try the example ↗</a></p>
-          <div class="tags"><span>C++ · .NET · Go</span></div>
+          <p class="tool-subtitle">Lab · CI hang reproduction kit</p>
+          <p>Reproduce the CI step that prints its last line and never finishes: the tool exits, but a process it started still holds the pipes. Node and Python tests pin what each runtime reports.</p>
+          <p class="tool-links"><a href="https://github.com/rad1092/lifecase/releases/latest">Latest release ↗</a><a href="https://github.com/rad1092/lifecase#try-it-with-node-or-python">Try the example ↗</a></p>
+          <div class="tags"><span>C++ · Node · Python · Go</span></div>
         </div>
         <div class="arch-card">
           <div class="top"><span class="mono">PS</span><a class="ext" href="https://github.com/rad1092/paperstager" target="_blank" rel="noopener noreferrer" aria-label="PaperStager GitHub">↗</a></div>
           <h4><a href="https://github.com/rad1092/paperstager">PaperStager</a></h4>
 
-          <p>For people organizing PDF batches: mark document boundaries with page thumbnails, review names suggested by text rules, and approve an export of separate PDFs plus a manifest.</p>
-          <p class="tool-links"><a href="https://github.com/rad1092/paperstager/releases/tag/v0.1.1">v0.1.1 preview · Download ↗</a><a href="https://github.com/rad1092/paperstager#get-started">Try the example ↗</a></p>
+          <p>For people organizing PDF batches that have selectable text: mark document boundaries with page thumbnails, review names suggested by text rules, and approve an export of separate PDFs plus a manifest. No OCR.</p>
+          <p class="tool-links"><a href="https://github.com/rad1092/paperstager/releases/latest">Latest release ↗</a><a href="https://github.com/rad1092/paperstager#get-started">Try the example ↗</a></p>
           <div class="tags"><span>C# · Avalonia</span></div>
         </div>
         <div class="arch-card">
@@ -521,7 +516,7 @@ body { background: var(--bg); }
           <h4><a href="https://github.com/rad1092/serdeproof">SerdeProof</a></h4>
 
           <p>For Java teams upgrading serializers: run real DTOs, mapper settings and a payload corpus in separate JVMs, comparing accepted inputs, JSON changes and four producer–consumer combinations.</p>
-          <p class="tool-links"><a href="https://github.com/rad1092/serdeproof/releases/tag/v0.1.1">v0.1.1 · Download ↗</a><a href="https://github.com/rad1092/serdeproof#try-the-release-without-building">Try the example ↗</a></p>
+          <p class="tool-links"><a href="https://github.com/rad1092/serdeproof/releases/latest">Latest release ↗</a><a href="https://github.com/rad1092/serdeproof#try-the-release-without-building">Try the example ↗</a></p>
           <div class="tags"><span>Java 17 · CLI</span></div>
         </div>
         <div class="arch-card">
@@ -529,11 +524,11 @@ body { background: var(--bg); }
           <h4><a href="https://github.com/rad1092/matcha">Matcha</a></h4>
 
           <p>For homebrew developers and emulator learners: inspect Game Boy CPU, memory and video, replay saved state, and drive repeatable debugging sessions through MCP. Some DMG/CGB timing remains unsupported.</p>
-          <p class="tool-links"><a href="https://github.com/rad1092/matcha/releases/tag/v0.1.1">v0.1.1 · Download ↗</a><a href="https://github.com/rad1092/matcha/blob/main/docs/MCP-HOMEBREW.md">Try the example ↗</a></p>
+          <p class="tool-links"><a href="https://github.com/rad1092/matcha/releases/latest">Latest release ↗</a><a href="https://github.com/rad1092/matcha/blob/main/docs/MCP-HOMEBREW.md">Try the example ↗</a></p>
           <div class="tags"><span>Rust · WASM · MCP</span></div>
         </div>
       </div>
-      <p class="lead" style="margin-top:20px;font-size:.92rem;"><a href="https://whago.net/software" style="color:var(--accent);">Compare the tools at WHAGO ↗</a></p>
+      <p class="lead" style="margin-top:20px;font-size:.92rem;"><a href="https://whago.net/software" style="color:var(--accent);">See every tool at whago.net ↗</a></p>
     </section>
 
     <!-- ---------- OTHER PROJECTS ---------- -->
@@ -542,16 +537,10 @@ body { background: var(--bg); }
       <h2 class="view-title">Other Work</h2>
       <div class="archive">
         <div class="arch-card">
-          <div class="top"><span class="folder">🦺</span><a class="ext" href="https://github.com/rad1092/minipr1_7" target="_blank">↗</a></div>
-          <h4><a href="https://github.com/rad1092/minipr1_7" target="_blank">Construction-Site PPE Detection</a></h4>
+          <div class="top"><span class="folder">🦺</span><span class="ext" style="font-size:.78rem;">Private repository</span></div>
+          <h4>Construction-Site PPE Detection</h4>
           <p>Detects hardhats and safety vests on workers in photos, video and webcam feeds — person-box-based post-processing cuts false positives and tracks per-worker status</p>
           <div class="tags"><span>Python</span><span>YOLO</span><span>Gradio</span><span>OpenCV</span></div>
-        </div>
-        <div class="arch-card">
-          <div class="top"><span class="folder">📈</span><a class="ext" href="https://github.com/rad1092/sec-alert-selfhosted" target="_blank">↗</a></div>
-          <h4><a href="https://github.com/rad1092/sec-alert-selfhosted" target="_blank">SEC Filing Alert Inbox</a></h4>
-          <p>Watches US SEC filings (8-K, Form 4) for a focused watchlist, shows why each one was flagged, and routes signals to Slack, webhooks or email — fully self-hosted</p>
-          <div class="tags"><span>Python</span><span>SQLite</span><span>Docker</span></div>
         </div>
         <div class="arch-card">
           <div class="top"><span class="folder">🪞</span><a class="ext" href="https://github.com/rad1092/smart-mirror" target="_blank">↗</a></div>
@@ -560,22 +549,10 @@ body { background: var(--bg); }
           <div class="tags"><span>Python</span><span>WebSocket</span><span>SQLite</span><span>AIoT</span></div>
         </div>
         <div class="arch-card">
-          <div class="top"><span class="folder">🔌</span><a class="ext" href="https://github.com/rad1092/firstcall-api-lookup-mcp" target="_blank">↗</a></div>
-          <h4><a href="https://github.com/rad1092/firstcall-api-lookup-mcp" target="_blank">FirstCall API Lookup MCP</a></h4>
-          <p>A read-only MCP server generated from FirstCall, exposing a single public-user-lookup tool an AI agent can use right away</p>
-          <div class="tags"><span>TypeScript</span><span>MCP</span><span>Node</span></div>
-        </div>
-        <div class="arch-card">
-          <div class="top"><span class="folder">🧭</span><a class="ext" href="https://github.com/rad1092/job-coach-agent" target="_blank">↗</a></div>
-          <h4><a href="https://github.com/rad1092/job-coach-agent" target="_blank">Job-Coach Agent</a></h4>
+          <div class="top"><span class="folder">🧭</span><span class="ext" style="font-size:.78rem;">Private repository</span></div>
+          <h4>Job-Coach Agent</h4>
           <p>Enter a target role and it runs the whole flow — job search, analysis report, cover-letter draft, interview prep, and a roadmap to landing the job</p>
           <div class="tags"><span>Streamlit</span><span>FastAPI</span><span>SQLite</span></div>
-        </div>
-        <div class="arch-card">
-          <div class="top"><span class="folder">⌨️</span><a class="ext" href="https://github.com/rad1092/ascii-diagram-editor" target="_blank">↗</a></div>
-          <h4><a href="https://github.com/rad1092/ascii-diagram-editor" target="_blank">ASCII Diagram Editor</a></h4>
-          <p>A browser-based ASCII diagram editor — draw on a fixed grid and render the result into real text</p>
-          <div class="tags"><span>TypeScript</span><span>Vite</span><span>Client-side</span></div>
         </div>
       </div>
       <p class="lead" style="margin-top:20px;font-size:.92rem;">See everything on the <a href="/repositories-en/" style="color:var(--accent);">repositories page</a></p>
@@ -584,13 +561,13 @@ body { background: var(--bg); }
     <!-- ---------- CONTACT ---------- -->
     <section class="block" id="contact">
       <p class="kicker">Contact</p>
-      <h2 class="view-title">Let's work together</h2>
-      <p class="lead">I'm always open to new collaborations and project ideas — feel free to reach out</p>
+      <h2 class="view-title">Contact</h2>
+      <p class="lead">For hiring or collaboration, send an email.</p>
       <div class="contact-big">
         <a href="mailto:rad174951@gmail.com">Email · rad174951@gmail.com →</a>
         <a class="ghost" href="https://github.com/rad1092" target="_blank">GitHub @rad1092 ↗</a>
       </div>
-      <p class="foot">Built with Jekyll · Designed &amp; developed by HongDae Kim — with a little help from AI</p>
+      <p class="foot">Built with Jekyll · Designed &amp; developed by HongDae Kim</p>
     </section>
 
   </main>
