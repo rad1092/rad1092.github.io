@@ -1,3 +1,19 @@
-theme: jekyll-theme-cayman
 title: HongDae Kim
-description: Portfolio of HongDae Kim, focusing on AI, automation, and developer productivity. 
+description: I build developer tools and desktop apps, and connect them to AI.
+url: https://rad1092.github.io
+markdown: kramdown
+kramdown:
+  input: GFM
+  auto_ids: true
+exclude:
+  - README.md
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+      lang: en
+  - scope:
+      path: "ko"
+    values:
+      lang: ko

@@ -1,0 +1,6 @@
+{%- assign m = include.m -%}
+{%- if m.type == "video" -%}
+<video src="{{ m.src | relative_url }}" poster="{{ m.poster | relative_url }}" width="{{ m.width }}" height="{{ m.height }}" autoplay muted loop playsinline aria-label="{{ m.alt[page.lang] }}"></video>
+{%- else -%}
+<img src="{{ m.src | relative_url }}" width="{{ m.width }}" height="{{ m.height }}" alt="{{ m.alt[page.lang] }}"{% if include.lazy %} loading="lazy"{% endif %}>
+{%- endif -%}

@@ -1,0 +1,12 @@
+{%- assign t = site.data.t[page.lang] -%}
+<header class="site-header">
+  <a class="site-name" href="{{ home_url | relative_url }}">{{ t.name }}</a>
+  <nav class="site-nav" aria-label="{{ t.name }}">
+    <a href="https://github.com/rad1092">GitHub</a>
+    <a href="mailto:rad174951@gmail.com">{{ t.email }}</a>
+    <span class="lang" role="group" aria-label="{{ t.language }}">
+      <a href="{{ en_url | relative_url }}" hreflang="en" lang="en" data-lang="en"{% if page.lang == "en" %} aria-current="true"{% endif %}>EN</a>
+      <a href="{{ ko_url | relative_url }}" hreflang="ko" lang="ko" data-lang="ko"{% if page.lang == "ko" %} aria-current="true"{% endif %}>한국어</a>
+    </span>
+  </nav>
+</header>

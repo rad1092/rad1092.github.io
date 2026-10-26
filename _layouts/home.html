@@ -1,0 +1,77 @@
+---
+layout: default
+---
+{%- include urls.html -%}
+{%- assign t = site.data.t[page.lang] -%}
+{%- assign h = site.data.home[page.lang] -%}
+{%- if page.lang == "ko" %}{% assign base = "/ko" %}{% else %}{% assign base = "" %}{% endif -%}
+<section class="intro">
+  <h1 class="intro__statement">{{ h.statement }}</h1>
+  <p class="intro__lead">{{ h.lead }}</p>
+</section>
+
+<section class="work" aria-labelledby="work-title">
+  <h2 id="work-title" class="section-title">{{ h.work_title }}</h2>
+  {%- for id in site.data.home.featured %}
+  {%- assign p = site.data.projects[id] -%}
+  {%- assign c = p[page.lang] -%}
+  {%- assign name = p.name[page.lang] | default: p.name -%}
+  {%- capture case_url %}{{ base }}/projects/{{ id }}/{% endcapture %}
+  <article class="project">
+    <div class="project__text">
+      <h3 class="project__name"><a href="{{ case_url | relative_url }}">{{ name }}</a></h3>
+      <p class="project__line">{{ c.line }}</p>
+      <p>{{ c.text }}</p>
+      <p class="project__meta">{{ c.meta }}</p>
+      <p class="project__links">
+        {%- if p.play %}<a class="button" href="{{ p.play }}">{{ t.play }}</a>{% endif %}
+        <a href="{{ case_url | relative_url }}">{{ t.case_study }}</a>
+        {%- if p.download %}<a href="{{ p.download }}">{{ t.download }}</a>{% endif %}
+        {%- if p.install %}<a href="{{ p.install }}">{{ t.install }}</a>{% endif %}
+        <a href="{{ p.source }}">{{ t.source }}</a>
+      </p>
+    </div>
+    <a class="project__media" href="{{ case_url | relative_url }}" tabindex="-1" aria-hidden="true">{% include media.html m=p.media.home lazy=true %}</a>
+  </article>
+  {%- endfor %}
+</section>
+
+<section class="more" aria-labelledby="more-title">
+  <h2 id="more-title" class="section-title">{{ h.more_title }}</h2>
+  <p class="section-intro">{{ h.more_intro }}</p>
+  <dl class="tools">
+    {%- for tool in h.tools %}
+    <div class="tool">
+      <dt><a href="{{ tool.href }}">{{ tool.name }}</a></dt>
+      <dd>{{ tool.text }}</dd>
+      <dd class="tool__stack">{{ tool.stack }}</dd>
+    </div>
+    {%- endfor %}
+  </dl>
+  <p><a href="{% if page.lang == 'ko' %}https://whago.net/ko/software{% else %}https://whago.net/software{% endif %}">{{ h.more_link }}</a></p>
+</section>
+
+<section class="prose-section" aria-labelledby="how-title">
+  <h2 id="how-title" class="section-title">{{ h.how_title }}</h2>
+  {%- for paragraph in h.how %}
+  <p>{{ paragraph }}</p>
+  {%- endfor %}
+</section>
+
+<section class="prose-section hire" aria-labelledby="hire-title">
+  <h2 id="hire-title" class="section-title">{{ h.hire_title }}</h2>
+  <p>{{ h.hire_intro }}</p>
+  <ul class="hire__list">
+    {%- for item in h.hire %}
+    <li><strong>{{ item.title }}</strong><span>{{ item.text }}</span></li>
+    {%- endfor %}
+  </ul>
+  <p><a class="button" href="mailto:rad174951@gmail.com">{{ h.hire_cta }}</a></p>
+</section>
+
+<section class="prose-section" aria-labelledby="background-title">
+  <h2 id="background-title" class="section-title">{{ h.background_title }}</h2>
+  {%- for line in h.background %}
+  <p>{{ line }}</p>
+  {%- endfor %}
+</section>

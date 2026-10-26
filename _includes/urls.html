@@ -1,0 +1,10 @@
+{%- comment -%}Sets en_url, ko_url and home_url for the current page.{%- endcomment -%}
+{%- if page.lang == "ko" -%}
+  {%- assign ko_url = page.url -%}
+  {%- assign en_url = page.url | remove_first: "/ko" -%}
+  {%- assign home_url = "/ko/" -%}
+{%- else -%}
+  {%- assign en_url = page.url -%}
+  {%- assign ko_url = page.url | prepend: "/ko" -%}
+  {%- assign home_url = "/" -%}
+{%- endif -%}
