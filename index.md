@@ -137,9 +137,6 @@ body { background: var(--bg); }
 .context { color: var(--muted); margin: 0 0 22px; max-width: 72ch; font-size: 1.04rem; }
 .context b { color: var(--text); }
 
-.ai-note { display: flex; gap: 13px; align-items: flex-start; margin: 0 0 30px; padding: 15px 18px; border: 1px solid color-mix(in srgb, var(--accent) 28%, transparent); border-radius: 12px; font-size: .94rem; color: var(--muted); max-width: 760px; background: color-mix(in srgb, var(--accent) 5%, transparent); }
-.ai-note .badge { flex: 0 0 auto; font-family: var(--serif); font-size: .68rem; font-weight: 700; color: var(--accent-ink); background: var(--accent); padding: 3px 8px; border-radius: 6px; margin-top: 2px; letter-spacing: .05em; }
-.ai-note b { color: var(--text); }
 
 .media { margin: 0 0 30px; }
 .gallery { display: grid; gap: 14px; }
@@ -230,14 +227,14 @@ body { background: var(--bg); }
   <aside class="id">
     <img class="id-photo" src="/profile.png" alt="김홍대 프로필 사진">
     <h1 class="id-name">김홍대<small>HongDae Kim</small></h1>
-    <p class="id-role">사용자의 다음 한 걸음을 돕는 소프트웨어를 만듭니다</p>
+    <p class="id-role">개발 도구와 데스크톱 앱을 만드는 소프트웨어 개발자</p>
     <nav class="snav">
       <a class="active" href="#about">소개</a>
       <a href="#experience">경력</a>
       <a href="#p1"><em>01</em>재난 대피 대시보드</a>
       <a href="#p2"><em>02</em>FirstCall</a>
       <a href="#p3"><em>03</em>gh-dep-risk</a>
-      <a href="#recent-tools">최근 도구</a>
+      <a href="#recent-tools">WHAGO 도구</a>
       <a href="#more">그 외</a>
       <a href="#contact">연락</a>
     </nav>
@@ -254,18 +251,19 @@ body { background: var(--bg); }
     <!-- ---------- ABOUT ---------- -->
     <section class="block" id="about">
       <p class="kicker">01 — 소개</p>
-      <h2 class="about-head">현장 영업과 납품을 거쳐, 사람의 <span class="hl">다음 한 걸음</span>을 돕는 소프트웨어를 만듭니다</h2>
+      <h2 class="about-head">내려받아 바로 쓰는 <span class="hl">개발 도구와 데스크톱 앱</span>을 설계부터 배포까지 직접 만듭니다</h2>
       <p class="lead">
-        실험적인 학습 저장소에서 시작해 실제 사용할 수 있는 도구형 프로젝트까지 단계적으로 확장해 왔고,
-        <span class="hl">"정보 전달을 넘어 실제 행동을 돕는다"</span>는 관점으로 재난 대피 안내와 API 도구화,
-        의존성 보안 점검처럼 사용자의 다음 행동을 만들어 주는 소프트웨어에 집중합니다
+        Rust, Go, Python, TypeScript, C++, Java, C#으로 만든 도구 11개를 GitHub 릴리스로 배포했고, 대부분 macOS·Windows·Linux에서 돕니다.
+        팀 프로젝트에서는 백엔드와 아키텍처를 맡았고, 개인 프로젝트는 테스트와 CI, 릴리스까지 직접 관리합니다.
       </p>
       <div class="chips">
         <span class="chip"><b>Python</b> Streamlit, Pandas, Folium</span>
         <span class="chip"><b>Rust</b> egui/eframe</span>
         <span class="chip"><b>Go</b> GitHub CLI</span>
-        <span class="chip"><b>DevOps</b> GitHub Actions</span>
-        <span class="chip"><b>AI</b> MCP, 에이전트 도구화</span>
+        <span class="chip"><b>TypeScript</b> Node, Next.js</span>
+        <span class="chip"><b>C++</b> Qt</span>
+        <span class="chip"><b>DevOps</b> GitHub Actions, Nginx</span>
+        <span class="chip"><b>MCP</b> 서버, 도구 패키징</span>
       </div>
       <div class="cta">
         <a class="primary" href="#p1">주요 프로젝트 보기 ↓</a>
@@ -281,7 +279,7 @@ body { background: var(--bg); }
         <div class="tl-item">
           <div class="tl-when">2016.07 – 2017.07, 2022.04 – 2025.04 — 합산 약 4년</div>
           <div class="tl-role">영업관리, 자재 납품 <span class="org">— 효상안전종합상사</span></div>
-          <p class="tl-desc">건설 현장에 들어가는 자재와 안전용품을 다루는 회사에서 자재 납품 실무로 시작해 영업관리까지 맡으며 약 4년간 근무했고, 거래처를 직접 응대하고 일정과 재고, 납기를 조율하며 현장의 요구를 절차와 데이터로 정리해 처리했습니다</p>
+          <p class="tl-desc">건설 자재와 안전용품을 공급하는 회사에서 자재 납품으로 시작해 영업관리를 맡았습니다.</p>
           <ul class="tl-detail">
             <li><b>2022.04 – 2025.04</b> 영업관리와 자재 납품 — 거래처 영업 관리, 일정과 재고, 납기 조율, 고객 직접 응대</li>
             <li><b>2016.07 – 2017.07</b> 자재 납품 — 건설 현장 자재 납품 실무</li>
@@ -290,15 +288,15 @@ body { background: var(--bg); }
         <div class="tl-item">
           <div class="tl-when">2017.07 – 2018.07</div>
           <div class="tl-role">교환학생 (어학연수) <span class="org">— UNAM CEPE, 멕시코 국립자치대학교</span></div>
-          <p class="tl-desc">멕시코 국립자치대학교(UNAM) 외국인 교육센터(CEPE)에서 1년간 교환학생으로 스페인어와 멕시코 문화를 공부했고, 낯선 환경에 빠르게 적응하고 다른 언어와 문화권 사람들과 소통하는 법을 익혔습니다</p>
+          <p class="tl-desc">멕시코 국립자치대학교(UNAM) 외국인 교육센터(CEPE)에서 1년간 스페인어를 공부했습니다.</p>
         </div>
       </div>
 
       <div class="certs-title">자격과 면허</div>
       <div class="certs">
-        <span class="cert">🚜 굴삭기 운전</span>
-        <span class="cert">🏗️ 지게차 운전</span>
-        <span class="cert">🚛 1종 대형 운전면허</span>
+        <span class="cert">굴삭기 운전</span>
+        <span class="cert">지게차 운전</span>
+        <span class="cert">1종 대형 운전면허</span>
       </div>
     </section>
 
@@ -332,8 +330,6 @@ body { background: var(--bg); }
           <figure><img src="/assets/projects/dashboard-demo-4-route.png" alt="안전 경로 안내" loading="lazy"><figcaption>④ 재난문자 발생(풍랑주의보) — 도보 안전 경로 안내</figcaption></figure>
         </div>
       </div>
-
-      <div class="ai-note"><span class="badge">AI</span><span>처음 다뤄 보는 기술 스택이 많았는데 <b>AI 도구를 적극 활용해 단기간에 구현 역량을 끌어올렸고</b>, 새로운 도구를 실전에서 빠르게 익히며 AI를 개발 파트너로 부리는 실용적인 방식을 체득한 프로젝트입니다</span></div>
 
       <div class="case">
         <div class="case-block flush">
@@ -380,7 +376,6 @@ body { background: var(--bg); }
       <div class="stack"><span>Rust</span><span>egui / eframe</span><span>firstcall-cli</span><span>MCP</span></div>
       <p class="summary">API 요청을 가져와 검증하고 용도와 입력을 설명해, <b>AI 클라이언트가 실제로 호출할 수 있는 로컬 MCP 도구</b>로 내보냅니다.</p><p class="context">기존 API를 AI 작업 흐름에 연결하려는 개발자를 위한 도구입니다. curl·OpenAPI 요청에서 인증과 일반 입력을 구분하고, 함께 제공하는 네이티브 CLI가 내보낸 도구를 실행합니다.</p>
       <div class="metrics"><div class="metric"><b>2</b><span>요청 입력 — curl·OpenAPI</span></div><div class="metric"><b>2</b><span>사용 방식 — 데스크톱 GUI·CLI</span></div><div class="metric"><b>4</b><span>배포 대상 — macOS(Apple Silicon·Intel)·Windows·Linux</span></div></div>
-      <div class="ai-note"><span class="badge">AI</span><span>Rust 코어 설계와 여러 입력 형식 처리, 테스트, 문서 작성 과정에서 <b>Claude를 페어 프로그래밍 파트너</b>로 활용했고, 무엇을 만들지와 지켜야 할 규칙은 제가 정하면서 반복 구현과 예외 상황 점검 속도를 AI로 끌어올렸습니다</span></div>
       <div class="case">
         <div class="case-block flush"><h3 class="case-h">문제</h3><p>HTTP 요청을 AI 도구로 연결하려면 주소뿐 아니라 검증한 동작, 이해할 수 있는 입력과 연결 설정이 필요합니다. FirstCall은 요청 이력과 레시피를 로컬에 저장하며, 요청 검증과 도구 호출은 사용자가 선택한 API로 직접 보냅니다.</p></div>
         <div class="case-block"><h3 class="case-h">사용 흐름</h3><p>요청을 읽고 입력을 채워 실제 검증 요청을 보냅니다. 성공한 요청에 도구 설명을 붙여 새 MCP 패키지로 내보내고, AI 클라이언트에 연결 설정과 인증 환경 변수를 제공합니다. 런타임이 함께 들어 있어 데스크톱 내보내기에 코드 빌드나 npm 설치가 필요하지 않습니다.</p></div>
@@ -418,8 +413,6 @@ body { background: var(--bg); }
         </div>
       </div>
 
-      <div class="ai-note"><span class="badge">AI</span><span>npm, pip, Go 등 <b>도구마다 다른 라이브러리 기록 방식</b>을 정리하고 예외 상황을 점검할 때 AI를 활용해 빠르게 테스트 케이스를 갖췄고, "어디까지 지원하고 무엇은 지원하지 않을지" 범위는 제가 직접 정했습니다</span></div>
-
       <div class="case">
         <div class="case-block flush">
           <h3 class="case-h">문제</h3>
@@ -455,9 +448,9 @@ body { background: var(--bg); }
 
     <!-- ---------- RECENT TOOLS ---------- -->
     <section class="block" id="recent-tools">
-      <p class="kicker">2026.10 — 오픈소스</p>
-      <h2 class="view-title">도구 모음과 최근 업데이트</h2>
-      <p class="lead">API 연결, 문서·파일 검토, 작업 계획과 소프트웨어 테스트·디버깅을 위한 9개 프로젝트입니다. 현재 공개 릴리스와 직접 따라 할 수 있는 시작 경로를 연결했습니다. 사전 공개 여부와 운영체제별 범위는 각 안내에서 확인할 수 있습니다.</p>
+      <p class="kicker">WHAGO</p>
+      <h2 class="view-title">배포 중인 도구</h2>
+      <p class="lead">WHAGO라는 이름으로 배포하는 도구입니다. 각 카드에 최신 릴리스와 바로 따라 해 볼 수 있는 예제를 연결했습니다.</p>
       <div class="archive">
         <div class="arch-card">
           <div class="top"><span class="mono">FC</span><a class="ext" href="https://github.com/rad1092/firstcall" target="_blank" rel="noopener noreferrer" aria-label="FirstCall GitHub">↗</a></div>
@@ -534,7 +527,7 @@ body { background: var(--bg); }
           <div class="tags"><span>Rust · WASM · MCP</span></div>
         </div>
       </div>
-      <p class="lead" style="margin-top:20px;font-size:.92rem;"><a href="https://whago.net/ko/software" style="color:var(--accent);">WHAGO에서 도구별 사용 흐름 비교하기 ↗</a></p>
+      <p class="lead" style="margin-top:20px;font-size:.92rem;"><a href="https://whago.net/ko/software" style="color:var(--accent);">whago.net에서 모든 도구 보기 ↗</a></p>
     </section>
 
     <!-- ---------- OTHER PROJECTS ---------- -->
@@ -567,13 +560,13 @@ body { background: var(--bg); }
     <!-- ---------- CONTACT ---------- -->
     <section class="block" id="contact">
       <p class="kicker">연락</p>
-      <h2 class="view-title">함께 일해요</h2>
-      <p class="lead">새로운 협업이나 프로젝트 제안은 언제든 환영하니 편하게 연락 주세요</p>
+      <h2 class="view-title">연락</h2>
+      <p class="lead">채용이나 협업 문의는 이메일로 보내 주세요.</p>
       <div class="contact-big">
         <a href="mailto:rad174951@gmail.com">문의 · rad174951@gmail.com →</a>
         <a class="ghost" href="https://github.com/rad1092" target="_blank">GitHub @rad1092 ↗</a>
       </div>
-      <p class="foot">Built with Jekyll · Designed &amp; developed by HongDae Kim — with a little help from AI</p>
+      <p class="foot">Built with Jekyll · Designed &amp; developed by HongDae Kim</p>
     </section>
 
   </main>
